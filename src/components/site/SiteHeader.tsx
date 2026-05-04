@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, Heart } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { CAUSES } from "@/lib/causes";
 import { site } from "@/content/site";
+import { UtilityBar } from "./UtilityBar";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -11,6 +12,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
+      <UtilityBar />
       <div className="mx-auto flex h-32 max-w-7xl items-center justify-between px-5 lg:px-8">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img src={logo} alt={`${site.brandName} ${site.brandSuffix}`} className="h-24 w-auto md:h-28" width={400} height={240} />

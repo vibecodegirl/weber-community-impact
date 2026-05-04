@@ -1,101 +1,34 @@
-# Weber Human Services Foundation — Website Plan
+## Crisis Hotline mini-header + EN/ES Language Translator
 
-A modern, service-oriented marketing site that mirrors the visual DNA of the parent organization (weberhs.net) while feeling fresher, warmer, and more story-driven. Built as a static multi-page TanStack site (no CMS in v1).
+### 1. Content (`src/content/site.ts`)
+Add two new blocks:
+- `utilityBar`: `crisisLabel: "24 Hour Crisis Hotline"`, `crisisNumber: "988"`, `crisisHref: "tel:988"`, `languageLabel: "Language"`.
+- `languages`: `[{ code: "en", label: "EN", name: "English" }, { code: "es", label: "ES", name: "Español" }]`.
 
-## Visual Direction
+### 2. New component: `src/components/site/UtilityBar.tsx`
+A slim 36px-tall bar with primary background:
+- **Left**: Phone icon + "24 Hour Crisis Hotline:" + bold "988" pill, wrapped in a `tel:988` link. Collapses to "Crisis: 988" under `sm`.
+- **Right**: `<LanguageTranslator />`.
+- Marked `notranslate` so the bar itself never gets re-translated.
 
-- **Primary palette** (from logo): deep navy `#1B2C56`, light sky blue `#A8D8E8`, white. Accent hints of warm red `#C8412C` for CTAs and emphasis. Soft warm gray for backgrounds.
-- **Typography**: clean, trustworthy sans-serif for body (Inter / Figtree); a refined serif italic accent for emotional pull-quotes and "Foundation" wordmark vibes (echoing the logo's italic "Foundation").
-- **Mood**: mountain imagery motifs (subtle nods to the logo's peaks), generous whitespace, rounded cards, soft shadows, photography-forward sections featuring real people and community moments.
-- **Tone**: warm, human, hopeful, professional. "One person at a time" as a recurring narrative thread.
+### 3. New component: `src/components/site/LanguageTranslator.tsx`
+Two-button **EN / ES** segmented toggle (rounded pill, tracks active state).
+- Injects the official Google Website Translator script once on mount into a hidden `#google_translate_element` host.
+- Switching languages writes the `googtrans` cookie (`/en/en` or `/en/es`) on the current host and the parent domain, then `window.location.reload()` so Google Translate re-applies — the simplest pattern that also works identically when the snippet is dropped into Wix.
+- Reads current language from the cookie on mount to highlight the active button.
 
-## Site Map
+### 4. Header integration (`src/components/site/SiteHeader.tsx`)
+Render `<UtilityBar />` as the first child of the `<header>`, above the existing nav row. No other header changes.
 
-```text
-/                        Home
-/about                   Who we are, mission, board, parent org connection
-/causes                  Overview of 5 cause areas (with submenu nav)
-  /causes/employee-care
-  /causes/aging-services
-  /causes/mental-health
-  /causes/prevention
-  /causes/substance-abuse
-/impact                  Impact stories + Annual report highlights
-/events                  Upcoming + past events calendar
-/get-involved            Volunteer + Corporate/Community partners
-/news                    News/blog list + newsletter signup
-/contact                 Contact form, locations (Morgan & Weber counties)
-/donate                  Donation landing (links out to paywall)
-```
+### 5. Style tweaks (`src/styles.css`)
+Append small global overrides to suppress Google Translate's injected chrome:
+- Hide `.skiptranslate` iframe banner, reset `body { top: 0 !important }`, hide `#goog-gt-tt` tooltip.
 
-Top nav: **About · Causes ▾ · Impact · Events · Get Involved · News · Contact** with prominent red **Donate** button. Causes opens a dropdown listing all 5 areas.
+### 6. Wix migration notes (`src/content/README.md`)
+Append a short section:
+- Crisis bar = a Wix Strip with a text element + a phone-link button. Copy lives in `site.utilityBar`.
+- Translator = paste Google's official Website Translator embed snippet into a Wix HTML/Embed element, configured with `pageLanguage: 'en'` and `includedLanguages: 'en,es'`. Include the exact snippet inline in the README so it's drop-in.
 
-## Page Breakdown
-
-**Home**
-- Hero with mission statement, mountain motif, primary photo, dual CTA (Donate / Learn About Our Causes)
-- "Who We Are / What We Do / Why We Do It" trio (from your copy)
-- 5 cause areas as visual cards linking to detail pages
-- Featured impact story (one person, one outcome)
-- Stats strip (clients served, dollars raised, programs funded — placeholders)
-- Upcoming event teaser
-- Parent org connection band linking to weberhs.net
-- Newsletter signup + donate CTA
-
-**About**
-- Foundation story, relationship to Weber Human Services
-- Mission / Vision / Values
-- Board & leadership (placeholder bios + headshots)
-- Financial transparency note (placeholder for 990s / annual report PDF)
-
-**Causes (overview + 5 detail pages)**
-- Overview: intro + grid of all 5
-- Each detail page: who it serves, the gap the Foundation fills, outcomes/impact, related stories, "Fund this cause" CTA
-
-**Impact**
-- Story grid (anonymized client spotlights, 6–8 placeholders)
-- Annual report highlights section with key numbers and a download placeholder
-- Pull-quotes from clients/staff
-
-**Events**
-- Upcoming events list with date, location, description, RSVP/learn-more link
-- Past events archive with photos
-- Recurring annual events (gala, awareness walks)
-
-**Get Involved**
-- Volunteer opportunities + interest form
-- Corporate & community partners showcase (logo wall, partnership tiers)
-- Ways to give summary (one-time, monthly, memorial/honor, planned giving, employer match) — all routing to /donate
-
-**News**
-- Article list with categories
-- Newsletter signup (email capture — stored locally / placeholder for v1)
-
-**Contact**
-- Contact form (name, email, message — placeholder submit)
-- Locations & service area (Morgan & Weber counties)
-- Phone, email, social links
-- Crisis resources callout (988, parent org links)
-
-**Donate**
-- Explanatory page about impact of giving
-- Buttons routing to external donation paywall (placeholder URLs swappable later)
-- Other ways to give (mail check, stock, planned giving contact)
-
-## Components Built
-
-Reusable: `SiteHeader`, `SiteFooter`, `DonateButton`, `CauseCard`, `StoryCard`, `EventCard`, `StatBlock`, `SectionHeader`, `NewsletterSignup`, `MountainDivider` (subtle SVG echoing the logo).
-
-## Out of Scope for v1
-
-- Admin dashboard / CMS (content is hardcoded; easy to update via developer)
-- Real donation processing (links out to existing paywall)
-- Real form submissions (forms are UI-only with success states; can be wired later)
-- Authentication
-
-## Open Items (can finalize during build or after)
-
-- Donation paywall URL(s) — placeholders used until provided
-- Real photography — using high-quality stock placeholders that match the warm/community tone
-- Final board bios, real impact story content, actual event listings — placeholder copy used
-
+### Files
+- **Edit**: `src/content/site.ts`, `src/components/site/SiteHeader.tsx`, `src/styles.css`, `src/content/README.md`
+- **Create**: `src/components/site/UtilityBar.tsx`, `src/components/site/LanguageTranslator.tsx`

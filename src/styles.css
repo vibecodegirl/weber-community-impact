@@ -174,3 +174,12 @@
   .text-balance { text-wrap: balance; }
   .text-pretty  { text-wrap: pretty; }
 }
+
+/* Suppress Google Website Translator chrome */
+.skiptranslate > iframe.skiptranslate,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame { display: none !important; }
+body { top: 0 !important; }
+.goog-tooltip, .goog-tooltip:hover { display: none !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
