@@ -40,35 +40,101 @@ function getCurrentLang(): string {
   return match ? match[1] : "en";
 }
 
+/**
+ * Force Google Translate to re-scan the DOM.
+ * The widget exposes a hidden <select class="goog-te-combo"> — dispatching
+ * a "change" event on it causes the engine to re-translate visible text,
+ * including content rendered by SPA route changes.
+ */
+function retranslate(lang: string) {
+  if (lang === "en") return;
+  const select = document.querySelector<HTMLSelectElement>("select.goog-te-combo");
+  if (!select) return;
+  if (select.value !== lang) select.value = lang;
+  select.dispatchEvent(new Event("change"));
+}
+
 export function LanguageTranslator() {
   const [active, setActive] = useState<string>("en");
 
   useEffect(() => {
-    setActive(getCurrentLang());
-    if (document.getElementById("google-translate-script")) return;
+    const initialLang = getCurrentLang();
+    setActive(initialLang);
 
-    window.googleTranslateElementInit = () => {
-      if (!window.google?.translate?.TranslateElement) return;
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          includedLanguages: site.languages.map((l) => l.code).join(","),
-          autoDisplay: false,
-        },
-        "google_translate_element",
-      );
+    if (!document.getElementById("google-translate-script")) {
+      window.googleTranslateElementInit = () => {
+        if (!window.google?.translate?.TranslateElement) return;
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: site.languages.map((l) => l.code).join(","),
+            autoDisplay: false,
+          },
+          "google_translate_element",
+        );
+      };
+
+      const script = document.createElement("script");
+      script.id = "google-translate-script";
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    // Re-apply translation after SPA route changes & dynamic content updates.
+    let retryTimer: number | undefined;
+    const scheduleRetranslate = () => {
+      const lang = getCurrentLang();
+      if (lang === "en") return;
+      window.clearTimeout(retryTimer);
+      retryTimer = window.setTimeout(() => retranslate(lang), 150);
     };
 
-    const script = document.createElement("script");
-    script.id = "google-translate-script";
-    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script.async = true;
-    document.body.appendChild(script);
+    // Patch history methods to detect SPA navigation.
+    const origPush = history.pushState;
+    const origReplace = history.replaceState;
+    history.pushState = function (...args) {
+      const r = origPush.apply(this, args as any);
+      scheduleRetranslate();
+      return r;
+    };
+    history.replaceState = function (...args) {
+      const r = origReplace.apply(this, args as any);
+      scheduleRetranslate();
+      return r;
+    };
+    window.addEventListener("popstate", scheduleRetranslate);
+
+    // Observe DOM swaps within the app shell (route content, modals, etc.).
+    const observer = new MutationObserver((mutations) => {
+      const lang = getCurrentLang();
+      if (lang === "en") return;
+      const meaningful = mutations.some((m) =>
+        Array.from(m.addedNodes).some(
+          (n) =>
+            n.nodeType === 1 &&
+            !(n as Element).classList?.contains("skiptranslate") &&
+            !(n as Element).closest?.(".notranslate"),
+        ),
+      );
+      if (meaningful) scheduleRetranslate();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      window.clearTimeout(retryTimer);
+      window.removeEventListener("popstate", scheduleRetranslate);
+      history.pushState = origPush;
+      history.replaceState = origReplace;
+      observer.disconnect();
+    };
   }, []);
 
   function switchTo(lang: string) {
     setTranslateCookie(lang);
     setActive(lang);
+    // Full reload ensures the widget picks up the new cookie cleanly;
+    // subsequent SPA navigation is handled by the observer above.
     window.location.reload();
   }
 
