@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Weber Human Services Foundation" },
+      { name: "description", content: "Website for human and health services foundation showcasing programs and impact." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Weber Human Services Foundation" },
+      { property: "og:description", content: "Website for human and health services foundation showcasing programs and impact." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Weber Human Services Foundation" },
+      { name: "twitter:description", content: "Website for human and health services foundation showcasing programs and impact." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8214c165-d7cb-4c1f-a374-a859469adfae/id-preview-9a60a543--7f5bfbdb-6318-46c4-a30c-b3c108a334ac.lovable.app-1777929671571.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8214c165-d7cb-4c1f-a374-a859469adfae/id-preview-9a60a543--7f5bfbdb-6318-46c4-a30c-b3c108a334ac.lovable.app-1777929671571.png" },
     ],
     links: [
       {
