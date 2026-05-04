@@ -11,12 +11,14 @@ declare global {
 
 function setTranslateCookie(lang: string) {
   const value = lang === "en" ? "/en/en" : `/en/${lang}`;
+  // Set on current host (works in iframed sandboxes that block parent-domain cookies)
   document.cookie = `googtrans=${value};path=/`;
   const host = window.location.hostname;
   const parts = host.split(".");
   if (parts.length > 1) {
     const root = "." + parts.slice(-2).join(".");
     document.cookie = `googtrans=${value};path=/;domain=${root}`;
+    document.cookie = `googtrans=${value};path=/;domain=${host}`;
   }
 }
 
@@ -24,6 +26,16 @@ function getCurrentLang(): string {
   if (typeof document === "undefined") return "en";
   const match = document.cookie.match(/googtrans=\/[^/]+\/([^;]+)/);
   return match ? match[1] : "en";
+}
+
+function triggerSelect(lang: string): boolean {
+  const select = document.querySelector<HTMLSelectElement>(
+    "select.goog-te-combo",
+  );
+  if (!select) return false;
+  select.value = lang;
+  select.dispatchEvent(new Event("change"));
+  return true;
 }
 
 export function LanguageTranslator() {
@@ -55,7 +67,19 @@ export function LanguageTranslator() {
   function switchTo(lang: string) {
     setTranslateCookie(lang);
     setActive(lang);
-    window.location.reload();
+    // Try in-place switch first (no reload, works even when cookies are blocked)
+    const target = lang === "en" ? "" : lang;
+    // Poll briefly for the Google Translate <select> to exist
+    let tries = 0;
+    const tick = () => {
+      if (triggerSelect(target) || tries++ > 20) {
+        // Fallback: reload so the cookie takes effect
+        if (tries > 20) window.location.reload();
+        return;
+      }
+      setTimeout(tick, 100);
+    };
+    tick();
   }
 
   return (
