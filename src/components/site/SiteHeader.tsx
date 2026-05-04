@@ -17,8 +17,8 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {site.nav.items.map((item, idx) => (
-            <>
+          {site.nav.items.map((item) => (
+            <Fragment key={item.to}>
               <Link
                 key={item.to}
                 to={item.to}
