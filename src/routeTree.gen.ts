@@ -23,6 +23,8 @@ import { Route as BoardRouteImport } from './routes/board'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CausesIndexRouteImport } from './routes/causes.index'
+import { Route as EventsSubForSantaRouteImport } from './routes/events.sub-for-santa'
+import { Route as EventsGolfTournamentRouteImport } from './routes/events.golf-tournament'
 import { Route as CausesSlugRouteImport } from './routes/causes.$slug'
 
 const TermsRoute = TermsRouteImport.update({
@@ -95,6 +97,16 @@ const CausesIndexRoute = CausesIndexRouteImport.update({
   path: '/causes/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsSubForSantaRoute = EventsSubForSantaRouteImport.update({
+  id: '/sub-for-santa',
+  path: '/sub-for-santa',
+  getParentRoute: () => EventsRoute,
+} as any)
+const EventsGolfTournamentRoute = EventsGolfTournamentRouteImport.update({
+  id: '/golf-tournament',
+  path: '/golf-tournament',
+  getParentRoute: () => EventsRoute,
+} as any)
 const CausesSlugRoute = CausesSlugRouteImport.update({
   id: '/causes/$slug',
   path: '/causes/$slug',
@@ -107,7 +119,7 @@ export interface FileRoutesByFullPath {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRoute
+  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -116,6 +128,8 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/causes/$slug': typeof CausesSlugRoute
+  '/events/golf-tournament': typeof EventsGolfTournamentRoute
+  '/events/sub-for-santa': typeof EventsSubForSantaRoute
   '/causes/': typeof CausesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -124,7 +138,7 @@ export interface FileRoutesByTo {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRoute
+  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -133,6 +147,8 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/causes/$slug': typeof CausesSlugRoute
+  '/events/golf-tournament': typeof EventsGolfTournamentRoute
+  '/events/sub-for-santa': typeof EventsSubForSantaRoute
   '/causes': typeof CausesIndexRoute
 }
 export interface FileRoutesById {
@@ -142,7 +158,7 @@ export interface FileRoutesById {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRoute
+  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -151,6 +167,8 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/causes/$slug': typeof CausesSlugRoute
+  '/events/golf-tournament': typeof EventsGolfTournamentRoute
+  '/events/sub-for-santa': typeof EventsSubForSantaRoute
   '/causes/': typeof CausesIndexRoute
 }
 export interface FileRouteTypes {
@@ -170,6 +188,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/causes/$slug'
+    | '/events/golf-tournament'
+    | '/events/sub-for-santa'
     | '/causes/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -187,6 +207,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/causes/$slug'
+    | '/events/golf-tournament'
+    | '/events/sub-for-santa'
     | '/causes'
   id:
     | '__root__'
@@ -204,6 +226,8 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/causes/$slug'
+    | '/events/golf-tournament'
+    | '/events/sub-for-santa'
     | '/causes/'
   fileRoutesById: FileRoutesById
 }
@@ -213,7 +237,7 @@ export interface RootRouteChildren {
   BoardRoute: typeof BoardRoute
   ContactRoute: typeof ContactRoute
   DonateRoute: typeof DonateRoute
-  EventsRoute: typeof EventsRoute
+  EventsRoute: typeof EventsRouteWithChildren
   FaqRoute: typeof FaqRoute
   FinancialsRoute: typeof FinancialsRoute
   GetInvolvedRoute: typeof GetInvolvedRoute
@@ -325,6 +349,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CausesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/sub-for-santa': {
+      id: '/events/sub-for-santa'
+      path: '/sub-for-santa'
+      fullPath: '/events/sub-for-santa'
+      preLoaderRoute: typeof EventsSubForSantaRouteImport
+      parentRoute: typeof EventsRoute
+    }
+    '/events/golf-tournament': {
+      id: '/events/golf-tournament'
+      path: '/golf-tournament'
+      fullPath: '/events/golf-tournament'
+      preLoaderRoute: typeof EventsGolfTournamentRouteImport
+      parentRoute: typeof EventsRoute
+    }
     '/causes/$slug': {
       id: '/causes/$slug'
       path: '/causes/$slug'
@@ -335,13 +373,26 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface EventsRouteChildren {
+  EventsGolfTournamentRoute: typeof EventsGolfTournamentRoute
+  EventsSubForSantaRoute: typeof EventsSubForSantaRoute
+}
+
+const EventsRouteChildren: EventsRouteChildren = {
+  EventsGolfTournamentRoute: EventsGolfTournamentRoute,
+  EventsSubForSantaRoute: EventsSubForSantaRoute,
+}
+
+const EventsRouteWithChildren =
+  EventsRoute._addFileChildren(EventsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BoardRoute: BoardRoute,
   ContactRoute: ContactRoute,
   DonateRoute: DonateRoute,
-  EventsRoute: EventsRoute,
+  EventsRoute: EventsRouteWithChildren,
   FaqRoute: FaqRoute,
   FinancialsRoute: FinancialsRoute,
   GetInvolvedRoute: GetInvolvedRoute,
