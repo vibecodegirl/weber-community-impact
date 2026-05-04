@@ -53,8 +53,8 @@ export const home = {
 
   // 4. PARENT ORG band
   parentOrg: {
-    title: "Proudly partnered with Weber Human Services",
-    body: "The Foundation exists to amplify the work of Weber Human Services — the public agency providing mental health, substance use, and aging services across our two counties.",
+    title: "An extension of Weber Human Services",
+    body: "The Foundation is an extension of Weber Human Services — the public agency providing mental health, substance use, and aging services across our two counties.",
     ctaLabel: "Visit weberhs.net",
   },
 
