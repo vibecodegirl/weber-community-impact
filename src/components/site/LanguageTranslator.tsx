@@ -81,16 +81,18 @@ export function LanguageTranslator() {
       document.body.appendChild(script);
     }
 
-    // Re-apply translation after SPA route changes & dynamic content updates.
+    // Re-apply translation after SPA route changes only. We intentionally
+    // do NOT use a MutationObserver here — Google Translate itself mutates
+    // the DOM as it translates, which causes a feedback loop (flicker /
+    // text rapidly toggling between EN and ES).
     let retryTimer: number | undefined;
     const scheduleRetranslate = () => {
       const lang = getCurrentLang();
       if (lang === "en") return;
       window.clearTimeout(retryTimer);
-      retryTimer = window.setTimeout(() => retranslate(lang), 150);
+      retryTimer = window.setTimeout(() => retranslate(lang), 250);
     };
 
-    // Patch history methods to detect SPA navigation.
     const origPush = history.pushState;
     const origReplace = history.replaceState;
     history.pushState = function (...args) {
@@ -105,28 +107,11 @@ export function LanguageTranslator() {
     };
     window.addEventListener("popstate", scheduleRetranslate);
 
-    // Observe DOM swaps within the app shell (route content, modals, etc.).
-    const observer = new MutationObserver((mutations) => {
-      const lang = getCurrentLang();
-      if (lang === "en") return;
-      const meaningful = mutations.some((m) =>
-        Array.from(m.addedNodes).some(
-          (n) =>
-            n.nodeType === 1 &&
-            !(n as Element).classList?.contains("skiptranslate") &&
-            !(n as Element).closest?.(".notranslate"),
-        ),
-      );
-      if (meaningful) scheduleRetranslate();
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-
     return () => {
       window.clearTimeout(retryTimer);
       window.removeEventListener("popstate", scheduleRetranslate);
       history.pushState = origPush;
       history.replaceState = origReplace;
-      observer.disconnect();
     };
   }, []);
 
