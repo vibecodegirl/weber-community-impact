@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MountainDivider } from "./MountainDivider";
 import { CAUSES } from "@/lib/causes";
+import { site } from "@/content/site";
 
 export function SiteFooter() {
   return (
@@ -10,22 +11,19 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
           <div className="font-serif text-2xl">
-            Weber Human Services <em className="text-sky">Foundation</em>
+            {site.brandName} <em className="text-sky">{site.brandSuffix}</em>
           </div>
-          <p className="mt-3 max-w-md text-sm text-primary-foreground/75">
-            Bridging the gap between client needs and available funding — so every neighbor in Morgan
-            and Weber Counties can lead a healthy, successful life.
-          </p>
+          <p className="mt-3 max-w-md text-sm text-primary-foreground/75">{site.tagline}</p>
           <Link
             to="/donate"
             className="mt-6 inline-flex rounded-full bg-ember px-6 py-3 text-sm font-semibold text-ember-foreground"
           >
-            Make a donation
+            {site.footer.donateButton}
           </Link>
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-sky">Causes</h4>
+          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-sky">{site.footer.causesHeading}</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/80">
             {CAUSES.map((c) => (
               <li key={c.slug}>
@@ -38,25 +36,21 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-sky">Foundation</h4>
+          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-sky">{site.footer.foundationHeading}</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/80">
-            <li><Link to="/about" className="hover:text-sky">About</Link></li>
-            <li><Link to="/board" className="hover:text-sky">Board & Leadership</Link></li>
-            <li><Link to="/financials" className="hover:text-sky">Financials & 990s</Link></li>
-            <li><Link to="/impact" className="hover:text-sky">Impact</Link></li>
-            <li><Link to="/events" className="hover:text-sky">Events</Link></li>
-            <li><Link to="/get-involved" className="hover:text-sky">Get Involved</Link></li>
-            <li><Link to="/news" className="hover:text-sky">News</Link></li>
-            <li><Link to="/faq" className="hover:text-sky">FAQ</Link></li>
-            <li><Link to="/contact" className="hover:text-sky">Contact</Link></li>
+            {site.footer.foundationLinks.map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="hover:text-sky">{l.label}</Link>
+              </li>
+            ))}
             <li>
               <a
-                href="https://www.weberhs.net/"
+                href={site.parentOrg.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-sky"
               >
-                Weber Human Services ↗
+                {site.parentOrg.name} ↗
               </a>
             </li>
           </ul>
@@ -65,11 +59,12 @@ export function SiteFooter() {
 
       <div className="border-t border-primary-foreground/15">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-6 text-xs text-primary-foreground/60 md:flex-row md:items-center lg:px-8">
-          <p>© {new Date().getFullYear()} Weber Human Services Foundation. A 501(c)(3) nonprofit.</p>
+          <p>© {new Date().getFullYear()} {site.brandName} {site.brandSuffix}. {site.footer.copyrightSuffix}</p>
           <div className="flex flex-wrap items-center gap-4">
-            <Link to="/privacy" className="hover:text-sky">Privacy</Link>
-            <Link to="/terms" className="hover:text-sky">Terms</Link>
-            <span>Serving Morgan & Weber Counties, Utah</span>
+            {site.footer.legalLinks.map((l) => (
+              <Link key={l.to} to={l.to} className="hover:text-sky">{l.label}</Link>
+            ))}
+            <span>{site.footer.serviceAreaLine}</span>
           </div>
         </div>
       </div>
