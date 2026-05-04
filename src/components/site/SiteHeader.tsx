@@ -139,14 +139,29 @@ export function SiteHeader() {
               ))}
             </div>
             {site.nav.items.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="block py-2 font-medium"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
+              <Fragment key={item.to}>
+                <Link
+                  to={item.to}
+                  className="block py-2 font-medium"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+                {item.to === "/events" && (
+                  <div className="ml-3 space-y-1 border-l border-border pl-3">
+                    {EVENT_SUBNAV.map((e) => (
+                      <Link
+                        key={e.to}
+                        to={e.to}
+                        className="block py-1.5 text-sm text-muted-foreground"
+                        onClick={() => setOpen(false)}
+                      >
+                        {e.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </Fragment>
             ))}
             <Link
               to="/donate"
