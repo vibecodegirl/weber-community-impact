@@ -16,12 +16,12 @@ import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as GetInvolvedRouteImport } from './routes/get-involved'
 import { Route as FinancialsRouteImport } from './routes/financials'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as EventsRouteImport } from './routes/events'
 import { Route as DonateRouteImport } from './routes/donate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BoardRouteImport } from './routes/board'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as CausesIndexRouteImport } from './routes/causes.index'
 import { Route as EventsSubForSantaRouteImport } from './routes/events.sub-for-santa'
 import { Route as EventsGolfTournamentRouteImport } from './routes/events.golf-tournament'
@@ -62,11 +62,6 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DonateRoute = DonateRouteImport.update({
   id: '/donate',
   path: '/donate',
@@ -90,6 +85,11 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CausesIndexRoute = CausesIndexRouteImport.update({
@@ -119,7 +119,6 @@ export interface FileRoutesByFullPath {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -131,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/events/golf-tournament': typeof EventsGolfTournamentRoute
   '/events/sub-for-santa': typeof EventsSubForSantaRoute
   '/causes/': typeof CausesIndexRoute
+  '/events/': typeof EventsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -138,7 +138,6 @@ export interface FileRoutesByTo {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -150,6 +149,7 @@ export interface FileRoutesByTo {
   '/events/golf-tournament': typeof EventsGolfTournamentRoute
   '/events/sub-for-santa': typeof EventsSubForSantaRoute
   '/causes': typeof CausesIndexRoute
+  '/events': typeof EventsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -158,7 +158,6 @@ export interface FileRoutesById {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -170,6 +169,7 @@ export interface FileRoutesById {
   '/events/golf-tournament': typeof EventsGolfTournamentRoute
   '/events/sub-for-santa': typeof EventsSubForSantaRoute
   '/causes/': typeof CausesIndexRoute
+  '/events/': typeof EventsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -179,7 +179,6 @@ export interface FileRouteTypes {
     | '/board'
     | '/contact'
     | '/donate'
-    | '/events'
     | '/faq'
     | '/financials'
     | '/get-involved'
@@ -191,6 +190,7 @@ export interface FileRouteTypes {
     | '/events/golf-tournament'
     | '/events/sub-for-santa'
     | '/causes/'
+    | '/events/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -198,7 +198,6 @@ export interface FileRouteTypes {
     | '/board'
     | '/contact'
     | '/donate'
-    | '/events'
     | '/faq'
     | '/financials'
     | '/get-involved'
@@ -210,6 +209,7 @@ export interface FileRouteTypes {
     | '/events/golf-tournament'
     | '/events/sub-for-santa'
     | '/causes'
+    | '/events'
   id:
     | '__root__'
     | '/'
@@ -217,7 +217,6 @@ export interface FileRouteTypes {
     | '/board'
     | '/contact'
     | '/donate'
-    | '/events'
     | '/faq'
     | '/financials'
     | '/get-involved'
@@ -229,6 +228,7 @@ export interface FileRouteTypes {
     | '/events/golf-tournament'
     | '/events/sub-for-santa'
     | '/causes/'
+    | '/events/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -237,7 +237,6 @@ export interface RootRouteChildren {
   BoardRoute: typeof BoardRoute
   ContactRoute: typeof ContactRoute
   DonateRoute: typeof DonateRoute
-  EventsRoute: typeof EventsRouteWithChildren
   FaqRoute: typeof FaqRoute
   FinancialsRoute: typeof FinancialsRoute
   GetInvolvedRoute: typeof GetInvolvedRoute
@@ -247,6 +246,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   CausesSlugRoute: typeof CausesSlugRoute
   CausesIndexRoute: typeof CausesIndexRoute
+  EventsIndexRoute: typeof EventsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -300,13 +300,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/events': {
-      id: '/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof EventsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/donate': {
       id: '/donate'
       path: '/donate'
@@ -342,6 +335,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/causes/': {
       id: '/causes/'
       path: '/causes'
@@ -373,26 +373,12 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface EventsRouteChildren {
-  EventsGolfTournamentRoute: typeof EventsGolfTournamentRoute
-  EventsSubForSantaRoute: typeof EventsSubForSantaRoute
-}
-
-const EventsRouteChildren: EventsRouteChildren = {
-  EventsGolfTournamentRoute: EventsGolfTournamentRoute,
-  EventsSubForSantaRoute: EventsSubForSantaRoute,
-}
-
-const EventsRouteWithChildren =
-  EventsRoute._addFileChildren(EventsRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BoardRoute: BoardRoute,
   ContactRoute: ContactRoute,
   DonateRoute: DonateRoute,
-  EventsRoute: EventsRouteWithChildren,
   FaqRoute: FaqRoute,
   FinancialsRoute: FinancialsRoute,
   GetInvolvedRoute: GetInvolvedRoute,
@@ -402,6 +388,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   CausesSlugRoute: CausesSlugRoute,
   CausesIndexRoute: CausesIndexRoute,
+  EventsIndexRoute: EventsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
