@@ -2,9 +2,8 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import { MountainDivider } from "@/components/site/MountainDivider";
+import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { CAUSES } from "@/lib/causes";
-import hero from "@/assets/hero.jpg";
 import mountains from "@/assets/mountains.jpg";
 
 export const Route = createFileRoute("/")({
@@ -29,42 +28,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <SiteLayout>
-      {/* HERO */}
-      <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <img src={hero} alt="" width={1920} height={1080} className="h-full w-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        </div>
-        <div className="mx-auto max-w-7xl px-5 pb-28 pt-24 text-primary-foreground md:pt-32 lg:px-8 lg:pb-40 lg:pt-40">
-          <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] backdrop-blur">
-              <Sparkles className="h-3.5 w-3.5" /> Serving Morgan & Weber Counties
-            </div>
-            <h1 className="text-balance font-serif text-4xl leading-[1.05] md:text-6xl lg:text-7xl">
-              Bridging the gap, <em className="text-sky">one person</em> at a time.
-            </h1>
-            <p className="mt-6 max-w-xl text-pretty text-lg text-primary-foreground/85 md:text-xl">
-              We raise and steward funds that close the distance between what Medicaid and Medicare
-              cover — and what our neighbors actually need to live healthy, successful lives.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/donate"
-                className="inline-flex items-center gap-2 rounded-full bg-ember px-7 py-3.5 text-sm font-semibold text-ember-foreground shadow-[var(--shadow-elevated)] transition-transform hover:scale-[1.03]"
-              >
-                <Heart className="h-4 w-4" /> Donate now
-              </Link>
-              <Link
-                to="/causes"
-                className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/5 px-7 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur transition-colors hover:bg-primary-foreground/15"
-              >
-                Explore our causes <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-        <MountainDivider className="absolute bottom-0 left-0 h-16 w-full text-background" />
-      </section>
+      <HeroCarousel />
 
       {/* WHO WHAT WHY */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
