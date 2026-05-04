@@ -41,10 +41,13 @@ export function SiteFooter() {
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-sky">Foundation</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/80">
             <li><Link to="/about" className="hover:text-sky">About</Link></li>
+            <li><Link to="/board" className="hover:text-sky">Board & Leadership</Link></li>
+            <li><Link to="/financials" className="hover:text-sky">Financials & 990s</Link></li>
             <li><Link to="/impact" className="hover:text-sky">Impact</Link></li>
             <li><Link to="/events" className="hover:text-sky">Events</Link></li>
             <li><Link to="/get-involved" className="hover:text-sky">Get Involved</Link></li>
             <li><Link to="/news" className="hover:text-sky">News</Link></li>
+            <li><Link to="/faq" className="hover:text-sky">FAQ</Link></li>
             <li><Link to="/contact" className="hover:text-sky">Contact</Link></li>
             <li>
               <a
