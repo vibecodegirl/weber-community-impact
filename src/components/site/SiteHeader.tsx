@@ -60,7 +60,7 @@ export function SiteHeader() {
                   )}
                 </div>
               )}
-            </>
+            </Fragment>
           ))}
 
           <Link
