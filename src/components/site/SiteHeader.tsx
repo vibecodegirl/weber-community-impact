@@ -17,46 +17,50 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          <div
-            className="relative"
-            onMouseEnter={() => setCausesOpen(true)}
-            onMouseLeave={() => setCausesOpen(false)}
-          >
-            <Link
-              to="/causes"
-              className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary" }}
-            >
-              {site.nav.causesLabel} <ChevronDown className="h-4 w-4" />
-            </Link>
-            {causesOpen && (
-              <div className="absolute left-0 top-full w-72 pt-2">
-                <div className="overflow-hidden rounded-xl border border-border bg-card shadow-[var(--shadow-elevated)]">
-                  {CAUSES.map((c) => (
-                    <Link
-                      key={c.slug}
-                      to="/causes/$slug"
-                      params={{ slug: c.slug }}
-                      className="block border-b border-border/60 px-4 py-3 text-sm transition-colors last:border-b-0 hover:bg-muted"
-                    >
-                      <div className="font-medium text-foreground">{c.title}</div>
-                      <div className="text-xs text-muted-foreground">{c.tagline}</div>
-                    </Link>
-                  ))}
+          {site.nav.items.map((item, idx) => (
+            <>
+              <Link
+                key={item.to}
+                to={item.to}
+                className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                activeProps={{ className: "text-primary" }}
+              >
+                {item.label}
+              </Link>
+              {item.to === "/about" && (
+                <div
+                  key="causes-menu"
+                  className="relative"
+                  onMouseEnter={() => setCausesOpen(true)}
+                  onMouseLeave={() => setCausesOpen(false)}
+                >
+                  <Link
+                    to="/causes"
+                    className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                    activeProps={{ className: "text-primary" }}
+                  >
+                    {site.nav.causesLabel} <ChevronDown className="h-4 w-4" />
+                  </Link>
+                  {causesOpen && (
+                    <div className="absolute left-0 top-full w-72 pt-2">
+                      <div className="overflow-hidden rounded-xl border border-border bg-card shadow-[var(--shadow-elevated)]">
+                        {CAUSES.map((c) => (
+                          <Link
+                            key={c.slug}
+                            to="/causes/$slug"
+                            params={{ slug: c.slug }}
+                            className="block border-b border-border/60 px-4 py-3 text-sm transition-colors last:border-b-0 hover:bg-muted"
+                          >
+                            <div className="font-medium text-foreground">{c.title}</div>
+                            <div className="text-xs text-muted-foreground">{c.tagline}</div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            )}
-          </div>
-
-          {site.nav.items.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary" }}
-            >
-              {item.label}
-            </Link>
+              )}
+            </>
           ))}
 
           <Link
