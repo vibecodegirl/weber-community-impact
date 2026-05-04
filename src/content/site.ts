@@ -10,6 +10,20 @@ export const site = {
   // External donation paywall — replace with your real giving link.
   donateUrl: "#",
 
+  nav: {
+    causesLabel: "Causes",
+    donateLabel: "Donate",
+    items: [
+      { to: "/about" as const, label: "About" },
+      { to: "/impact" as const, label: "Impact" },
+      { to: "/events" as const, label: "Events" },
+      { to: "/get-involved" as const, label: "Get Involved" },
+      { to: "/news" as const, label: "News" },
+      { to: "/contact" as const, label: "Contact" },
+    ],
+  },
+
+
   // Parent organization
   parentOrg: {
     name: "Weber Human Services",
