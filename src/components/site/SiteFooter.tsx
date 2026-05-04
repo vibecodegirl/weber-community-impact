@@ -66,7 +66,11 @@ export function SiteFooter() {
       <div className="border-t border-primary-foreground/15">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-6 text-xs text-primary-foreground/60 md:flex-row md:items-center lg:px-8">
           <p>© {new Date().getFullYear()} Weber Human Services Foundation. A 501(c)(3) nonprofit.</p>
-          <p>Serving Morgan & Weber Counties, Utah</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/privacy" className="hover:text-sky">Privacy</Link>
+            <Link to="/terms" className="hover:text-sky">Terms</Link>
+            <span>Serving Morgan & Weber Counties, Utah</span>
+          </div>
         </div>
       </div>
     </footer>
