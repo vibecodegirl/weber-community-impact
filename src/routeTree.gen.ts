@@ -16,6 +16,7 @@ import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as GetInvolvedRouteImport } from './routes/get-involved'
 import { Route as FinancialsRouteImport } from './routes/financials'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as DonateRouteImport } from './routes/donate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BoardRouteImport } from './routes/board'
@@ -62,6 +63,11 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DonateRoute = DonateRouteImport.update({
   id: '/donate',
   path: '/donate',
@@ -88,9 +94,9 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsIndexRoute = EventsIndexRouteImport.update({
-  id: '/events/',
-  path: '/events/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => EventsRoute,
 } as any)
 const CausesIndexRoute = CausesIndexRouteImport.update({
   id: '/causes/',
@@ -119,6 +125,7 @@ export interface FileRoutesByFullPath {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -158,6 +165,7 @@ export interface FileRoutesById {
   '/board': typeof BoardRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/financials': typeof FinancialsRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -179,6 +187,7 @@ export interface FileRouteTypes {
     | '/board'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/faq'
     | '/financials'
     | '/get-involved'
@@ -217,6 +226,7 @@ export interface FileRouteTypes {
     | '/board'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/faq'
     | '/financials'
     | '/get-involved'
@@ -237,6 +247,7 @@ export interface RootRouteChildren {
   BoardRoute: typeof BoardRoute
   ContactRoute: typeof ContactRoute
   DonateRoute: typeof DonateRoute
+  EventsRoute: typeof EventsRouteWithChildren
   FaqRoute: typeof FaqRoute
   FinancialsRoute: typeof FinancialsRoute
   GetInvolvedRoute: typeof GetInvolvedRoute
@@ -246,7 +257,6 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   CausesSlugRoute: typeof CausesSlugRoute
   CausesIndexRoute: typeof CausesIndexRoute
-  EventsIndexRoute: typeof EventsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -300,6 +310,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/donate': {
       id: '/donate'
       path: '/donate'
@@ -337,10 +354,10 @@ declare module '@tanstack/react-router' {
     }
     '/events/': {
       id: '/events/'
-      path: '/events'
+      path: '/'
       fullPath: '/events/'
       preLoaderRoute: typeof EventsIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof EventsRoute
     }
     '/causes/': {
       id: '/causes/'
@@ -373,12 +390,28 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface EventsRouteChildren {
+  EventsGolfTournamentRoute: typeof EventsGolfTournamentRoute
+  EventsSubForSantaRoute: typeof EventsSubForSantaRoute
+  EventsIndexRoute: typeof EventsIndexRoute
+}
+
+const EventsRouteChildren: EventsRouteChildren = {
+  EventsGolfTournamentRoute: EventsGolfTournamentRoute,
+  EventsSubForSantaRoute: EventsSubForSantaRoute,
+  EventsIndexRoute: EventsIndexRoute,
+}
+
+const EventsRouteWithChildren =
+  EventsRoute._addFileChildren(EventsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BoardRoute: BoardRoute,
   ContactRoute: ContactRoute,
   DonateRoute: DonateRoute,
+  EventsRoute: EventsRouteWithChildren,
   FaqRoute: FaqRoute,
   FinancialsRoute: FinancialsRoute,
   GetInvolvedRoute: GetInvolvedRoute,
@@ -388,7 +421,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   CausesSlugRoute: CausesSlugRoute,
   CausesIndexRoute: CausesIndexRoute,
-  EventsIndexRoute: EventsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
