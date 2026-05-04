@@ -2,6 +2,7 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowRight, Heart, CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CAUSES, getCause } from "@/lib/causes";
+import { causesPage } from "@/content/causes-page";
 
 export const Route = createFileRoute("/causes/$slug")({
   loader: ({ params }) => {
@@ -24,9 +25,7 @@ export const Route = createFileRoute("/causes/$slug")({
     <SiteLayout>
       <div className="mx-auto max-w-3xl px-5 py-32 text-center">
         <h1 className="font-serif text-4xl">Cause not found</h1>
-        <Link to="/causes" className="mt-6 inline-flex text-primary underline">
-          View all causes
-        </Link>
+        <Link to="/causes" className="mt-6 inline-flex text-primary underline">View all causes</Link>
       </div>
     </SiteLayout>
   ),
@@ -44,6 +43,7 @@ export const Route = createFileRoute("/causes/$slug")({
 function CauseDetail() {
   const { cause } = Route.useLoaderData();
   const others = CAUSES.filter((c) => c.slug !== cause.slug).slice(0, 3);
+  const c = causesPage.detail;
 
   return (
     <SiteLayout>
@@ -52,12 +52,8 @@ function CauseDetail() {
           <img src={cause.image} alt="" className="h-full w-full object-cover" />
         </div>
         <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
-          <Link to="/causes" className="text-sm uppercase tracking-[0.2em] text-sky hover:underline">
-            ← All causes
-          </Link>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight md:text-6xl">
-            {cause.title}
-          </h1>
+          <Link to="/causes" className="text-sm uppercase tracking-[0.2em] text-sky hover:underline">{c.backLabel}</Link>
+          <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight md:text-6xl">{cause.title}</h1>
           <p className="mt-4 max-w-xl text-lg text-primary-foreground/85">{cause.tagline}</p>
         </div>
       </section>
@@ -66,8 +62,7 @@ function CauseDetail() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr]">
           <div>
             <p className="text-pretty text-lg text-foreground/80 md:text-xl">{cause.description}</p>
-
-            <h2 className="mt-12 font-serif text-2xl text-primary">Programs we fund</h2>
+            <h2 className="mt-12 font-serif text-2xl text-primary">{c.programsHeading}</h2>
             <ul className="mt-5 space-y-3">
               {cause.programs.map((p) => (
                 <li key={p} className="flex items-start gap-3 rounded-xl bg-cream p-4">
@@ -80,28 +75,21 @@ function CauseDetail() {
 
           <aside className="space-y-6">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-              <h3 className="font-serif text-xl">Outcomes</h3>
+              <h3 className="font-serif text-xl">{c.outcomesHeading}</h3>
               <dl className="mt-4 space-y-4">
                 {cause.outcomes.map((o) => (
                   <div key={o.label} className="border-b border-border pb-3 last:border-0 last:pb-0">
-                    <dt className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {o.label}
-                    </dt>
+                    <dt className="text-xs uppercase tracking-wider text-muted-foreground">{o.label}</dt>
                     <dd className="font-serif text-3xl text-primary">{o.value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
             <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
-              <h3 className="font-serif text-xl">Fund this cause</h3>
-              <p className="mt-2 text-sm text-primary-foreground/80">
-                Your gift goes directly to the programs above.
-              </p>
-              <Link
-                to="/donate"
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 font-semibold text-ember-foreground"
-              >
-                <Heart className="h-4 w-4" /> Donate
+              <h3 className="font-serif text-xl">{c.fundCard.title}</h3>
+              <p className="mt-2 text-sm text-primary-foreground/80">{c.fundCard.body}</p>
+              <Link to="/donate" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 font-semibold text-ember-foreground">
+                <Heart className="h-4 w-4" /> {c.fundCard.buttonLabel}
               </Link>
             </div>
           </aside>
@@ -110,15 +98,10 @@ function CauseDetail() {
 
       <section className="bg-cream py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <h2 className="font-serif text-3xl text-primary">Other causes we support</h2>
+          <h2 className="font-serif text-3xl text-primary">{c.relatedHeading}</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {others.map((o) => (
-              <Link
-                key={o.slug}
-                to="/causes/$slug"
-                params={{ slug: o.slug }}
-                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1"
-              >
+              <Link key={o.slug} to="/causes/$slug" params={{ slug: o.slug }} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={o.image} alt="" loading="lazy" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
                 </div>
