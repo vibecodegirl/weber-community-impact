@@ -6,9 +6,15 @@ import { CAUSES } from "@/lib/causes";
 import { site } from "@/content/site";
 import { UtilityBar } from "./UtilityBar";
 
+const EVENT_SUBNAV = [
+  { to: "/events/golf-tournament" as const, title: "Golf Tournament", tagline: "Our annual benefit on the green" },
+  { to: "/events/sub-for-santa" as const, title: "Sub for Santa", tagline: "Holiday giving for local families" },
+];
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [causesOpen, setCausesOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
