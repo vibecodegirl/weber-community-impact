@@ -31,7 +31,7 @@ export const about = {
     items: [
       { title: "Integrity", body: "Every dollar is stewarded with transparency and care." },
       { title: "Compassion", body: "We meet our neighbors where they are, without judgment." },
-      { title: "Partnership", body: "We amplify the work of Weber Human Services and local partners." },
+      { title: "Extension", body: "We are an extension of Weber Human Services, working alongside local partners." },
       { title: "Outcomes", body: "We measure success in lives changed, not dollars raised." },
     ],
   },
