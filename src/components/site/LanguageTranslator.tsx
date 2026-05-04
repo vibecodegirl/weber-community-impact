@@ -9,12 +9,26 @@ declare global {
   }
 }
 
+function clearTranslateCookies() {
+  const expire = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  const host = window.location.hostname;
+  const parts = host.split(".");
+  const domains = ["", host];
+  if (parts.length > 1) domains.push("." + parts.slice(-2).join("."));
+  for (const d of domains) {
+    const dom = d ? `;domain=${d}` : "";
+    document.cookie = `googtrans=;path=/${dom};${expire}`;
+  }
+}
+
 function setTranslateCookie(lang: string) {
-  const value = lang === "en" ? "/en/en" : `/en/${lang}`;
+  clearTranslateCookies();
+  if (lang === "en") return;
+  const value = `/en/${lang}`;
   document.cookie = `googtrans=${value};path=/`;
   const host = window.location.hostname;
   const parts = host.split(".");
-  if (parts.length > 1) {
+  if (parts.length > 2) {
     const root = "." + parts.slice(-2).join(".");
     document.cookie = `googtrans=${value};path=/;domain=${root}`;
   }
