@@ -3,52 +3,35 @@
 export const events = {
   hero: {
     eyebrow: "Events",
-    title: "Come together. Make a difference.",
+    title: "Two signature events. One shared mission.",
+    body: "Each year, the Foundation hosts two flagship events that fund services for our neighbors across Morgan and Weber Counties.",
   },
 
   upcomingHeading: {
-    eyebrow: "Upcoming",
+    eyebrow: "Our events",
     title: "Mark your calendar",
   },
 
   upcoming: [
     {
-      date: "Sep 14, 2026",
-      name: "Annual Hope Gala",
-      location: "Ogden Eccles Conference Center",
+      date: "Summer",
+      name: "Foundation Golf Tournament",
+      location: "Northern Utah — course TBA",
       description:
-        "Our signature evening of stories, music, and giving — supporting all five focus areas.",
-      rsvpUrl: "#",
+        "A day on the green bringing together sponsors, foursomes, and community partners to fund year-round Foundation programs.",
+      href: "/events/golf-tournament" as const,
+      ctaLabel: "Tournament details",
     },
     {
-      date: "May 3, 2026",
-      name: "Walk for Mental Health",
-      location: "Weber River Parkway, Ogden",
+      date: "December",
+      name: "Sub for Santa",
+      location: "Morgan & Weber Counties",
       description:
-        "A 5K family walk raising awareness and funds for mental health programs.",
-      rsvpUrl: "#",
-    },
-    {
-      date: "Jul 19, 2026",
-      name: "Recovery Community Picnic",
-      location: "Lorin Farr Park, Ogden",
-      description:
-        "Celebrating people in recovery and the families and peers who walk with them.",
-      rsvpUrl: "#",
+        "Sponsor a child or family for the holidays — providing gifts, warm clothing, and essentials for neighbors identified through Weber Human Services.",
+      href: "/events/sub-for-santa" as const,
+      ctaLabel: "Learn how to help",
     },
   ],
 
-  rsvpLabel: "RSVP",
-
-  pastHeading: {
-    eyebrow: "Past events",
-    title: "A community in motion",
-  },
-
-  past: [
-    "Hope Gala 2025",
-    "Aging Well Symposium",
-    "Community Awareness Drive",
-    "Prevention Youth Summit",
-  ],
+  rsvpLabel: "Learn more",
 };
