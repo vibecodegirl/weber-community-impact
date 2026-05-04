@@ -41,10 +41,13 @@ export function SiteFooter() {
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-sky">Foundation</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/80">
             <li><Link to="/about" className="hover:text-sky">About</Link></li>
+            <li><Link to="/board" className="hover:text-sky">Board & Leadership</Link></li>
+            <li><Link to="/financials" className="hover:text-sky">Financials & 990s</Link></li>
             <li><Link to="/impact" className="hover:text-sky">Impact</Link></li>
             <li><Link to="/events" className="hover:text-sky">Events</Link></li>
             <li><Link to="/get-involved" className="hover:text-sky">Get Involved</Link></li>
             <li><Link to="/news" className="hover:text-sky">News</Link></li>
+            <li><Link to="/faq" className="hover:text-sky">FAQ</Link></li>
             <li><Link to="/contact" className="hover:text-sky">Contact</Link></li>
             <li>
               <a
@@ -63,7 +66,11 @@ export function SiteFooter() {
       <div className="border-t border-primary-foreground/15">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-6 text-xs text-primary-foreground/60 md:flex-row md:items-center lg:px-8">
           <p>© {new Date().getFullYear()} Weber Human Services Foundation. A 501(c)(3) nonprofit.</p>
-          <p>Serving Morgan & Weber Counties, Utah</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/privacy" className="hover:text-sky">Privacy</Link>
+            <Link to="/terms" className="hover:text-sky">Terms</Link>
+            <span>Serving Morgan & Weber Counties, Utah</span>
+          </div>
         </div>
       </div>
     </footer>
