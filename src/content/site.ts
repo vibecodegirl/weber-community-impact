@@ -10,6 +10,20 @@ export const site = {
   // External donation paywall — replace with your real giving link.
   donateUrl: "#",
 
+  // Slim utility bar shown above the main header.
+  utilityBar: {
+    crisisLabel: "24 Hour Crisis Hotline",
+    crisisNumber: "988",
+    crisisHref: "tel:988",
+    languageLabel: "Language",
+  },
+
+  // Languages offered by the translator toggle. Codes are Google Translate codes.
+  languages: [
+    { code: "en", label: "EN", name: "English" },
+    { code: "es", label: "ES", name: "Español" },
+  ],
+
   nav: {
     causesLabel: "Causes",
     donateLabel: "Donate",
