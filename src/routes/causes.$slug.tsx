@@ -64,7 +64,7 @@ function CauseDetail() {
             <p className="text-pretty text-lg text-foreground/80 md:text-xl">{cause.description}</p>
             <h2 className="mt-12 font-serif text-2xl text-primary">{c.programsHeading}</h2>
             <ul className="mt-5 space-y-3">
-              {cause.programs.map((p) => (
+              {cause.programs.map((p: string) => (
                 <li key={p} className="flex items-start gap-3 rounded-xl bg-cream p-4">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-ember" />
                   <span className="text-foreground/85">{p}</span>
@@ -77,7 +77,7 @@ function CauseDetail() {
             <div className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
               <h3 className="font-serif text-xl">{c.outcomesHeading}</h3>
               <dl className="mt-4 space-y-4">
-                {cause.outcomes.map((o) => (
+                {cause.outcomes.map((o: { label: string; value: string }) => (
                   <div key={o.label} className="border-b border-border pb-3 last:border-0 last:pb-0">
                     <dt className="text-xs uppercase tracking-wider text-muted-foreground">{o.label}</dt>
                     <dd className="font-serif text-3xl text-primary">{o.value}</dd>
