@@ -62,6 +62,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        {/* UserWay Accessibility Widget (WCAG) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(d){var s=d.createElement("script");s.setAttribute("data-account","REPLACE_WITH_USERWAY_ACCOUNT_ID");s.setAttribute("src","https://cdn.userway.org/widget.js");(d.body||d.head).appendChild(s);})(document);`,
+          }}
+        />
         <Scripts />
       </body>
     </html>
