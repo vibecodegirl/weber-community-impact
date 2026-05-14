@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ArrowRight, Heart } from "lucide-react";
 import { about } from "@/content/about";
+import { board } from "@/content/board";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -56,13 +57,30 @@ function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionHeader eyebrow={about.boardPreview.eyebrow} title={about.boardPreview.title} />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {about.boardPreview.members.map((b, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-              <div className="aspect-square rounded-xl bg-gradient-to-br from-sky to-accent" />
-              <div className="mt-4 font-serif text-xl">{b.name}</div>
-              <div className="text-sm text-ember">{b.role}</div>
-            </div>
+          {board.directors.slice(0, 6).map((d, i) => (
+            <article key={i} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]">
+              <div className="aspect-square overflow-hidden bg-muted">
+                <img
+                  src={d.photo}
+                  alt={`Portrait of ${d.name}`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <div className="font-serif text-xl">{d.name}</div>
+                <div className="mt-1 text-sm font-semibold text-ember">{d.role}</div>
+                {d.affiliation && (
+                  <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{d.affiliation}</div>
+                )}
+              </div>
+            </article>
           ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Link to="/board" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground">
+            View full board <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
