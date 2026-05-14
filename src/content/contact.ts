@@ -10,11 +10,11 @@ export const contact = {
     teamMember: {
       enabled: true,
       photo: contactTeamMemberPhoto,
-      name: "Jane Doe",
-      title: "Director of Community Outreach",
-      email: "jane@whsfoundation.org",
-      phone: "(801) 555-0123",
-      phoneHref: "+18015550123",
+      name: "Madeline McDonald",
+      title: "Foundation Director",
+      email: "madelinemc@weberhs.org",
+      phone: "(801) 778-6834",
+      phoneHref: "+18017786834",
     },
   },
 
