@@ -28,6 +28,7 @@ export const site = {
     causesLabel: "Causes",
     donateLabel: "Donate",
     items: [
+      { to: "/" as const, label: "Home" },
       { to: "/about" as const, label: "About" },
       { to: "/impact" as const, label: "Impact" },
       { to: "/events" as const, label: "Events" },
@@ -45,7 +46,7 @@ export const site = {
   },
 
   contact: {
-    email: "foundation@weberhs.net",
+    email: "foundation@weberhs.org",
     phone: "(801) 626-0700",
     phoneHref: "+18016260700",
     serviceArea: "Morgan & Weber Counties, Utah",
