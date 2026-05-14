@@ -31,12 +31,24 @@ function BoardPage() {
         <SectionHeader eyebrow={board.directorsHeading.eyebrow} title={board.directorsHeading.title} />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {board.directors.map((d, i) => (
-            <article key={i} className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-              <div className="aspect-square rounded-xl bg-gradient-to-br from-sky to-accent" />
-              <div className="mt-4 font-serif text-xl">{d.name}</div>
-              <div className="text-sm font-semibold text-ember">{d.role}</div>
-              <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{d.affiliation}</div>
-              <p className="mt-3 text-sm text-muted-foreground">{d.bio}</p>
+            <article key={i} className="overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]">
+              <div className="aspect-square overflow-hidden bg-muted">
+                <img
+                  src={d.photo}
+                  alt={`Portrait of ${d.name}`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <div className="font-serif text-xl">{d.name}</div>
+                <div className="mt-1 text-sm font-semibold text-ember">{d.role}</div>
+                {d.affiliation && (
+                  <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                    {d.affiliation}
+                  </div>
+                )}
+              </div>
             </article>
           ))}
         </div>
