@@ -63,6 +63,7 @@ export const site = {
   footer: {
     causesHeading: "Causes",
     foundationHeading: "Foundation",
+    aboutHeading: "About",
     donateButton: "Make a donation",
     copyrightSuffix: "A 501(c)(3) nonprofit.",
     serviceAreaLine: "Serving Morgan & Weber Counties, Utah",
@@ -71,13 +72,15 @@ export const site = {
       { label: "Terms", to: "/terms" as const },
     ],
     foundationLinks: [
-      { label: "About", to: "/about" as const },
-      { label: "Board & Leadership", to: "/board" as const },
-      { label: "Financials & 990s", to: "/financials" as const },
       { label: "Impact", to: "/impact" as const },
       { label: "Events", to: "/events" as const },
       { label: "Get Involved", to: "/get-involved" as const },
       { label: "News", to: "/news" as const },
+    ],
+    aboutLinks: [
+      { label: "About", to: "/about" as const },
+      { label: "Board & Leadership", to: "/board" as const },
+      { label: "Financials & 990s", to: "/financials" as const },
       { label: "FAQ", to: "/faq" as const },
       { label: "Contact", to: "/contact" as const },
     ],
