@@ -1,61 +1,66 @@
 // Board & Leadership page content.
 
-import markChamberlain from "@/assets/board/mark-chamberlain.jpg";
-import paulHyer from "@/assets/board/paul-hyer.jpg";
-import lornaCarter from "@/assets/board/lorna-carter.jpg";
-import cindyBeecher from "@/assets/board/cindy-beecher.jpg";
-import garrettBonella from "@/assets/board/garrett-schulda.jpg";
-import dawnHarold from "@/assets/board/dawn-harold.jpg";
-import daveLundstrom from "@/assets/board/dave-langston.jpg";
-import spenceMcArthur from "@/assets/board/spencer-carthur.jpg";
-import seanObrien from "@/assets/board/sean-obrien.jpg";
-import paulaPrice from "@/assets/board/paula-price.jpg";
-import codyRichards from "@/assets/board/cody-richards.jpg";
-import morganSmith from "@/assets/board/morey-smith.jpg";
-import dianaWindley from "@/assets/board/diana-wincup.jpg";
-import zachWynegar from "@/assets/board/zack-wynegar.jpg";
-import tiffanyShields from "@/assets/board/tiffany-schuler.jpg";
-import audieBaker from "@/assets/board/audie-baker.jpg";
-import kevinEastman from "@/assets/board/kevin-eastman.jpg";
-import jedBurton from "@/assets/board/jed-burton.jpg";
-import michelleJensen from "@/assets/board/michele-euson.jpg";
-import noelDzuka from "@/assets/board/andrew-dzaga.jpg";
-import madelineMcDonald from "@/assets/board/madeline-mcdonald.jpg";
-
 export const board = {
   hero: {
     eyebrow: "Board & Leadership",
     title: "Local leaders, volunteering their time for our neighbors.",
-    body: "Our board of directors is made up of people who live, work, and serve in Morgan and Weber Counties. Every board member volunteers their time and expertise — no board member is compensated.",
+    body: "Our board of directors is made up of people who live, work, and serve in Morgan and Weber Counties. Every member volunteers their time and expertise — no board member is compensated.",
   },
 
   directorsHeading: {
-    eyebrow: "Board Members",
+    eyebrow: "Directors",
     title: "Meet the board",
   },
 
   directors: [
-    { name: "Mark Chamberlain", role: "Board President", affiliation: "America First Credit Union", photo: markChamberlain },
-    { name: "Paul Hyer", role: "Board Vice President", affiliation: "Mountain America Credit Union", photo: paulHyer },
-    { name: "Lorna Carter", role: "Board Treasurer", affiliation: "Wasatch Peaks Credit Union", photo: lornaCarter },
-    { name: "Cindy Beecher", role: "Branch Manager", affiliation: "First Community Bank", photo: cindyBeecher },
-    { name: "Barrett Bonella", role: "Associate Professor of Social Work", affiliation: "Weber State University", photo: garrettBonella },
-    { name: "Dawn Harold, M.D.", role: "Chief Medical Officer", affiliation: "Ogden Regional Medical Center", photo: dawnHarold },
-    { name: "Dave Lundstrom", role: "Community Representative", affiliation: "", photo: daveLundstrom },
-    { name: "Spence McArthur", role: "Executive Vice President", affiliation: "Wasatch Peaks Credit Union", photo: spenceMcArthur },
-    { name: "Sean O'Brien", role: "Business Development Liaison", affiliation: "Northern Utah Rehabilitation Hospital", photo: seanObrien },
-    { name: "Paula Price", role: "Community Representative", affiliation: "", photo: paulaPrice },
-    { name: "Cody Richards", role: "Executive Director", affiliation: "The Auberge at North Ogden", photo: codyRichards },
-    { name: "Morgan Smith", role: "Vice President, Commercial Loan Officer", affiliation: "DL Evans Bank", photo: morganSmith },
-    { name: "Diana Windley", role: "Senior Vice President", affiliation: "Goldenwest Credit Union", photo: dianaWindley },
-    { name: "Zach Wynegar", role: "Senior Vice President of Marketing & Member Engagement", affiliation: "America First Credit Union", photo: zachWynegar },
-    { name: "Tiffany Shields", role: "General Manager", affiliation: "Treeo Senior Living", photo: tiffanyShields },
-    { name: "Audie Baker", role: "Employee Representative", affiliation: "Weber Human Services", photo: audieBaker },
-    { name: "Kevin Eastman", role: "Director, CEO", affiliation: "Weber Human Services", photo: kevinEastman },
-    { name: "Jed Burton", role: "Director, Clinical Services", affiliation: "Weber Human Services", photo: jedBurton },
-    { name: "Michelle Jensen", role: "Director, CFO", affiliation: "Weber Human Services", photo: michelleJensen },
-    { name: "Noel Dzuka", role: "Director, Community and Senior Services", affiliation: "Weber Human Services", photo: noelDzuka },
-    { name: "Madeline McDonald", role: "Director, Foundation", affiliation: "Weber Human Services", photo: madelineMcDonald },
+    {
+      name: "Board Member",
+      role: "Chair",
+      affiliation: "Local Business Leader",
+      bio: "Brings decades of community leadership and a passion for mental health advocacy to the Foundation's strategic direction.",
+    },
+    {
+      name: "Board Member",
+      role: "Vice Chair",
+      affiliation: "Healthcare Executive",
+      bio: "Champions integrated care and works to remove barriers between clinical services and the neighbors who need them.",
+    },
+    {
+      name: "Board Member",
+      role: "Treasurer",
+      affiliation: "CPA, Local Firm",
+      bio: "Stewards the Foundation's finances with transparency and ensures every donor dollar is accounted for.",
+    },
+    {
+      name: "Board Member",
+      role: "Secretary",
+      affiliation: "Education Leader",
+      bio: "Connects prevention programming with the schools and families across Morgan and Weber Counties.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Community Volunteer",
+      bio: "A long-time volunteer focused on aging services and supporting our oldest neighbors with dignity.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Faith Community Leader",
+      bio: "Bridges faith communities and recovery resources, helping reduce stigma around substance use treatment.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Weber Human Services Liaison",
+      bio: "Ensures the Foundation's funding aligns directly with the most pressing needs identified by frontline staff.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Local Attorney",
+      bio: "Provides governance and compliance guidance, keeping the Foundation accountable to its mission and donors.",
+    },
   ],
 
   joinCta: {
