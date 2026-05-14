@@ -1,34 +1,36 @@
-## Crisis Hotline mini-header + EN/ES Language Translator
+## Goal
+Convert the Contact page hero into a two-column layout. Left column keeps the existing eyebrow/title/body. Right column renders an optional team member contact card (photo, name, title, email, phone).
 
-### 1. Content (`src/content/site.ts`)
-Add two new blocks:
-- `utilityBar`: `crisisLabel: "24 Hour Crisis Hotline"`, `crisisNumber: "988"`, `crisisHref: "tel:988"`, `languageLabel: "Language"`.
-- `languages`: `[{ code: "en", label: "EN", name: "English" }, { code: "es", label: "ES", name: "Español" }]`.
+## Changes
 
-### 2. New component: `src/components/site/UtilityBar.tsx`
-A slim 36px-tall bar with primary background:
-- **Left**: Phone icon + "24 Hour Crisis Hotline:" + bold "988" pill, wrapped in a `tel:988` link. Collapses to "Crisis: 988" under `sm`.
-- **Right**: `<LanguageTranslator />`.
-- Marked `notranslate` so the bar itself never gets re-translated.
+**1. `src/content/contact.ts`**
+Add an optional `teamMember` block to the hero content:
+```ts
+hero: {
+  eyebrow, title, body,
+  teamMember: {
+    enabled: true,
+    photo: "/placeholder-avatar.jpg", // or imported asset
+    name: "Jane Doe",
+    title: "Director of Community Outreach",
+    email: "jane@whsfoundation.org",
+    phone: "(801) 555-0123",
+  }
+}
+```
+Marking it optional (or `enabled: false`) lets the column be hidden later.
 
-### 3. New component: `src/components/site/LanguageTranslator.tsx`
-Two-button **EN / ES** segmented toggle (rounded pill, tracks active state).
-- Injects the official Google Website Translator script once on mount into a hidden `#google_translate_element` host.
-- Switching languages writes the `googtrans` cookie (`/en/en` or `/en/es`) on the current host and the parent domain, then `window.location.reload()` so Google Translate re-applies — the simplest pattern that also works identically when the snippet is dropped into Wix.
-- Reads current language from the cookie on mount to highlight the active button.
+**2. `src/routes/contact.tsx`**
+- Restructure the hero `<section>` into a responsive grid: `grid gap-10 lg:grid-cols-[1.2fr_1fr] items-center`.
+- Left column: existing eyebrow + h1 + body paragraph (unchanged copy).
+- Right column (only renders when `teamMember.enabled`): a card with circular photo, name (serif), title (sky/muted), and Mail/Phone rows linking to `mailto:` / `tel:`.
+- Card styled to read on the navy hero: `bg-card/10 backdrop-blur border border-primary-foreground/15 rounded-2xl p-6` with light text tokens.
+- On mobile: single column, hero text first, team card below (default DOM order, no `order-` overrides needed).
 
-### 4. Header integration (`src/components/site/SiteHeader.tsx`)
-Render `<UtilityBar />` as the first child of the `<header>`, above the existing nav row. No other header changes.
+**3. Placeholder asset**
+Use a generated avatar saved to `src/assets/contact-team-member.jpg` and import it in `contact.ts` (or accept a string URL). Provide friendly placeholder values so the user can swap in real info later.
 
-### 5. Style tweaks (`src/styles.css`)
-Append small global overrides to suppress Google Translate's injected chrome:
-- Hide `.skiptranslate` iframe banner, reset `body { top: 0 !important }`, hide `#goog-gt-tt` tooltip.
-
-### 6. Wix migration notes (`src/content/README.md`)
-Append a short section:
-- Crisis bar = a Wix Strip with a text element + a phone-link button. Copy lives in `site.utilityBar`.
-- Translator = paste Google's official Website Translator embed snippet into a Wix HTML/Embed element, configured with `pageLanguage: 'en'` and `includedLanguages: 'en,es'`. Include the exact snippet inline in the README so it's drop-in.
-
-### Files
-- **Edit**: `src/content/site.ts`, `src/components/site/SiteHeader.tsx`, `src/styles.css`, `src/content/README.md`
-- **Create**: `src/components/site/UtilityBar.tsx`, `src/components/site/LanguageTranslator.tsx`
+## Notes
+- No changes to backend, routing, or other pages.
+- Existing contact info cards and form below the hero remain untouched.
+- All colors via design tokens (`primary`, `primary-foreground`, `sky`, `ember`).
