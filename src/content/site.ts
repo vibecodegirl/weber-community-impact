@@ -47,8 +47,8 @@ export const site = {
 
   contact: {
     email: "foundation@weberhs.org",
-    phone: "(801) 626-0700",
-    phoneHref: "+18016260700",
+    phone: "(801) 778-6834",
+    phoneHref: "+18017786834",
     serviceArea: "Morgan & Weber Counties, Utah",
   },
 
