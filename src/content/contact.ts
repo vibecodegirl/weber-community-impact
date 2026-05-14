@@ -1,10 +1,21 @@
 // Contact page content.
 
+import contactTeamMemberPhoto from "@/assets/contact-team-member.jpg";
+
 export const contact = {
   hero: {
     eyebrow: "Contact",
     title: "Let's talk.",
     body: "Whether you'd like to give, partner, volunteer, or just learn more — we'd love to hear from you.",
+    teamMember: {
+      enabled: true,
+      photo: contactTeamMemberPhoto,
+      name: "Jane Doe",
+      title: "Director of Community Outreach",
+      email: "jane@whsfoundation.org",
+      phone: "(801) 555-0123",
+      phoneHref: "+18015550123",
+    },
   },
 
   cards: {
