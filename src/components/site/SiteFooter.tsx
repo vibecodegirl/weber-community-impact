@@ -8,8 +8,8 @@ export function SiteFooter() {
     <footer className="relative mt-24 bg-primary text-primary-foreground">
       <MountainDivider className="absolute -top-px left-0 h-12 w-full -translate-y-full text-primary" />
 
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-4 lg:px-8">
-        <div className="md:col-span-2">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 lg:grid-cols-5 lg:px-8">
+        <div className="lg:col-span-2">
           <div className="font-serif text-2xl">
             {site.brandName} <em className="text-sky">{site.brandSuffix}</em>
           </div>
@@ -53,6 +53,17 @@ export function SiteFooter() {
                 {site.parentOrg.name} ↗
               </a>
             </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-sky">{site.footer.aboutHeading}</h4>
+          <ul className="space-y-2 text-sm text-primary-foreground/80">
+            {site.footer.aboutLinks.map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="hover:text-sky">{l.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
