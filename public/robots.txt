@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://whsf.accessmypage.online/sitemap.xml
