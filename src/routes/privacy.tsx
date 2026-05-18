@@ -10,7 +10,9 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: "How the Weber Human Services Foundation collects, uses, and protects your personal information." },
       { property: "og:title", content: "Privacy Policy" },
       { property: "og:description", content: "Our commitment to protecting your privacy and personal information." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/privacy" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/privacy" }],
   }),
   component: () => (
     <SiteLayout>

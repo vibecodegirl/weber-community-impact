@@ -11,7 +11,9 @@ export const Route = createFileRoute("/events/")({
       { name: "description", content: "The Foundation's two signature events: the annual Golf Tournament and Sub for Santa." },
       { property: "og:title", content: "Events" },
       { property: "og:description", content: "Golf Tournament and Sub for Santa — our two signature events." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/events" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/events" }],
   }),
   component: EventsPage,
 });

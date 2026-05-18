@@ -11,7 +11,9 @@ export const Route = createFileRoute("/causes/")({
       { name: "description", content: "Five focus areas where your gift becomes outcomes: Employee Care, Aging Services, Mental Health, Prevention, and Substance Use Recovery." },
       { property: "og:title", content: "Our Causes" },
       { property: "og:description", content: "Where your gift goes to work — five focus areas." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/causes" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/causes" }],
   }),
   component: CausesIndex,
 });

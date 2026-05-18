@@ -11,7 +11,9 @@ export const Route = createFileRoute("/financials")({
       { name: "description", content: "Annual reports, IRS Form 990s, and financial statements for the Weber Human Services Foundation. We believe in full transparency." },
       { property: "og:title", content: "Financial Transparency" },
       { property: "og:description", content: "Annual reports and IRS Form 990s for the Weber Human Services Foundation." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/financials" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/financials" }],
   }),
   component: FinancialsPage,
 });
