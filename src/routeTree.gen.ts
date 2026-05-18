@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as ImpactRouteImport } from './routes/impact'
@@ -31,6 +32,11 @@ import { Route as CausesSlugRouteImport } from './routes/causes.$slug'
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -132,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/impact': typeof ImpactRoute
   '/news': typeof NewsRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/causes/$slug': typeof CausesSlugRoute
   '/events/golf-tournament': typeof EventsGolfTournamentRoute
@@ -151,6 +158,7 @@ export interface FileRoutesByTo {
   '/impact': typeof ImpactRoute
   '/news': typeof NewsRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/causes/$slug': typeof CausesSlugRoute
   '/events/golf-tournament': typeof EventsGolfTournamentRoute
@@ -172,6 +180,7 @@ export interface FileRoutesById {
   '/impact': typeof ImpactRoute
   '/news': typeof NewsRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/causes/$slug': typeof CausesSlugRoute
   '/events/golf-tournament': typeof EventsGolfTournamentRoute
@@ -194,6 +203,7 @@ export interface FileRouteTypes {
     | '/impact'
     | '/news'
     | '/privacy'
+    | '/sitemap.xml'
     | '/terms'
     | '/causes/$slug'
     | '/events/golf-tournament'
@@ -213,6 +223,7 @@ export interface FileRouteTypes {
     | '/impact'
     | '/news'
     | '/privacy'
+    | '/sitemap.xml'
     | '/terms'
     | '/causes/$slug'
     | '/events/golf-tournament'
@@ -233,6 +244,7 @@ export interface FileRouteTypes {
     | '/impact'
     | '/news'
     | '/privacy'
+    | '/sitemap.xml'
     | '/terms'
     | '/causes/$slug'
     | '/events/golf-tournament'
@@ -254,6 +266,7 @@ export interface RootRouteChildren {
   ImpactRoute: typeof ImpactRoute
   NewsRoute: typeof NewsRoute
   PrivacyRoute: typeof PrivacyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   CausesSlugRoute: typeof CausesSlugRoute
   CausesIndexRoute: typeof CausesIndexRoute
@@ -266,6 +279,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -418,6 +438,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImpactRoute: ImpactRoute,
   NewsRoute: NewsRoute,
   PrivacyRoute: PrivacyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   CausesSlugRoute: CausesSlugRoute,
   CausesIndexRoute: CausesIndexRoute,
@@ -425,12 +446,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

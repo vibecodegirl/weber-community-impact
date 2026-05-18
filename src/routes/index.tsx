@@ -13,14 +13,18 @@ const ICONS = [HandHeart, Heart, Sparkles];
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: `${site.brandName} ${site.brandSuffix} — Bridging the gap, one person at a time` },
+      { title: "Weber Human Services Foundation | Morgan & Weber Counties" },
       {
         name: "description",
         content:
           "A nonprofit foundation supporting clients and programs of Weber Human Services across Morgan and Weber Counties. Help us bridge the gap between need and funding.",
       },
-      { property: "og:title", content: `${site.brandName} ${site.brandSuffix}` },
+      { property: "og:title", content: "Weber Human Services Foundation — Supporting Northern Utah" },
       { property: "og:description", content: site.tagline },
+      { property: "og:url", content: "https://whsf.accessmypage.online/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://whsf.accessmypage.online/" },
     ],
   }),
   component: HomePage,

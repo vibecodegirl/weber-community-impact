@@ -10,6 +10,26 @@ export const Route = createFileRoute("/faq")({
       { name: "description", content: "Frequently asked questions about giving to, partnering with, and benefiting from the Weber Human Services Foundation." },
       { property: "og:title", content: "Frequently Asked Questions" },
       { property: "og:description", content: "Answers about donations, programs, and the Weber Human Services Foundation." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/faq" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://whsf.accessmypage.online/faq" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.sections.flatMap((s) =>
+            s.items.map((it) => ({
+              "@type": "Question",
+              name: it.question,
+              acceptedAnswer: { "@type": "Answer", text: it.answer },
+            })),
+          ),
+        }),
+      },
     ],
   }),
   component: FaqPage,
