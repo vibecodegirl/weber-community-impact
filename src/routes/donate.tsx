@@ -9,10 +9,10 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/donate")({
   head: () => ({
     meta: [
-      { title: "Donate — Weber Human Services Foundation" },
-      { name: "description", content: "Make a tax-deductible donation to the Weber Human Services Foundation. 100% of your gift stays local." },
-      { property: "og:title", content: "Donate to the Foundation" },
-      { property: "og:description", content: "Your gift fuels real outcomes for our neighbors." },
+      { title: "Donate to the Weber Human Services Foundation | Ogden, UT" },
+      { name: "description", content: "Make a tax-deductible donation to the Weber Human Services Foundation. 100% local — funds mental health, aging, prevention, and addiction recovery in Utah." },
+      { property: "og:title", content: "Donate to the Weber Human Services Foundation" },
+      { property: "og:description", content: "Tax-deductible giving that funds mental health, aging, and recovery programs in Weber County, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/donate" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/donate" }],

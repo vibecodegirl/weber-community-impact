@@ -7,10 +7,10 @@ import { financials } from "@/content/financials";
 export const Route = createFileRoute("/financials")({
   head: () => ({
     meta: [
-      { title: "Financials & 990s — Weber Human Services Foundation" },
-      { name: "description", content: "Annual reports, IRS Form 990s, and financial statements for the Weber Human Services Foundation. We believe in full transparency." },
-      { property: "og:title", content: "Financial Transparency" },
-      { property: "og:description", content: "Annual reports and IRS Form 990s for the Weber Human Services Foundation." },
+      { title: "Financials & IRS 990s | Weber Human Services Foundation" },
+      { name: "description", content: "Annual reports, IRS Form 990s, and financial transparency for the Weber Human Services Foundation — a 501(c)(3) serving Morgan & Weber Counties, Utah." },
+      { property: "og:title", content: "Financials & IRS 990s | Weber Human Services Foundation" },
+      { property: "og:description", content: "Annual reports and IRS Form 990s from the Foundation. Full financial transparency." },
       { property: "og:url", content: "https://whsf.accessmypage.online/financials" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/financials" }],

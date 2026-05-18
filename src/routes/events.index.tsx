@@ -7,10 +7,10 @@ import { events } from "@/content/events";
 export const Route = createFileRoute("/events/")({
   head: () => ({
     meta: [
-      { title: "Events — Weber Human Services Foundation" },
-      { name: "description", content: "The Foundation's two signature events: the annual Golf Tournament and Sub for Santa." },
-      { property: "og:title", content: "Events" },
-      { property: "og:description", content: "Golf Tournament and Sub for Santa — our two signature events." },
+      { title: "Events: Golf Tournament & Sub for Santa | WHS Foundation" },
+      { name: "description", content: "Join the Weber Human Services Foundation's annual Golf Tournament and Sub for Santa events in Ogden, Utah. Sponsor, play, or give to fund local programs." },
+      { property: "og:title", content: "Foundation Events — Golf Tournament & Sub for Santa" },
+      { property: "og:description", content: "Two signature fundraising events for the Weber Human Services Foundation in Ogden, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/events" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/events" }],

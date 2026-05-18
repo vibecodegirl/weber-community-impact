@@ -7,10 +7,10 @@ import { about } from "@/content/about";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Weber Human Services Foundation" },
-      { name: "description", content: "Learn about the Weber Human Services Foundation board, mission, and our commitment to financial transparency in supporting Morgan and Weber Counties." },
-      { property: "og:title", content: "About the Foundation" },
-      { property: "og:description", content: "A nonprofit board of local leaders supporting Weber Human Services." },
+      { title: "About the Weber Human Services Foundation | Ogden, UT" },
+      { name: "description", content: "Meet the volunteer board behind the Weber Human Services Foundation — bridging the funding gap for mental health, aging, and recovery services in Weber County, Utah." },
+      { property: "og:title", content: "About the Weber Human Services Foundation" },
+      { property: "og:description", content: "A nonprofit board of local leaders funding programs at Weber Human Services in Morgan & Weber Counties." },
       { property: "og:url", content: "https://whsf.accessmypage.online/about" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/about" }],

@@ -7,10 +7,10 @@ import { impact } from "@/content/impact";
 export const Route = createFileRoute("/impact")({
   head: () => ({
     meta: [
-      { title: "Impact & Stories — Weber Human Services Foundation" },
-      { name: "description", content: "Real stories of change from across Morgan and Weber Counties — and the numbers behind our annual impact." },
-      { property: "og:title", content: "Impact & Stories" },
-      { property: "og:description", content: "Stories and outcomes from the Foundation's work." },
+      { title: "Impact & Stories | Weber Human Services Foundation" },
+      { name: "description", content: "Real outcomes from the Weber Human Services Foundation: lives changed across mental health, aging, recovery, and prevention services in Weber County, Utah." },
+      { property: "og:title", content: "Impact & Stories | Weber Human Services Foundation" },
+      { property: "og:description", content: "Annual outcomes and personal stories from the Foundation's work in Morgan & Weber Counties." },
       { property: "og:url", content: "https://whsf.accessmypage.online/impact" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/impact" }],
