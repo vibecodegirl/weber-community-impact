@@ -8,10 +8,10 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Weber Human Services Foundation" },
-      { name: "description", content: "Get in touch with the Weber Human Services Foundation. Serving Morgan and Weber Counties, Utah." },
-      { property: "og:title", content: "Contact the Foundation" },
-      { property: "og:description", content: "Reach out to the Weber Human Services Foundation." },
+      { title: "Contact the Weber Human Services Foundation | Ogden, UT" },
+      { name: "description", content: "Reach the Weber Human Services Foundation in Ogden, Utah. Email foundation@weberhs.org or call (801) 778-6834 to give, partner, or volunteer." },
+      { property: "og:title", content: "Contact the Weber Human Services Foundation" },
+      { property: "og:description", content: "Email foundation@weberhs.org or call (801) 778-6834 — serving Morgan & Weber Counties, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/contact" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/contact" }],

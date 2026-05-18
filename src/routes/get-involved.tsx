@@ -10,10 +10,10 @@ import { site } from "@/content/site";
 export const Route = createFileRoute("/get-involved")({
   head: () => ({
     meta: [
-      { title: "Get Involved — Weber Human Services Foundation" },
-      { name: "description", content: "Support the Foundation through monetary donations, in-kind gifts, or by volunteering your time." },
-      { property: "og:title", content: "Get Involved" },
-      { property: "og:description", content: "Donate, give in-kind, or volunteer with the Foundation." },
+      { title: "Volunteer or Donate | Weber Human Services Foundation" },
+      { name: "description", content: "Three ways to support the Weber Human Services Foundation: donate, give in-kind, or volunteer your time across Morgan & Weber Counties, Utah." },
+      { property: "og:title", content: "Get Involved — Volunteer or Donate" },
+      { property: "og:description", content: "Donate, give in-kind, or volunteer with the Weber Human Services Foundation in Ogden, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/get-involved" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/get-involved" }],

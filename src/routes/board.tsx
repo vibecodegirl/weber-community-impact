@@ -7,10 +7,10 @@ import { board } from "@/content/board";
 export const Route = createFileRoute("/board")({
   head: () => ({
     meta: [
-      { title: "Board & Leadership — Weber Human Services Foundation" },
-      { name: "description", content: "Meet the volunteer board of directors leading the Weber Human Services Foundation — local leaders dedicated to Morgan and Weber Counties." },
-      { property: "og:title", content: "Board & Leadership" },
-      { property: "og:description", content: "Local leaders volunteering their time to bridge the funding gap for human services." },
+      { title: "Board & Leadership | Weber Human Services Foundation" },
+      { name: "description", content: "Local leaders volunteering with the Weber Human Services Foundation to fund mental health, aging, and recovery programs across Morgan & Weber Counties, Utah." },
+      { property: "og:title", content: "Board & Leadership | Weber Human Services Foundation" },
+      { property: "og:description", content: "Meet the volunteer directors guiding the Foundation's work across Weber County, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/board" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/board" }],

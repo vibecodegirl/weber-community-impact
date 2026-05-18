@@ -13,13 +13,13 @@ const ICONS = [HandHeart, Heart, Sparkles];
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Weber Human Services Foundation | Morgan & Weber Counties" },
+      { title: "Weber Human Services Foundation | Ogden, Utah Nonprofit" },
       {
         name: "description",
         content:
-          "A nonprofit foundation supporting clients and programs of Weber Human Services across Morgan and Weber Counties. Help us bridge the gap between need and funding.",
+          "Donate or volunteer with the Weber Human Services Foundation — a 501(c)(3) funding mental health, aging, recovery, and prevention programs in Weber County, Utah.",
       },
-      { property: "og:title", content: "Weber Human Services Foundation — Supporting Northern Utah" },
+      { property: "og:title", content: "Weber Human Services Foundation | Ogden, Utah Nonprofit" },
       { property: "og:description", content: site.tagline },
       { property: "og:url", content: "https://whsf.accessmypage.online/" },
     ],

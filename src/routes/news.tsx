@@ -8,10 +8,10 @@ import { news } from "@/content/news";
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "News — Weber Human Services Foundation" },
-      { name: "description", content: "Updates, campaign announcements, and stories from the Foundation." },
-      { property: "og:title", content: "News" },
-      { property: "og:description", content: "Updates and stories from the Foundation." },
+      { title: "News & Updates | Weber Human Services Foundation" },
+      { name: "description", content: "Latest news, campaigns, and impact stories from the Weber Human Services Foundation in Ogden, Utah — funding mental health, aging, and recovery programs." },
+      { property: "og:title", content: "News & Updates | Weber Human Services Foundation" },
+      { property: "og:description", content: "Campaign announcements and stories from the Foundation across Weber County, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/news" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/news" }],
