@@ -9,7 +9,9 @@ export const Route = createFileRoute("/events/sub-for-santa")({
       { name: "description", content: "Sponsor a family or donate gifts through the Weber Human Services Foundation Sub for Santa program." },
       { property: "og:title", content: "Sub for Santa" },
       { property: "og:description", content: "Bring holiday hope to local families." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/events/sub-for-santa" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/events/sub-for-santa" }],
   }),
   component: SubForSantaPage,
 });

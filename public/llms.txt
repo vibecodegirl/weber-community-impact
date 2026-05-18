@@ -1,0 +1,25 @@
+# Weber Human Services Foundation
+
+> A 501(c)(3) nonprofit foundation bridging the gap between client needs and available funding for human and health services in Morgan and Weber Counties, Utah.
+
+The Weber Human Services Foundation is an independent nonprofit that raises private charitable contributions to support the clients and programs of Weber Human Services, focusing on Employee Care, Aging Services, Mental Health, Prevention, and Substance Use Recovery.
+
+## Pages
+
+- [Home](/): Overview of the Foundation's mission and impact.
+- [About](/about): Mission, history, and approach.
+- [Board & Leadership](/board): Volunteer board of directors.
+- [Causes](/causes): Five focus areas the Foundation supports.
+- [Impact & Stories](/impact): Outcomes and personal stories from the community.
+- [Events](/events): Annual Golf Tournament and Sub for Santa.
+- [Get Involved](/get-involved): Donate, give in-kind, or volunteer.
+- [Donate](/donate): Make a tax-deductible contribution.
+- [News](/news): Updates and announcements.
+- [Financials & 990s](/financials): Annual reports and IRS Form 990s.
+- [FAQ](/faq): Common questions about donations and programs.
+- [Contact](/contact): Get in touch with the Foundation.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms of Use](/terms)

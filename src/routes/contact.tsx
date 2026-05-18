@@ -12,7 +12,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get in touch with the Weber Human Services Foundation. Serving Morgan and Weber Counties, Utah." },
       { property: "og:title", content: "Contact the Foundation" },
       { property: "og:description", content: "Reach out to the Weber Human Services Foundation." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/contact" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/contact" }],
   }),
   component: ContactPage,
 });

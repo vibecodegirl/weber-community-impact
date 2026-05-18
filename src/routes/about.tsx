@@ -11,7 +11,9 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Learn about the Weber Human Services Foundation board, mission, and our commitment to financial transparency in supporting Morgan and Weber Counties." },
       { property: "og:title", content: "About the Foundation" },
       { property: "og:description", content: "A nonprofit board of local leaders supporting Weber Human Services." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/about" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/about" }],
   }),
   component: AboutPage,
 });

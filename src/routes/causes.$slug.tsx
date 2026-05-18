@@ -10,7 +10,7 @@ export const Route = createFileRoute("/causes/$slug")({
     if (!cause) throw notFound();
     return { cause };
   },
-  head: ({ loaderData }) => ({
+  head: ({ loaderData, params }) => ({
     meta: loaderData
       ? [
           { title: `${loaderData.cause.title} — Weber Human Services Foundation` },
@@ -18,8 +18,12 @@ export const Route = createFileRoute("/causes/$slug")({
           { property: "og:title", content: loaderData.cause.title },
           { property: "og:description", content: loaderData.cause.tagline },
           { property: "og:image", content: loaderData.cause.image },
+          { property: "og:url", content: `https://whsf.accessmypage.online/causes/${params.slug}` },
         ]
       : [],
+    links: [
+      { rel: "canonical", href: `https://whsf.accessmypage.online/causes/${params.slug}` },
+    ],
   }),
   notFoundComponent: () => (
     <SiteLayout>

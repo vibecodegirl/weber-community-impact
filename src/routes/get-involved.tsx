@@ -14,7 +14,9 @@ export const Route = createFileRoute("/get-involved")({
       { name: "description", content: "Support the Foundation through monetary donations, in-kind gifts, or by volunteering your time." },
       { property: "og:title", content: "Get Involved" },
       { property: "og:description", content: "Donate, give in-kind, or volunteer with the Foundation." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/get-involved" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/get-involved" }],
   }),
   component: GetInvolvedPage,
 });

@@ -10,7 +10,9 @@ export const Route = createFileRoute("/terms")({
       { name: "description", content: "Terms governing your use of the Weber Human Services Foundation website and online services." },
       { property: "og:title", content: "Terms of Use" },
       { property: "og:description", content: "The terms governing use of the Weber Human Services Foundation website." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/terms" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/terms" }],
   }),
   component: () => (
     <SiteLayout>

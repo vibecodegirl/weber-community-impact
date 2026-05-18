@@ -36,6 +36,8 @@ export function HeroCarousel() {
               alt=""
               width={1920}
               height={1080}
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "auto"}
               className="h-full w-full scale-105 object-cover"
               style={{ animation: i === index ? "heroKenBurns 9s ease-out forwards" : "none" }}
             />

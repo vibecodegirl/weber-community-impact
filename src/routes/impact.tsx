@@ -11,7 +11,9 @@ export const Route = createFileRoute("/impact")({
       { name: "description", content: "Real stories of change from across Morgan and Weber Counties — and the numbers behind our annual impact." },
       { property: "og:title", content: "Impact & Stories" },
       { property: "og:description", content: "Stories and outcomes from the Foundation's work." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/impact" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/impact" }],
   }),
   component: ImpactPage,
 });

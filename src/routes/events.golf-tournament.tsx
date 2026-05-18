@@ -9,7 +9,9 @@ export const Route = createFileRoute("/events/golf-tournament")({
       { name: "description", content: "Join the Weber Human Services Foundation Golf Tournament — a day on the course supporting mental health, recovery, and aging programs." },
       { property: "og:title", content: "Golf Tournament" },
       { property: "og:description", content: "A day on the course supporting our community." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/events/golf-tournament" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/events/golf-tournament" }],
   }),
   component: GolfTournamentPage,
 });

@@ -12,7 +12,9 @@ export const Route = createFileRoute("/news")({
       { name: "description", content: "Updates, campaign announcements, and stories from the Foundation." },
       { property: "og:title", content: "News" },
       { property: "og:description", content: "Updates and stories from the Foundation." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/news" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/news" }],
   }),
   component: NewsPage,
 });

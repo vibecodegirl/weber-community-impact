@@ -13,7 +13,9 @@ export const Route = createFileRoute("/donate")({
       { name: "description", content: "Make a tax-deductible donation to the Weber Human Services Foundation. 100% of your gift stays local." },
       { property: "og:title", content: "Donate to the Foundation" },
       { property: "og:description", content: "Your gift fuels real outcomes for our neighbors." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/donate" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/donate" }],
   }),
   component: DonatePage,
 });

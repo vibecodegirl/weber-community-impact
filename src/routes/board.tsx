@@ -11,7 +11,9 @@ export const Route = createFileRoute("/board")({
       { name: "description", content: "Meet the volunteer board of directors leading the Weber Human Services Foundation — local leaders dedicated to Morgan and Weber Counties." },
       { property: "og:title", content: "Board & Leadership" },
       { property: "og:description", content: "Local leaders volunteering their time to bridge the funding gap for human services." },
+      { property: "og:url", content: "https://whsf.accessmypage.online/board" },
     ],
+    links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/board" }],
   }),
   component: BoardPage,
 });
