@@ -39,14 +39,6 @@ export const about = {
   boardPreview: {
     eyebrow: "Leadership",
     title: "Our board of directors",
-    members: [
-      { name: "Board Member", role: "Chair" },
-      { name: "Board Member", role: "Vice Chair" },
-      { name: "Board Member", role: "Treasurer" },
-      { name: "Board Member", role: "Secretary" },
-      { name: "Board Member", role: "Director" },
-      { name: "Board Member", role: "Director" },
-    ],
   },
 
   transparency: {

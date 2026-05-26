@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ArrowRight, Heart } from "lucide-react";
 import { about } from "@/content/about";
+import { board } from "@/content/board";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -58,11 +59,21 @@ function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionHeader eyebrow={about.boardPreview.eyebrow} title={about.boardPreview.title} />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {about.boardPreview.members.map((b, i) => (
+          {board.directors.map((b, i) => (
             <div key={i} className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-              <div className="aspect-square rounded-xl bg-gradient-to-br from-sky to-accent" />
+              <div className="aspect-square overflow-hidden rounded-xl bg-muted">
+                <img
+                  src={b.imageUrl}
+                  alt={b.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <div className="mt-4 font-serif text-xl">{b.name}</div>
               <div className="text-sm text-ember">{b.role}</div>
+              {b.affiliation && (
+                <div className="mt-1 text-sm text-muted-foreground">{b.affiliation}</div>
+              )}
             </div>
           ))}
         </div>
