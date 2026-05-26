@@ -97,7 +97,19 @@ function ContactPage() {
             </div>
           </div>
 
-          <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const inputs = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input, textarea");
+              const [name, email, subject, message] = Array.from(inputs).map((el) => el.value);
+              const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+              const mailto = `mailto:${site.contact.email}?subject=${encodeURIComponent(subject || "Website inquiry")}&body=${encodeURIComponent(body)}`;
+              window.location.href = mailto;
+              setSent(true);
+            }}
+            className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
+          >
             <h2 className="font-serif text-3xl text-primary">{contact.form.title}</h2>
             <div className="mt-6 grid gap-4">
               <div className="grid gap-4 sm:grid-cols-2">
