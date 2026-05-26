@@ -8,7 +8,7 @@ export const Route = createFileRoute("/board")({
   head: () => ({
     meta: [
       { title: "Board & Leadership | Weber Human Services Foundation" },
-      { name: "description", content: "Local leaders volunteering with the Weber Human Services Foundation to fund mental health, aging, and recovery programs across Morgan & Weber Counties, Utah." },
+      { name: "description", content: "Local leaders volunteering with the Weber Human Services Foundation to fund mental health, aging, and recovery programs across Morgan & Weber Counties, Utah.[...]
       { property: "og:title", content: "Board & Leadership | Weber Human Services Foundation" },
       { property: "og:description", content: "Meet the volunteer directors guiding the Foundation's work across Weber County, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/board" },
@@ -34,7 +34,15 @@ function BoardPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {board.directors.map((d, i) => (
             <article key={i} className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-              <div className="aspect-square rounded-xl bg-gradient-to-br from-sky to-accent" />
+              {d.imageUrl ? (
+                <img 
+                  src={d.imageUrl} 
+                  alt={d.name}
+                  className="aspect-square rounded-xl object-cover"
+                />
+              ) : (
+                <div className="aspect-square rounded-xl bg-gradient-to-br from-sky to-accent" />
+              )}
               <div className="mt-4 font-serif text-xl">{d.name}</div>
               <div className="text-sm font-semibold text-ember">{d.role}</div>
               <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{d.affiliation}</div>
