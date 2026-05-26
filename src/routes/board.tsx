@@ -8,7 +8,7 @@ export const Route = createFileRoute("/board")({
   head: () => ({
     meta: [
       { title: "Board & Leadership | Weber Human Services Foundation" },
-      { name: "description", content: "Local leaders volunteering with the Weber Human Services Foundation to fund mental health, aging, and recovery programs across Morgan & Weber Counties, Utah.[...]
+      { name: "description", content: "Local leaders volunteering with the Weber Human Services Foundation to fund mental health, aging, and recovery programs across Morgan & Weber Counties, Utah." },
       { property: "og:title", content: "Board & Leadership | Weber Human Services Foundation" },
       { property: "og:description", content: "Meet the volunteer directors guiding the Foundation's work across Weber County, Utah." },
       { property: "og:url", content: "https://whsf.accessmypage.online/board" },
