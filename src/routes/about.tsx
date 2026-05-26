@@ -60,23 +60,29 @@ function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionHeader eyebrow={about.boardPreview.eyebrow} title={about.boardPreview.title} />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {board.directors.map((b, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-              <div className="aspect-square overflow-hidden rounded-xl bg-muted">
-                <img
-                  src={b.imageUrl}
-                  alt={b.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
+          {board.directors.map((b, i) => {
+            const filename = b.imageUrl.split("/").pop() ?? "";
+            const hiRes = `${b.imageUrl}/v1/fill/w_800,h_800,al_c,q_90,enc_auto/${filename}`;
+            return (
+              <div key={i} className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
+                <div className="aspect-square overflow-hidden rounded-xl bg-muted">
+                  <img
+                    src={hiRes}
+                    alt={b.name}
+                    loading="lazy"
+                    width={800}
+                    height={800}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <div className="mt-4 font-serif text-xl">{b.name}</div>
+                <div className="text-sm text-ember">{b.role}</div>
+                {b.affiliation && (
+                  <div className="mt-1 text-sm text-muted-foreground">{b.affiliation}</div>
+                )}
               </div>
-              <div className="mt-4 font-serif text-xl">{b.name}</div>
-              <div className="text-sm text-ember">{b.role}</div>
-              {b.affiliation && (
-                <div className="mt-1 text-sm text-muted-foreground">{b.affiliation}</div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
