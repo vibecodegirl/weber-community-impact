@@ -109,6 +109,12 @@ function GetInvolvedPage() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              const form = e.currentTarget;
+              const inputs = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input, textarea");
+              const [name, email, phone, extra, message] = Array.from(inputs).map((el) => el.value);
+              const subject = isContact ? (extra || "Website inquiry") : `Volunteer inquiry from ${name}`;
+              const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n${isContact ? "" : `Availability/interests: ${extra}\n`}\n${message}`;
+              window.location.href = `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
               setSent(true);
             }}
             className="mt-6 grid gap-4"
