@@ -24,12 +24,12 @@ export const financials = {
   },
 
   documents: [
+    { year: "2025", type: "Annual Report", note: "PDF · Coming soon", url: "#" },
+    { year: "2025", type: "IRS Form 990", note: "PDF · Coming soon", url: "#" },
     { year: "2024", type: "Annual Report", note: "PDF · Coming soon", url: "#" },
     { year: "2024", type: "IRS Form 990", note: "PDF · Coming soon", url: "#" },
     { year: "2023", type: "Annual Report", note: "PDF · Coming soon", url: "#" },
     { year: "2023", type: "IRS Form 990", note: "PDF · Coming soon", url: "#" },
-    { year: "2022", type: "Annual Report", note: "PDF · Coming soon", url: "#" },
-    { year: "2022", type: "IRS Form 990", note: "PDF · Coming soon", url: "#" },
   ],
 
   downloadLabel: "Download",
