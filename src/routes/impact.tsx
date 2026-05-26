@@ -3,6 +3,7 @@ import { Download, Quote } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { impact } from "@/content/impact";
+import { site } from "@/content/site";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -67,9 +68,9 @@ function ImpactPage() {
               <a className="inline-flex items-center gap-2 rounded-full bg-sky px-6 py-3 font-semibold text-primary" href={impact.annualReport.downloadUrl}>
                 <Download className="h-4 w-4" /> {impact.annualReport.downloadLabel}
               </a>
-              <Link to="/donate" className="inline-flex items-center gap-2 rounded-full bg-ember px-6 py-3 font-semibold text-ember-foreground">
+              <a href={site.donateUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-ember px-6 py-3 font-semibold text-ember-foreground">
                 {impact.annualReport.donateLabel}
-              </Link>
+              </a>
             </div>
           </div>
         </div>

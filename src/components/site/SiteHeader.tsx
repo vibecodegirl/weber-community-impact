@@ -102,12 +102,14 @@ export function SiteHeader() {
             </Fragment>
           ))}
 
-          <Link
-            to="/donate"
+          <a
+            href={site.donateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-3 inline-flex items-center gap-2 rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-ember-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.03]"
           >
             <Heart className="h-4 w-4" /> {site.nav.donateLabel}
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -163,13 +165,15 @@ export function SiteHeader() {
                 )}
               </Fragment>
             ))}
-            <Link
-              to="/donate"
+            <a
+              href={site.donateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 font-semibold text-ember-foreground"
               onClick={() => setOpen(false)}
             >
               <Heart className="h-4 w-4" /> {site.nav.donateLabel}
-            </Link>
+            </a>
           </div>
         </div>
       )}

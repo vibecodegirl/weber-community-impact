@@ -17,8 +17,8 @@ export const getInvolved = {
       title: "Monetary donations",
       body: "One-time or recurring gifts of any size fund Foundation programs year-round. 100% of your gift stays local.",
       ctaLabel: "Donate now",
-      ctaTo: "/donate" as const,
-      ctaHref: undefined as string | undefined,
+      ctaTo: undefined as "/donate" | "/contact" | undefined,
+      ctaHref: "https://weberhsfoundation.org/donate/" as string | undefined,
     },
     {
       title: "In-kind donations",

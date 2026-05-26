@@ -7,8 +7,8 @@ export const site = {
   tagline:
     "Bridging the gap between client needs and available funding — so every neighbor in Morgan and Weber Counties can lead a healthy, successful life.",
 
-  // External donation paywall — replace with your real giving link.
-  donateUrl: "#",
+  // External donation paywall.
+  donateUrl: "https://weberhsfoundation.org/donate/",
 
   // Slim utility bar shown above the main header.
   utilityBar: {

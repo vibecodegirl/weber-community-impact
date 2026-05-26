@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { ArrowRight, Heart } from "lucide-react";
 import { about } from "@/content/about";
 import { board } from "@/content/board";
+import { site } from "@/content/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -90,9 +91,9 @@ function AboutPage() {
               <Link to="/impact" className="inline-flex items-center gap-2 rounded-full bg-sky px-6 py-3 font-semibold text-primary">
                 {about.transparency.primaryLabel} <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/donate" className="inline-flex items-center gap-2 rounded-full bg-ember px-6 py-3 font-semibold text-ember-foreground">
+              <a href={site.donateUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-ember px-6 py-3 font-semibold text-ember-foreground">
                 <Heart className="h-4 w-4" /> {about.transparency.secondaryLabel}
-              </Link>
+              </a>
             </div>
           </div>
         </div>
