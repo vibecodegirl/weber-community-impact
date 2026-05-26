@@ -31,20 +31,18 @@ export const home = {
   causes: {
     eyebrow: "Five focus areas",
     title: "Where your gift goes to work.",
-    description:
-      "Every dollar funds a specific need within our community — directly tied to outcomes.",
+    description: "Every dollar funds a specific need within our community — directly tied to outcomes.",
     viewAllLabel: "View all causes",
   },
 
   // 3. IMPACT STORY quote
   story: {
     eyebrow: "An Impact Story",
-    quote:
-      "I didn't think anyone could help me. The Foundation paid for the therapy that gave me my life back.",
+    quote: "I didn't think anyone could help me. The Foundation paid for the therapy that gave me my life back.",
     attribution: "— Maria, mental health client, age 34",
     ctaLabel: "Read more stories",
     stats: [
-      { value: "10,000+", label: "lives touched in 2024" },
+      { value: "10,000+", label: "lives touched in 2025" },
       { value: "$1.4M", label: "stewarded for direct client care" },
       { value: "5", label: "focus areas of impact" },
       { value: "100%", label: "of your gift stays local" },

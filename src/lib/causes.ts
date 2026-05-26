@@ -23,7 +23,7 @@ export const CAUSES: Cause[] = [
     description:
       "The people of Weber Human Services walk alongside our community in its hardest moments. The Employee Care Fund supports staff facing personal hardship — medical emergencies, housing instability, or unexpected loss — so they can keep showing up for the families that depend on them.",
     outcomes: [
-      { label: "Staff supported in 2024", value: "62" },
+      { label: "Staff supported in 2025", value: "62" },
       { label: "Average grant", value: "$1,250" },
       { label: "Requests funded within 7 days", value: "94%" },
     ],
@@ -45,11 +45,7 @@ export const CAUSES: Cause[] = [
       { label: "Caregiver respite hours funded", value: "8,200" },
       { label: "Home visits last year", value: "3,100" },
     ],
-    programs: [
-      "Caregiver respite & support",
-      "In-home wellness checks",
-      "Social engagement & meal programs",
-    ],
+    programs: ["Caregiver respite & support", "In-home wellness checks", "Social engagement & meal programs"],
   },
   {
     slug: "mental-health",
@@ -63,11 +59,7 @@ export const CAUSES: Cause[] = [
       { label: "Crisis interventions supported", value: "320" },
       { label: "Clients served", value: "2,100" },
     ],
-    programs: [
-      "Therapy access scholarships",
-      "Crisis stabilization support",
-      "Supportive housing assistance",
-    ],
+    programs: ["Therapy access scholarships", "Crisis stabilization support", "Supportive housing assistance"],
   },
   {
     slug: "prevention",
@@ -81,11 +73,7 @@ export const CAUSES: Cause[] = [
       { label: "Schools partnered", value: "27" },
       { label: "Family workshops", value: "140" },
     ],
-    programs: [
-      "Youth resilience curriculum",
-      "Parent education workshops",
-      "Community awareness campaigns",
-    ],
+    programs: ["Youth resilience curriculum", "Parent education workshops", "Community awareness campaigns"],
   },
   {
     slug: "substance-abuse",
@@ -99,11 +87,7 @@ export const CAUSES: Cause[] = [
       { label: "Peer-support hours funded", value: "12,400" },
       { label: "Sober-living scholarships", value: "95" },
     ],
-    programs: [
-      "Peer recovery coaching",
-      "Sober-living scholarships",
-      "Family recovery support",
-    ],
+    programs: ["Peer recovery coaching", "Sober-living scholarships", "Family recovery support"],
   },
 ];
 

@@ -10,8 +10,7 @@ const OUT = "/mnt/documents/whsf-static-export";
 const SITE = "https://whsf.accessmypage.online";
 
 // ---- helpers ----------------------------------------------------------------
-const esc = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 // ---- DATA (mirrors src/content/*.ts + src/lib/causes.ts) --------------------
 const site = {
@@ -76,11 +75,15 @@ const CAUSES = [
     description:
       "The people of Weber Human Services walk alongside our community in its hardest moments. The Employee Care Fund supports staff facing personal hardship — medical emergencies, housing instability, or unexpected loss — so they can keep showing up for the families that depend on them.",
     outcomes: [
-      { label: "Staff supported in 2024", value: "62" },
+      { label: "Staff supported in 2025", value: "62" },
       { label: "Average grant", value: "$1,250" },
       { label: "Requests funded within 7 days", value: "94%" },
     ],
-    programs: ["Emergency hardship grants", "Mental wellness stipends for caregivers", "Continuing education scholarships"],
+    programs: [
+      "Emergency hardship grants",
+      "Mental wellness stipends for caregivers",
+      "Continuing education scholarships",
+    ],
   },
   {
     slug: "aging-services",
@@ -151,26 +154,52 @@ const home = {
     description:
       "A nonprofit comprised of community members from local organizations, dedicated to supporting the clients and programs of Weber Human Services.",
     cards: [
-      { eyebrow: "Who we are", title: "Neighbors helping neighbors", body: "A volunteer board of local leaders dedicated to the work of Weber Human Services and the people it serves." },
-      { eyebrow: "What we do", title: "We bridge the funding gap", body: "We raise and steward charitable contributions to fill the spaces Medicaid and Medicare leave behind." },
-      { eyebrow: "Why we do it", title: "So lives can be rebuilt", body: "We help clients and families access the services they need to lead healthy, successful, connected lives." },
+      {
+        eyebrow: "Who we are",
+        title: "Neighbors helping neighbors",
+        body: "A volunteer board of local leaders dedicated to the work of Weber Human Services and the people it serves.",
+      },
+      {
+        eyebrow: "What we do",
+        title: "We bridge the funding gap",
+        body: "We raise and steward charitable contributions to fill the spaces Medicaid and Medicare leave behind.",
+      },
+      {
+        eyebrow: "Why we do it",
+        title: "So lives can be rebuilt",
+        body: "We help clients and families access the services they need to lead healthy, successful, connected lives.",
+      },
     ],
   },
-  causes: { eyebrow: "Five focus areas", title: "Where your gift goes to work.", description: "Every dollar funds a specific need within our community — directly tied to outcomes.", viewAllLabel: "View all causes" },
+  causes: {
+    eyebrow: "Five focus areas",
+    title: "Where your gift goes to work.",
+    description: "Every dollar funds a specific need within our community — directly tied to outcomes.",
+    viewAllLabel: "View all causes",
+  },
   story: {
     eyebrow: "An Impact Story",
     quote: "I didn't think anyone could help me. The Foundation paid for the therapy that gave me my life back.",
     attribution: "— Maria, mental health client, age 34",
     ctaLabel: "Read more stories",
     stats: [
-      { value: "10,000+", label: "lives touched in 2024" },
+      { value: "10,000+", label: "lives touched in 2025" },
       { value: "$1.4M", label: "stewarded for direct client care" },
       { value: "5", label: "focus areas of impact" },
       { value: "100%", label: "of your gift stays local" },
     ],
   },
-  parentOrg: { title: "An extension of Weber Human Services", body: "The Foundation is an extension of Weber Human Services — the public agency providing mental health, substance use, and aging services across our two counties.", ctaLabel: "Visit weberhs.net" },
-  cta: { title: "Be the bridge for someone who needs one.", body: "Your gift becomes therapy, recovery, dignity, hope — for a real person, in your community.", primaryLabel: "Donate", secondaryLabel: "Volunteer with us" },
+  parentOrg: {
+    title: "An extension of Weber Human Services",
+    body: "The Foundation is an extension of Weber Human Services — the public agency providing mental health, substance use, and aging services across our two counties.",
+    ctaLabel: "Visit weberhs.net",
+  },
+  cta: {
+    title: "Be the bridge for someone who needs one.",
+    body: "Your gift becomes therapy, recovery, dignity, hope — for a real person, in your community.",
+    primaryLabel: "Donate",
+    secondaryLabel: "Volunteer with us",
+  },
 };
 
 const heroSlide = {
@@ -185,39 +214,121 @@ const heroSlide = {
 };
 
 const about = {
-  hero: { eyebrow: "About the Foundation", title: "We exist so that no neighbor is turned away from the help they need.", body: "The Weber Human Services Foundation is a 501(c)(3) nonprofit comprised of a group of individuals from local organizations who are dedicated to supporting the clients and programs offered at Weber Human Services." },
+  hero: {
+    eyebrow: "About the Foundation",
+    title: "We exist so that no neighbor is turned away from the help they need.",
+    body: "The Weber Human Services Foundation is a 501(c)(3) nonprofit comprised of a group of individuals from local organizations who are dedicated to supporting the clients and programs offered at Weber Human Services.",
+  },
   whoWhatWhy: [
-    { eyebrow: "Who we are", title: "A local board of local people.", body: "Our directors live, work, and raise families in Morgan and Weber Counties. We know our neighbors because they are our neighbors." },
-    { eyebrow: "What we do", title: "We bridge the funding gap.", body: "We raise charitable contributions and direct them to the programs and clients of Weber Human Services where the need is greatest." },
-    { eyebrow: "Why we do it", title: "Because lives depend on it.", body: "Healthy, successful lives are built on access — to therapy, recovery, dignity, and connection. The Foundation makes that access possible." },
+    {
+      eyebrow: "Who we are",
+      title: "A local board of local people.",
+      body: "Our directors live, work, and raise families in Morgan and Weber Counties. We know our neighbors because they are our neighbors.",
+    },
+    {
+      eyebrow: "What we do",
+      title: "We bridge the funding gap.",
+      body: "We raise charitable contributions and direct them to the programs and clients of Weber Human Services where the need is greatest.",
+    },
+    {
+      eyebrow: "Why we do it",
+      title: "Because lives depend on it.",
+      body: "Healthy, successful lives are built on access — to therapy, recovery, dignity, and connection. The Foundation makes that access possible.",
+    },
   ],
-  values: { eyebrow: "Our values", title: "How we show up for our community.", items: [
-    { title: "Integrity", body: "Every dollar is stewarded with transparency and care." },
-    { title: "Compassion", body: "We meet our neighbors where they are, without judgment." },
-    { title: "Extension", body: "We are an extension of Weber Human Services, working alongside local partners." },
-    { title: "Outcomes", body: "We measure success in lives changed, not dollars raised." },
-  ]},
-  boardPreview: { eyebrow: "Leadership", title: "Our board of directors", members: [
-    { name: "Board Member", role: "Chair" }, { name: "Board Member", role: "Vice Chair" }, { name: "Board Member", role: "Treasurer" },
-    { name: "Board Member", role: "Secretary" }, { name: "Board Member", role: "Director" }, { name: "Board Member", role: "Director" },
-  ]},
-  transparency: { title: "Financial transparency", body: "We are proud to publish our annual reports and IRS Form 990s. Every gift is tracked, stewarded, and reported on publicly.", primaryLabel: "Annual report", secondaryLabel: "Donate" },
+  values: {
+    eyebrow: "Our values",
+    title: "How we show up for our community.",
+    items: [
+      { title: "Integrity", body: "Every dollar is stewarded with transparency and care." },
+      { title: "Compassion", body: "We meet our neighbors where they are, without judgment." },
+      { title: "Extension", body: "We are an extension of Weber Human Services, working alongside local partners." },
+      { title: "Outcomes", body: "We measure success in lives changed, not dollars raised." },
+    ],
+  },
+  boardPreview: {
+    eyebrow: "Leadership",
+    title: "Our board of directors",
+    members: [
+      { name: "Board Member", role: "Chair" },
+      { name: "Board Member", role: "Vice Chair" },
+      { name: "Board Member", role: "Treasurer" },
+      { name: "Board Member", role: "Secretary" },
+      { name: "Board Member", role: "Director" },
+      { name: "Board Member", role: "Director" },
+    ],
+  },
+  transparency: {
+    title: "Financial transparency",
+    body: "We are proud to publish our annual reports and IRS Form 990s. Every gift is tracked, stewarded, and reported on publicly.",
+    primaryLabel: "Annual report",
+    secondaryLabel: "Donate",
+  },
 };
 
 const board = {
-  hero: { eyebrow: "Board & Leadership", title: "Local leaders, volunteering their time for our neighbors.", body: "Our board of directors is made up of people who live, work, and serve in Morgan and Weber Counties. Every member volunteers their time and expertise — no board member is compensated." },
+  hero: {
+    eyebrow: "Board & Leadership",
+    title: "Local leaders, volunteering their time for our neighbors.",
+    body: "Our board of directors is made up of people who live, work, and serve in Morgan and Weber Counties. Every member volunteers their time and expertise — no board member is compensated.",
+  },
   directorsHeading: { eyebrow: "Directors", title: "Meet the board" },
   directors: [
-    { name: "Board Member", role: "Chair", affiliation: "Local Business Leader", bio: "Brings decades of community leadership and a passion for mental health advocacy to the Foundation's strategic direction." },
-    { name: "Board Member", role: "Vice Chair", affiliation: "Healthcare Executive", bio: "Champions integrated care and works to remove barriers between clinical services and the neighbors who need them." },
-    { name: "Board Member", role: "Treasurer", affiliation: "CPA, Local Firm", bio: "Stewards the Foundation's finances with transparency and ensures every donor dollar is accounted for." },
-    { name: "Board Member", role: "Secretary", affiliation: "Education Leader", bio: "Connects prevention programming with the schools and families across Morgan and Weber Counties." },
-    { name: "Board Member", role: "Director", affiliation: "Community Volunteer", bio: "A long-time volunteer focused on aging services and supporting our oldest neighbors with dignity." },
-    { name: "Board Member", role: "Director", affiliation: "Faith Community Leader", bio: "Bridges faith communities and recovery resources, helping reduce stigma around substance use treatment." },
-    { name: "Board Member", role: "Director", affiliation: "Weber Human Services Liaison", bio: "Ensures the Foundation's funding aligns directly with the most pressing needs identified by frontline staff." },
-    { name: "Board Member", role: "Director", affiliation: "Local Attorney", bio: "Provides governance and compliance guidance, keeping the Foundation accountable to its mission and donors." },
+    {
+      name: "Board Member",
+      role: "Chair",
+      affiliation: "Local Business Leader",
+      bio: "Brings decades of community leadership and a passion for mental health advocacy to the Foundation's strategic direction.",
+    },
+    {
+      name: "Board Member",
+      role: "Vice Chair",
+      affiliation: "Healthcare Executive",
+      bio: "Champions integrated care and works to remove barriers between clinical services and the neighbors who need them.",
+    },
+    {
+      name: "Board Member",
+      role: "Treasurer",
+      affiliation: "CPA, Local Firm",
+      bio: "Stewards the Foundation's finances with transparency and ensures every donor dollar is accounted for.",
+    },
+    {
+      name: "Board Member",
+      role: "Secretary",
+      affiliation: "Education Leader",
+      bio: "Connects prevention programming with the schools and families across Morgan and Weber Counties.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Community Volunteer",
+      bio: "A long-time volunteer focused on aging services and supporting our oldest neighbors with dignity.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Faith Community Leader",
+      bio: "Bridges faith communities and recovery resources, helping reduce stigma around substance use treatment.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Weber Human Services Liaison",
+      bio: "Ensures the Foundation's funding aligns directly with the most pressing needs identified by frontline staff.",
+    },
+    {
+      name: "Board Member",
+      role: "Director",
+      affiliation: "Local Attorney",
+      bio: "Provides governance and compliance guidance, keeping the Foundation accountable to its mission and donors.",
+    },
   ],
-  joinCta: { eyebrow: "Join the board", title: "Interested in serving your community?", body: "We periodically welcome new directors who bring fresh perspective and a commitment to human services in our region. Reach out to learn about open seats and the nomination process.", buttonLabel: "Contact the board" },
+  joinCta: {
+    eyebrow: "Join the board",
+    title: "Interested in serving your community?",
+    body: "We periodically welcome new directors who bring fresh perspective and a commitment to human services in our region. Reach out to learn about open seats and the nomination process.",
+    buttonLabel: "Contact the board",
+  },
 };
 
 const impact = {
@@ -230,38 +341,112 @@ const impact = {
   ],
   storiesHeading: { eyebrow: "Stories", title: "Real people. Real change." },
   stories: [
-    { name: "Maria, 34", cause: "Mental Health", quote: "I didn't think anyone could help me. The Foundation paid for the therapy that gave me my life back." },
-    { name: "James, 67", cause: "Aging Services", quote: "After my wife passed, the home visits kept me going. I'm not alone anymore." },
-    { name: "Sofia, 16", cause: "Prevention", quote: "The school program helped me find words for what I was feeling — and people who listened." },
-    { name: "Daniel, 41", cause: "Substance Use Recovery", quote: "Two years sober. My kids have their dad back. I owe a piece of that to the people who funded my recovery coach." },
-    { name: "Renée, WHS staff", cause: "Employee Care", quote: "When my mom got sick, the Care Fund covered my rent so I could focus on being there for her." },
-    { name: "The Lee Family", cause: "Aging Services", quote: "Respite care meant I could rest, and that meant I could keep caring for Dad at home." },
+    {
+      name: "Maria, 34",
+      cause: "Mental Health",
+      quote: "I didn't think anyone could help me. The Foundation paid for the therapy that gave me my life back.",
+    },
+    {
+      name: "James, 67",
+      cause: "Aging Services",
+      quote: "After my wife passed, the home visits kept me going. I'm not alone anymore.",
+    },
+    {
+      name: "Sofia, 16",
+      cause: "Prevention",
+      quote: "The school program helped me find words for what I was feeling — and people who listened.",
+    },
+    {
+      name: "Daniel, 41",
+      cause: "Substance Use Recovery",
+      quote:
+        "Two years sober. My kids have their dad back. I owe a piece of that to the people who funded my recovery coach.",
+    },
+    {
+      name: "Renée, WHS staff",
+      cause: "Employee Care",
+      quote: "When my mom got sick, the Care Fund covered my rent so I could focus on being there for her.",
+    },
+    {
+      name: "The Lee Family",
+      cause: "Aging Services",
+      quote: "Respite care meant I could rest, and that meant I could keep caring for Dad at home.",
+    },
   ],
   storiesDisclaimer: "Names and details have been changed to protect client privacy.",
-  annualReport: { title: "2024 Annual Report", body: "A full breakdown of programs funded, outcomes achieved, and how every dollar was spent.", downloadLabel: "Download (PDF)", downloadUrl: "#", donateLabel: "Donate" },
+  annualReport: {
+    title: "2025 Annual Report",
+    body: "A full breakdown of programs funded, outcomes achieved, and how every dollar was spent.",
+    downloadLabel: "Download (PDF)",
+    downloadUrl: "https://weberhsfoundation.org/donate/",
+    donateLabel: "Donate",
+  },
 };
 
 const events = {
-  hero: { eyebrow: "Events", title: "Two signature events. One shared mission.", body: "Each year, the Foundation hosts two flagship events that fund services for our neighbors across Morgan and Weber Counties." },
+  hero: {
+    eyebrow: "Events",
+    title: "Two signature events. One shared mission.",
+    body: "Each year, the Foundation hosts two flagship events that fund services for our neighbors across Morgan and Weber Counties.",
+  },
   upcomingHeading: { eyebrow: "Our events", title: "Mark your calendar" },
   upcoming: [
-    { date: "Summer", name: "Foundation Golf Tournament", location: "Northern Utah — course TBA", description: "A day on the green bringing together sponsors, foursomes, and community partners to fund year-round Foundation programs.", file: "events-golf-tournament.html", ctaLabel: "Tournament details" },
-    { date: "December", name: "Sub for Santa", location: "Morgan & Weber Counties", description: "Sponsor a child or family for the holidays — providing gifts, warm clothing, and essentials for neighbors identified through Weber Human Services.", file: "events-sub-for-santa.html", ctaLabel: "Learn how to help" },
+    {
+      date: "Summer",
+      name: "Foundation Golf Tournament",
+      location: "Northern Utah — course TBA",
+      description:
+        "A day on the green bringing together sponsors, foursomes, and community partners to fund year-round Foundation programs.",
+      file: "events-golf-tournament.html",
+      ctaLabel: "Tournament details",
+    },
+    {
+      date: "December",
+      name: "Sub for Santa",
+      location: "Morgan & Weber Counties",
+      description:
+        "Sponsor a child or family for the holidays — providing gifts, warm clothing, and essentials for neighbors identified through Weber Human Services.",
+      file: "events-sub-for-santa.html",
+      ctaLabel: "Learn how to help",
+    },
   ],
 };
 
 const getInvolved = {
-  hero: { eyebrow: "Get Involved", title: "Three simple ways to be the bridge.", body: "Every contribution — financial, in-kind, or your time — directly supports our neighbors across Morgan and Weber Counties." },
+  hero: {
+    eyebrow: "Get Involved",
+    title: "Three simple ways to be the bridge.",
+    body: "Every contribution — financial, in-kind, or your time — directly supports our neighbors across Morgan and Weber Counties.",
+  },
   waysHeading: { eyebrow: "Ways to give", title: "Donate, give in-kind, or volunteer" },
   ways: [
-    { title: "Monetary donations", body: "One-time or recurring gifts of any size fund Foundation programs year-round. 100% of your gift stays local.", ctaLabel: "Donate now", href: "donate.html" },
-    { title: "In-kind donations", body: "Donate goods, supplies, or services — including gifts and essentials for Sub for Santa families and items for the Golf Tournament.", ctaLabel: "Contact us", href: "contact.html" },
-    { title: "Volunteer with us", body: "Lend your time and talents at Foundation events and programs. Send us a quick note and we'll match you with an opportunity that fits.", ctaLabel: "Inquire to volunteer", href: "contact.html#volunteer" },
+    {
+      title: "Monetary donations",
+      body: "One-time or recurring gifts of any size fund Foundation programs year-round. 100% of your gift stays local.",
+      ctaLabel: "Donate now",
+      href: "donate.html",
+    },
+    {
+      title: "In-kind donations",
+      body: "Donate goods, supplies, or services — including gifts and essentials for Sub for Santa families and items for the Golf Tournament.",
+      ctaLabel: "Contact us",
+      href: "contact.html",
+    },
+    {
+      title: "Volunteer with us",
+      body: "Lend your time and talents at Foundation events and programs. Send us a quick note and we'll match you with an opportunity that fits.",
+      ctaLabel: "Inquire to volunteer",
+      href: "contact.html#volunteer",
+    },
   ],
 };
 
 const donate = {
-  hero: { eyebrow: "Donate", title: "Your gift becomes someone's turning point.", body: "Every dollar you give stays in Morgan and Weber Counties — funding therapy, recovery, dignity, and connection for your neighbors." },
+  hero: {
+    eyebrow: "Donate",
+    title: "Your gift becomes someone's turning point.",
+    body: "Every dollar you give stays in Morgan and Weber Counties — funding therapy, recovery, dignity, and connection for your neighbors.",
+  },
   giveNowHeading: { eyebrow: "Give now", title: "Choose your gift" },
   tiers: [
     { value: "$50", description: "covers a therapy session" },
@@ -279,25 +464,68 @@ const donate = {
     { title: "Stock & planned giving", body: "Tax-smart strategies for greater impact." },
     { title: "Mail a check", body: "Made out to Weber Human Services Foundation." },
   ],
-  taxNote: "The Weber Human Services Foundation is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the fullest extent allowed by law.",
+  taxNote:
+    "The Weber Human Services Foundation is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the fullest extent allowed by law.",
 };
 
 const news = {
   hero: { eyebrow: "News", title: "What's happening at the Foundation." },
   posts: [
-    { category: "Campaign", date: "Apr 28, 2026", title: "Spring Campaign exceeds $250K goal", excerpt: "Thanks to 1,800 donors across our two counties, we surpassed our spring fundraising goal in record time." },
-    { category: "Story", date: "Apr 12, 2026", title: "How peer recovery coaches change lives", excerpt: "An inside look at the recovery model the Foundation funds — and why peer support works." },
-    { category: "Announcement", date: "Mar 30, 2026", title: "New scholarship for caregiving education", excerpt: "We're proud to launch a new scholarship for WHS staff pursuing certifications in caregiving and clinical support." },
-    { category: "Event", date: "Mar 15, 2026", title: "Save the date: Hope Gala 2026", excerpt: "Our signature evening returns September 14. Tables and sponsorships open soon." },
-    { category: "Story", date: "Feb 22, 2026", title: "Aging in place, with dignity", excerpt: "How respite care funded by the Foundation helps families keep their loved ones at home." },
-    { category: "Update", date: "Feb 4, 2026", title: "2025 Annual Report is here", excerpt: "Read the full breakdown of programs, outcomes, and stewardship from last year." },
+    {
+      category: "Campaign",
+      date: "Apr 28, 2026",
+      title: "Spring Campaign exceeds $250K goal",
+      excerpt:
+        "Thanks to 1,800 donors across our two counties, we surpassed our spring fundraising goal in record time.",
+    },
+    {
+      category: "Story",
+      date: "Apr 12, 2026",
+      title: "How peer recovery coaches change lives",
+      excerpt: "An inside look at the recovery model the Foundation funds — and why peer support works.",
+    },
+    {
+      category: "Announcement",
+      date: "Mar 30, 2026",
+      title: "New scholarship for caregiving education",
+      excerpt:
+        "We're proud to launch a new scholarship for WHS staff pursuing certifications in caregiving and clinical support.",
+    },
+    {
+      category: "Event",
+      date: "Mar 15, 2026",
+      title: "Save the date: Hope Gala 2026",
+      excerpt: "Our signature evening returns September 14. Tables and sponsorships open soon.",
+    },
+    {
+      category: "Story",
+      date: "Feb 22, 2026",
+      title: "Aging in place, with dignity",
+      excerpt: "How respite care funded by the Foundation helps families keep their loved ones at home.",
+    },
+    {
+      category: "Update",
+      date: "Feb 4, 2026",
+      title: "2025 Annual Report is here",
+      excerpt: "Read the full breakdown of programs, outcomes, and stewardship from last year.",
+    },
   ],
   readMoreLabel: "Read more",
-  newsletter: { eyebrow: "Newsletter", title: "Stay close to the work.", description: "Quarterly stories, campaign updates, and event invitations — straight to your inbox.", placeholder: "you@example.com", submitLabel: "Subscribe" },
+  newsletter: {
+    eyebrow: "Newsletter",
+    title: "Stay close to the work.",
+    description: "Quarterly stories, campaign updates, and event invitations — straight to your inbox.",
+    placeholder: "you@example.com",
+    submitLabel: "Subscribe",
+  },
 };
 
 const financials = {
-  hero: { eyebrow: "Financial Transparency", title: "Every dollar accounted for. Every report public.", body: "The Weber Human Services Foundation is a 501(c)(3) nonprofit. We publish our annual reports and IRS Form 990s so donors can see exactly how their generosity is put to work." },
+  hero: {
+    eyebrow: "Financial Transparency",
+    title: "Every dollar accounted for. Every report public.",
+    body: "The Weber Human Services Foundation is a 501(c)(3) nonprofit. We publish our annual reports and IRS Form 990s so donors can see exactly how their generosity is put to work.",
+  },
   allocationHeading: { eyebrow: "How funds are used", title: "Where your gift goes" },
   allocation: [
     { label: "Direct client programs", value: 82 },
@@ -306,84 +534,326 @@ const financials = {
   ],
   documentsHeading: { eyebrow: "Documents", title: "Annual reports & 990s" },
   documents: [
+    { year: "2025", type: "Annual Report", note: "PDF · Coming soon" },
+    { year: "2025", type: "IRS Form 990", note: "PDF · Coming soon" },
     { year: "2024", type: "Annual Report", note: "PDF · Coming soon" },
-    { year: "2024", type: "IRS Form 990", note: "PDF · Coming soon" },
-    { year: "2023", type: "Annual Report", note: "PDF · Coming soon" },
+    {
+      year: "2024",
+      type: "IRS Form 990",
+      note: "PDF · https://apps.irs.gov/pub/epostcard/cor/870528187_202412_990_2026030223965667.pdf",
+    },
+    {
+      year: "2023",
+      type: "Annual Report",
+      note: "PDF · https://apps.irs.gov/pub/epostcard/cor/870528187_202312_990_2025030323149079.pdf",
+    },
     { year: "2023", type: "IRS Form 990", note: "PDF · Coming soon" },
-    { year: "2022", type: "Annual Report", note: "PDF · Coming soon" },
-    { year: "2022", type: "IRS Form 990", note: "PDF · Coming soon" },
   ],
   downloadLabel: "Download",
-  questionsCta: { badge: "501(c)(3) Public Charity", title: "Have a question about our finances?", body: "We welcome donor questions. Contact our treasurer for additional financial detail or to request a specific year's filing.", buttonLabel: "Contact us" },
+  questionsCta: {
+    badge: "501(c)(3) Public Charity",
+    title: "Have a question about our finances?",
+    body: "We welcome donor questions. Contact our treasurer for additional financial detail or to request a specific year's filing.",
+    buttonLabel: "Contact us",
+  },
 };
 
 const faq = {
-  hero: { eyebrow: "Frequently Asked Questions", title: "Answers to the questions we hear most.", body: "Don't see your question? We'd love to hear from you — reach out anytime." },
+  hero: {
+    eyebrow: "Frequently Asked Questions",
+    title: "Answers to the questions we hear most.",
+    body: "Don't see your question? We'd love to hear from you — reach out anytime.",
+  },
   sections: [
-    { heading: "About the Foundation", items: [
-      { question: "What is the Weber Human Services Foundation?", answer: "We are a 501(c)(3) nonprofit comprised of local volunteers who raise charitable contributions in support of the clients and programs at Weber Human Services in Morgan and Weber Counties." },
-      { question: "Are you the same as Weber Human Services?", answer: "No. Weber Human Services is the public agency that delivers programs. The Foundation is an independent nonprofit that raises private donations to fill gaps that public funding cannot cover." },
-      { question: "What areas do you serve?", answer: "We serve neighbors in Morgan and Weber Counties, Utah." },
-    ]},
-    { heading: "Donations & giving", items: [
-      { question: "Is my donation tax deductible?", answer: "Yes. We are a registered 501(c)(3) public charity, and donations are tax deductible to the extent allowed by law. You'll receive a receipt for your records." },
-      { question: "How is my donation used?", answer: "Roughly 82% of every dollar goes directly to client programs across our five focus areas. The remainder supports fundraising and administration. See our Financials page for full details." },
-      { question: "Can I designate my gift to a specific program?", answer: "Yes. You can direct your gift to Employee Care, Aging Services, Mental Health, Prevention, or Substance Use — or let the board allocate it where need is greatest." },
-      { question: "Do you accept stock, IRA distributions, or planned gifts?", answer: "Yes. Please contact us to coordinate stock transfers, qualified charitable distributions from an IRA, or to discuss leaving a legacy gift." },
-    ]},
-    { heading: "Programs & impact", items: [
-      { question: "What are the five cause areas?", answer: "Employee Care Fund, Aging Services, Mental Health, Prevention, and Substance Use. Each is detailed on our Causes page with specific programs and outcomes." },
-      { question: "How do I or someone I know access services?", answer: "Programs are delivered by Weber Human Services. Visit weberhs.net or call them directly. In a crisis, dial or text 988 for the Suicide & Crisis Lifeline." },
-    ]},
-    { heading: "Volunteering & partnership", items: [
-      { question: "How can I volunteer?", answer: "Visit our Get Involved page to share your interests. We welcome event volunteers, committee members, and skills-based volunteers." },
-      { question: "How can my business partner with the Foundation?", answer: "We partner with local businesses through sponsorships, workplace giving, and in-kind support. Reach out via the Contact page to start a conversation." },
-    ]},
+    {
+      heading: "About the Foundation",
+      items: [
+        {
+          question: "What is the Weber Human Services Foundation?",
+          answer:
+            "We are a 501(c)(3) nonprofit comprised of local volunteers who raise charitable contributions in support of the clients and programs at Weber Human Services in Morgan and Weber Counties.",
+        },
+        {
+          question: "Are you the same as Weber Human Services?",
+          answer:
+            "No. Weber Human Services is the public agency that delivers programs. The Foundation is an independent nonprofit that raises private donations to fill gaps that public funding cannot cover.",
+        },
+        { question: "What areas do you serve?", answer: "We serve neighbors in Morgan and Weber Counties, Utah." },
+      ],
+    },
+    {
+      heading: "Donations & giving",
+      items: [
+        {
+          question: "Is my donation tax deductible?",
+          answer:
+            "Yes. We are a registered 501(c)(3) public charity, and donations are tax deductible to the extent allowed by law. You'll receive a receipt for your records.",
+        },
+        {
+          question: "How is my donation used?",
+          answer:
+            "Roughly 82% of every dollar goes directly to client programs across our five focus areas. The remainder supports fundraising and administration. See our Financials page for full details.",
+        },
+        {
+          question: "Can I designate my gift to a specific program?",
+          answer:
+            "Yes. You can direct your gift to Employee Care, Aging Services, Mental Health, Prevention, or Substance Use — or let the board allocate it where need is greatest.",
+        },
+        {
+          question: "Do you accept stock, IRA distributions, or planned gifts?",
+          answer:
+            "Yes. Please contact us to coordinate stock transfers, qualified charitable distributions from an IRA, or to discuss leaving a legacy gift.",
+        },
+      ],
+    },
+    {
+      heading: "Programs & impact",
+      items: [
+        {
+          question: "What are the five cause areas?",
+          answer:
+            "Employee Care Fund, Aging Services, Mental Health, Prevention, and Substance Use. Each is detailed on our Causes page with specific programs and outcomes.",
+        },
+        {
+          question: "How do I or someone I know access services?",
+          answer:
+            "Programs are delivered by Weber Human Services. Visit weberhs.net or call them directly. In a crisis, dial or text 988 for the Suicide & Crisis Lifeline.",
+        },
+      ],
+    },
+    {
+      heading: "Volunteering & partnership",
+      items: [
+        {
+          question: "How can I volunteer?",
+          answer:
+            "Visit our Get Involved page to share your interests. We welcome event volunteers, committee members, and skills-based volunteers.",
+        },
+        {
+          question: "How can my business partner with the Foundation?",
+          answer:
+            "We partner with local businesses through sponsorships, workplace giving, and in-kind support. Reach out via the Contact page to start a conversation.",
+        },
+      ],
+    },
   ],
   closingCta: { title: "Still have questions?", body: "We'd love to hear from you.", buttonLabel: "Contact us" },
 };
 
 const contact = {
-  hero: { eyebrow: "Contact", title: "Let's talk.", body: "Whether you'd like to give, partner, volunteer, or just learn more — we'd love to hear from you.", teamMember: { photo: "assets/contact-team-member.jpg", name: "Madeline McDonald", title: "Foundation Director", email: "madelinemc@weberhs.org", phone: "(801) 778-6834", phoneHref: "+18017786834" } },
+  hero: {
+    eyebrow: "Contact",
+    title: "Let's talk.",
+    body: "Whether you'd like to give, partner, volunteer, or just learn more — we'd love to hear from you.",
+    teamMember: {
+      photo: "assets/contact-team-member.jpg",
+      name: "Madeline McDonald",
+      title: "Foundation Director",
+      email: "madelinemc@weberhs.org",
+      phone: "(801) 778-6834",
+      phoneHref: "+18017786834",
+    },
+  },
   cards: { emailLabel: "Email", phoneLabel: "Phone", serviceAreaLabel: "Service area" },
-  crisis: { title: "In crisis? Get help now.", body: "If you or someone you love is in crisis, you don't have to wait." },
-  form: { title: "Send us a message", nameLabel: "Full name", emailLabel: "Email", subjectLabel: "Subject", messageLabel: "Your message", submitLabel: "Send message" },
+  crisis: {
+    title: "In crisis? Get help now.",
+    body: "If you or someone you love is in crisis, you don't have to wait.",
+  },
+  form: {
+    title: "Send us a message",
+    nameLabel: "Full name",
+    emailLabel: "Email",
+    subjectLabel: "Subject",
+    messageLabel: "Your message",
+    submitLabel: "Send message",
+  },
 };
 
 const legal = {
   privacy: {
-    title: "Privacy Policy", lastUpdated: "Last updated: May 2026",
-    intro: 'The Weber Human Services Foundation ("we," "our," or "the Foundation") respects your privacy. This policy explains what information we collect on this website, how we use it, and the choices you have.',
+    title: "Privacy Policy",
+    lastUpdated: "Last updated: May 2026",
+    intro:
+      'The Weber Human Services Foundation ("we," "our," or "the Foundation") respects your privacy. This policy explains what information we collect on this website, how we use it, and the choices you have.',
     sections: [
-      { heading: "Information we collect", blocks: [{ type: "p", text: "We collect the following kinds of information:" }, { type: "ul", items: ["Information you provide directly — such as your name, email, phone number, or message — when you complete a form, sign up for our newsletter, or contact us.", "Donation information processed by our third-party payment provider. We do not store credit card or bank account details on our servers.", "Basic usage data — such as pages visited and approximate location — collected through standard web analytics."] }] },
-      { heading: "How we use your information", blocks: [{ type: "ul", items: ["To respond to your inquiries and process donations.", "To send newsletters, event invitations, and impact updates if you've opted in.", "To improve our website and understand how visitors use it.", "To meet legal, accounting, and tax-reporting obligations."] }] },
-      { heading: "Sharing", blocks: [{ type: "p", text: "We do not sell or rent your personal information. We share information only with trusted service providers (such as our email platform and payment processor) who help us operate, and only as required by law." }] },
-      { heading: "Your choices", blocks: [{ type: "p", text: "You may unsubscribe from our newsletter at any time using the link in any email, or contact us to update or delete your information." }] },
-      { heading: "Cookies", blocks: [{ type: "p", text: "We use a small number of cookies for site functionality and analytics. You can disable cookies in your browser settings." }] },
-      { heading: "Children", blocks: [{ type: "p", text: "This website is not directed to children under 13, and we do not knowingly collect personal information from children." }] },
-      { heading: "Contact", blocks: [{ type: "p", text: 'Questions about this policy? Please reach out via our Contact page. We may update this policy from time to time; the "Last updated" date above will reflect any revisions.' }] },
+      {
+        heading: "Information we collect",
+        blocks: [
+          { type: "p", text: "We collect the following kinds of information:" },
+          {
+            type: "ul",
+            items: [
+              "Information you provide directly — such as your name, email, phone number, or message — when you complete a form, sign up for our newsletter, or contact us.",
+              "Donation information processed by our third-party payment provider. We do not store credit card or bank account details on our servers.",
+              "Basic usage data — such as pages visited and approximate location — collected through standard web analytics.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "How we use your information",
+        blocks: [
+          {
+            type: "ul",
+            items: [
+              "To respond to your inquiries and process donations.",
+              "To send newsletters, event invitations, and impact updates if you've opted in.",
+              "To improve our website and understand how visitors use it.",
+              "To meet legal, accounting, and tax-reporting obligations.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Sharing",
+        blocks: [
+          {
+            type: "p",
+            text: "We do not sell or rent your personal information. We share information only with trusted service providers (such as our email platform and payment processor) who help us operate, and only as required by law.",
+          },
+        ],
+      },
+      {
+        heading: "Your choices",
+        blocks: [
+          {
+            type: "p",
+            text: "You may unsubscribe from our newsletter at any time using the link in any email, or contact us to update or delete your information.",
+          },
+        ],
+      },
+      {
+        heading: "Cookies",
+        blocks: [
+          {
+            type: "p",
+            text: "We use a small number of cookies for site functionality and analytics. You can disable cookies in your browser settings.",
+          },
+        ],
+      },
+      {
+        heading: "Children",
+        blocks: [
+          {
+            type: "p",
+            text: "This website is not directed to children under 13, and we do not knowingly collect personal information from children.",
+          },
+        ],
+      },
+      {
+        heading: "Contact",
+        blocks: [
+          {
+            type: "p",
+            text: 'Questions about this policy? Please reach out via our Contact page. We may update this policy from time to time; the "Last updated" date above will reflect any revisions.',
+          },
+        ],
+      },
     ],
   },
   terms: {
-    title: "Terms of Use", lastUpdated: "Last updated: May 2026",
-    intro: 'By accessing or using the Weber Human Services Foundation website (the "Site"), you agree to these Terms of Use. If you do not agree, please do not use the Site.',
+    title: "Terms of Use",
+    lastUpdated: "Last updated: May 2026",
+    intro:
+      'By accessing or using the Weber Human Services Foundation website (the "Site"), you agree to these Terms of Use. If you do not agree, please do not use the Site.',
     sections: [
-      { heading: "Use of the Site", blocks: [{ type: "p", text: "You may use the Site for lawful, personal, and informational purposes. You may not use the Site to transmit harmful content, attempt to gain unauthorized access, or interfere with its operation." }] },
-      { heading: "Donations", blocks: [{ type: "p", text: "Donations are processed through a third-party payment provider on a separate page. Donations are non-refundable except where required by law. Tax receipts are issued in accordance with IRS guidelines for U.S. 501(c)(3) public charities." }] },
-      { heading: "Not professional advice", blocks: [{ type: "p", text: "Information on this Site is provided for general awareness only and is not medical, mental-health, legal, or financial advice. If you or someone you know is in crisis, dial or text 988 for the Suicide & Crisis Lifeline." }] },
-      { heading: "Intellectual property", blocks: [{ type: "p", text: "The content, logo, and design of this Site are the property of the Weber Human Services Foundation or its licensors and are protected by applicable intellectual-property laws." }] },
-      { heading: "Third-party links", blocks: [{ type: "p", text: "The Site may link to third-party websites. We are not responsible for the content or practices of those sites." }] },
-      { heading: "Disclaimer of warranties", blocks: [{ type: "p", text: 'The Site is provided "as is" without warranties of any kind, express or implied. We do not warrant that the Site will be uninterrupted or error free.' }] },
-      { heading: "Limitation of liability", blocks: [{ type: "p", text: "To the fullest extent permitted by law, the Foundation, its directors, and volunteers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Site." }] },
-      { heading: "Changes", blocks: [{ type: "p", text: "We may update these Terms from time to time. Continued use of the Site after changes are posted constitutes acceptance of the revised Terms." }] },
-      { heading: "Contact", blocks: [{ type: "p", text: "Questions about these Terms? Please reach out via our Contact page." }] },
+      {
+        heading: "Use of the Site",
+        blocks: [
+          {
+            type: "p",
+            text: "You may use the Site for lawful, personal, and informational purposes. You may not use the Site to transmit harmful content, attempt to gain unauthorized access, or interfere with its operation.",
+          },
+        ],
+      },
+      {
+        heading: "Donations",
+        blocks: [
+          {
+            type: "p",
+            text: "Donations are processed through a third-party payment provider on a separate page. Donations are non-refundable except where required by law. Tax receipts are issued in accordance with IRS guidelines for U.S. 501(c)(3) public charities.",
+          },
+        ],
+      },
+      {
+        heading: "Not professional advice",
+        blocks: [
+          {
+            type: "p",
+            text: "Information on this Site is provided for general awareness only and is not medical, mental-health, legal, or financial advice. If you or someone you know is in crisis, dial or text 988 for the Suicide & Crisis Lifeline.",
+          },
+        ],
+      },
+      {
+        heading: "Intellectual property",
+        blocks: [
+          {
+            type: "p",
+            text: "The content, logo, and design of this Site are the property of the Weber Human Services Foundation or its licensors and are protected by applicable intellectual-property laws.",
+          },
+        ],
+      },
+      {
+        heading: "Third-party links",
+        blocks: [
+          {
+            type: "p",
+            text: "The Site may link to third-party websites. We are not responsible for the content or practices of those sites.",
+          },
+        ],
+      },
+      {
+        heading: "Disclaimer of warranties",
+        blocks: [
+          {
+            type: "p",
+            text: 'The Site is provided "as is" without warranties of any kind, express or implied. We do not warrant that the Site will be uninterrupted or error free.',
+          },
+        ],
+      },
+      {
+        heading: "Limitation of liability",
+        blocks: [
+          {
+            type: "p",
+            text: "To the fullest extent permitted by law, the Foundation, its directors, and volunteers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Site.",
+          },
+        ],
+      },
+      {
+        heading: "Changes",
+        blocks: [
+          {
+            type: "p",
+            text: "We may update these Terms from time to time. Continued use of the Site after changes are posted constitutes acceptance of the revised Terms.",
+          },
+        ],
+      },
+      {
+        heading: "Contact",
+        blocks: [{ type: "p", text: "Questions about these Terms? Please reach out via our Contact page." }],
+      },
     ],
   },
 };
 
 const causesPage = {
-  hero: { eyebrow: "Five focus areas", title: "Where your generosity becomes outcomes.", body: "Each cause we fund is tied to specific programs at Weber Human Services and to real, measurable change in people's lives." },
-  detail: { backLabel: "← All causes", programsHeading: "Programs we fund", outcomesHeading: "Outcomes", fundCard: { title: "Fund this cause", body: "Your gift goes directly to the programs above.", buttonLabel: "Donate" }, relatedHeading: "Other causes we support" },
+  hero: {
+    eyebrow: "Five focus areas",
+    title: "Where your generosity becomes outcomes.",
+    body: "Each cause we fund is tied to specific programs at Weber Human Services and to real, measurable change in people's lives.",
+  },
+  detail: {
+    backLabel: "← All causes",
+    programsHeading: "Programs we fund",
+    outcomesHeading: "Outcomes",
+    fundCard: {
+      title: "Fund this cause",
+      body: "Your gift goes directly to the programs above.",
+      buttonLabel: "Donate",
+    },
+    relatedHeading: "Other causes we support",
+  },
   learnMoreLabel: "Learn more",
 };
 
@@ -462,7 +932,12 @@ const renderFooter = () => `
 
 // ---- page shell -------------------------------------------------------------
 const pageShell = (opts: {
-  file: string; title: string; description: string; ogUrl: string; canonical: string; body: string;
+  file: string;
+  title: string;
+  description: string;
+  ogUrl: string;
+  canonical: string;
+  body: string;
 }) => `<!doctype html>
 <html lang="en">
 <head>
@@ -516,13 +991,17 @@ ${heroSection}
     <p class="lede">${esc(home.intro.description)}</p>
   </div>
   <div class="grid grid--3 mt-14">
-    ${home.intro.cards.map((c) => `
+    ${home.intro.cards
+      .map(
+        (c) => `
       <article class="card card--lift">
         <div class="card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.3-9A5.7 5.7 0 0 1 12 6a5.7 5.7 0 0 1 9.3 6c-2.3 4.5-9.3 9-9.3 9Z"/></svg></div>
         <div class="eyebrow eyebrow--ember">${esc(c.eyebrow)}</div>
         <h3>${esc(c.title)}</h3>
         <p>${esc(c.body)}</p>
-      </article>`).join("")}
+      </article>`,
+      )
+      .join("")}
   </div>
 </section>
 
@@ -537,7 +1016,8 @@ ${heroSection}
       <a href="causes.html" class="link-strong">${home.causes.viewAllLabel} →</a>
     </div>
     <div class="grid grid--3 mt-12">
-      ${CAUSES.map((c, i) => `
+      ${CAUSES.map(
+        (c, i) => `
         <a href="${c.file}" class="cause-card ${i === 0 ? "cause-card--wide" : ""}">
           <div class="cause-card__media"><img src="${c.image}" alt="" loading="lazy"/></div>
           <div class="cause-card__body">
@@ -545,7 +1025,8 @@ ${heroSection}
             <p class="muted">${esc(c.tagline)}</p>
             <span class="link-strong">Learn more →</span>
           </div>
-        </a>`).join("")}
+        </a>`,
+      ).join("")}
     </div>
   </div>
 </section>
@@ -600,12 +1081,16 @@ const aboutBody = `
 ${heroBlock(about.hero.eyebrow, about.hero.title, about.hero.body)}
 <section class="section container">
   <div class="grid grid--3">
-    ${about.whoWhatWhy.map((c) => `
+    ${about.whoWhatWhy
+      .map(
+        (c) => `
       <div class="card">
         <div class="eyebrow eyebrow--ember">${esc(c.eyebrow)}</div>
         <h3 class="card__title">${esc(c.title)}</h3>
         <p>${esc(c.body)}</p>
-      </div>`).join("")}
+      </div>`,
+      )
+      .join("")}
   </div>
 </section>
 <section class="band band--cream">
@@ -641,14 +1126,18 @@ ${heroBlock(board.hero.eyebrow, board.hero.title, board.hero.body)}
 <section class="section container">
   <div class="section-header"><div class="eyebrow eyebrow--ember">${esc(board.directorsHeading.eyebrow)}</div><h2>${esc(board.directorsHeading.title)}</h2></div>
   <div class="grid grid--3 mt-12">
-    ${board.directors.map((d) => `
+    ${board.directors
+      .map(
+        (d) => `
       <article class="card">
         <div class="avatar-block"></div>
         <div class="card__title-serif">${esc(d.name)}</div>
         <div class="text-ember bold">${esc(d.role)}</div>
         <div class="uppercase muted tiny">${esc(d.affiliation)}</div>
         <p class="muted small">${esc(d.bio)}</p>
-      </article>`).join("")}
+      </article>`,
+      )
+      .join("")}
   </div>
 </section>
 <section class="band band--cream">
@@ -672,12 +1161,16 @@ ${heroBlock(impact.hero.eyebrow, impact.hero.title)}
 <section class="section container">
   <div class="section-header"><div class="eyebrow eyebrow--ember">${esc(impact.storiesHeading.eyebrow)}</div><h2>${esc(impact.storiesHeading.title)}</h2></div>
   <div class="grid grid--3 mt-12">
-    ${impact.stories.map((s) => `
+    ${impact.stories
+      .map(
+        (s) => `
       <article class="card story-card">
         <div class="quote-mark">“</div>
         <p class="story-card__quote">"${esc(s.quote)}"</p>
         <div class="story-card__meta"><strong>${esc(s.name)}</strong><span class="text-ember">${esc(s.cause)}</span></div>
-      </article>`).join("")}
+      </article>`,
+      )
+      .join("")}
   </div>
   <p class="muted small mt-6 center">${esc(impact.storiesDisclaimer)}</p>
 </section>
@@ -698,7 +1191,8 @@ const causesIndexBody = `
 ${heroBlock(causesPage.hero.eyebrow, causesPage.hero.title, causesPage.hero.body)}
 <section class="section container">
   <div class="grid grid--2">
-    ${CAUSES.map((c) => `
+    ${CAUSES.map(
+      (c) => `
       <a href="${c.file}" class="cause-card cause-card--lg">
         <div class="cause-card__media"><img src="${c.image}" alt="" loading="lazy" /></div>
         <div class="cause-card__body">
@@ -707,11 +1201,12 @@ ${heroBlock(causesPage.hero.eyebrow, causesPage.hero.title, causesPage.hero.body
           <p class="muted">${esc(c.description)}</p>
           <span class="link-strong">${causesPage.learnMoreLabel} →</span>
         </div>
-      </a>`).join("")}
+      </a>`,
+    ).join("")}
   </div>
 </section>`;
 
-const causeDetailBody = (c: typeof CAUSES[number]) => {
+const causeDetailBody = (c: (typeof CAUSES)[number]) => {
   const others = CAUSES.filter((x) => x.slug !== c.slug).slice(0, 3);
   return `
 <section class="page-hero page-hero--image">
@@ -750,11 +1245,15 @@ const causeDetailBody = (c: typeof CAUSES[number]) => {
   <div class="container">
     <h2>${causesPage.detail.relatedHeading}</h2>
     <div class="grid grid--3 mt-8">
-      ${others.map((o) => `
+      ${others
+        .map(
+          (o) => `
         <a href="${o.file}" class="cause-card">
           <div class="cause-card__media"><img src="${o.image}" alt="" loading="lazy"/></div>
           <div class="cause-card__body"><h3>${esc(o.title)}</h3><p class="muted">${esc(o.tagline)}</p></div>
-        </a>`).join("")}
+        </a>`,
+        )
+        .join("")}
     </div>
   </div>
 </section>`;
@@ -765,14 +1264,18 @@ ${heroBlock(events.hero.eyebrow, events.hero.title, events.hero.body)}
 <section class="section container">
   <div class="section-header"><div class="eyebrow eyebrow--ember">${esc(events.upcomingHeading.eyebrow)}</div><h2>${esc(events.upcomingHeading.title)}</h2></div>
   <div class="grid grid--2 mt-12">
-    ${events.upcoming.map((e) => `
+    ${events.upcoming
+      .map(
+        (e) => `
       <a href="${e.file}" class="card card--lift">
         <span class="pill">📅 ${esc(e.date)}</span>
         <h3 class="mt-5">${esc(e.name)}</h3>
         <div class="muted small">📍 ${esc(e.location)}</div>
         <p>${esc(e.description)}</p>
         <span class="btn btn--primary btn--sm mt-6">${e.ctaLabel} →</span>
-      </a>`).join("")}
+      </a>`,
+      )
+      .join("")}
   </div>
 </section>`;
 
@@ -826,13 +1329,17 @@ ${heroBlock(getInvolved.hero.eyebrow, getInvolved.hero.title, getInvolved.hero.b
 <section class="section container">
   <div class="section-header"><div class="eyebrow eyebrow--ember">${esc(getInvolved.waysHeading.eyebrow)}</div><h2>${esc(getInvolved.waysHeading.title)}</h2></div>
   <div class="grid grid--3 mt-12">
-    ${getInvolved.ways.map((w) => `
+    ${getInvolved.ways
+      .map(
+        (w) => `
       <div class="card">
         <div class="card__icon card__icon--primary">♥</div>
         <h3 class="mt-5">${esc(w.title)}</h3>
         <p>${esc(w.body)}</p>
         <a class="btn btn--ember mt-6" href="${w.href}">${esc(w.ctaLabel)}</a>
-      </div>`).join("")}
+      </div>`,
+      )
+      .join("")}
   </div>
 </section>`;
 
@@ -840,14 +1347,18 @@ const newsBody = `
 ${heroBlock(news.hero.eyebrow, news.hero.title)}
 <section class="section container">
   <div class="grid grid--3">
-    ${news.posts.map((p) => `
+    ${news.posts
+      .map(
+        (p) => `
       <article class="card card--lift">
         <div class="news-thumb"></div>
         <div class="news-meta"><span class="text-ember">${esc(p.category)}</span><span class="muted">${esc(p.date)}</span></div>
         <h3 class="card__title-serif">${esc(p.title)}</h3>
         <p class="muted small">${esc(p.excerpt)}</p>
         <a href="#" class="link-strong mt-4">${news.readMoreLabel} →</a>
-      </article>`).join("")}
+      </article>`,
+      )
+      .join("")}
   </div>
 </section>
 <section class="section container">
@@ -869,12 +1380,16 @@ ${heroBlock(donate.hero.eyebrow, donate.hero.title, donate.hero.body)}
 <section class="section container">
   <div class="section-header center"><div class="eyebrow eyebrow--ember">${esc(donate.giveNowHeading.eyebrow)}</div><h2>${esc(donate.giveNowHeading.title)}</h2></div>
   <div class="grid grid--3 mt-12 narrow">
-    ${donate.tiers.map((t) => `
+    ${donate.tiers
+      .map(
+        (t) => `
       <a class="card center card--lift" href="${site.donateUrl}">
         <div class="stat__value">${esc(t.value)}</div>
         <div class="muted small mt-2">${esc(t.description)}</div>
         <span class="btn btn--ember btn--sm mt-5"><span class="heart">♥</span> ${donate.giveLabelPrefix} ${esc(t.value)}</span>
-      </a>`).join("")}
+      </a>`,
+      )
+      .join("")}
   </div>
   <div class="center mt-8">
     <a class="btn btn--primary btn--lg" href="${site.donateUrl}"><span class="heart">♥</span> ${donate.customAmountLabel}</a>
@@ -902,19 +1417,25 @@ ${heroBlock(financials.hero.eyebrow, financials.hero.title, financials.hero.body
 <section class="section container">
   <div class="section-header"><div class="eyebrow eyebrow--ember">${esc(financials.allocationHeading.eyebrow)}</div><h2>${esc(financials.allocationHeading.title)}</h2></div>
   <div class="grid grid--3 mt-12">
-    ${financials.allocation.map((a) => `
+    ${financials.allocation
+      .map(
+        (a) => `
       <div class="card">
         <div class="stat__value stat__value--xl">${a.value}%</div>
         <div class="eyebrow eyebrow--ember mt-2">${esc(a.label)}</div>
         <div class="bar mt-4"><div class="bar__fill" style="width:${a.value}%"></div></div>
-      </div>`).join("")}
+      </div>`,
+      )
+      .join("")}
   </div>
 </section>
 <section class="band band--cream">
   <div class="container">
     <div class="section-header"><div class="eyebrow eyebrow--ember">${esc(financials.documentsHeading.eyebrow)}</div><h2>${esc(financials.documentsHeading.title)}</h2></div>
     <ul class="doc-list mt-12">
-      ${financials.documents.map((d) => `
+      ${financials.documents
+        .map(
+          (d) => `
         <li>
           <div class="doc-list__left">
             <div class="doc-list__icon">📄</div>
@@ -924,7 +1445,9 @@ ${heroBlock(financials.hero.eyebrow, financials.hero.title, financials.hero.body
             </div>
           </div>
           <a class="btn btn--outline btn--sm" href="#">⬇ ${financials.downloadLabel}</a>
-        </li>`).join("")}
+        </li>`,
+        )
+        .join("")}
     </ul>
   </div>
 </section>
@@ -942,15 +1465,23 @@ ${heroBlock(financials.hero.eyebrow, financials.hero.title, financials.hero.body
 const faqBody = `
 ${heroBlock(faq.hero.eyebrow, faq.hero.title, faq.hero.body)}
 <section class="section container narrow">
-  ${faq.sections.map((s) => `
+  ${faq.sections
+    .map(
+      (s) => `
     <div class="faq-section">
       <h2>${esc(s.heading)}</h2>
-      ${s.items.map((it) => `
+      ${s.items
+        .map(
+          (it) => `
         <details class="faq-item">
           <summary>${esc(it.question)}</summary>
           <p>${esc(it.answer)}</p>
-        </details>`).join("")}
-    </div>`).join("")}
+        </details>`,
+        )
+        .join("")}
+    </div>`,
+    )
+    .join("")}
   <div class="callout center mt-12">
     <div>
       <h2>${esc(faq.closingCta.title)}</h2>
@@ -1020,12 +1551,20 @@ const legalBody = (doc: typeof legal.privacy) => `
 <section class="section container narrow">
   <article class="legal">
     <p class="lede">${esc(doc.intro)}</p>
-    ${doc.sections.map((s) => `
+    ${doc.sections
+      .map(
+        (s) => `
       <h2>${esc(s.heading)}</h2>
-      ${s.blocks.map((b: any) => b.type === "p"
-        ? `<p>${esc(b.text)}</p>`
-        : `<ul>${b.items.map((i: string) => `<li>${esc(i)}</li>`).join("")}</ul>`).join("")}
-    `).join("")}
+      ${s.blocks
+        .map((b: any) =>
+          b.type === "p"
+            ? `<p>${esc(b.text)}</p>`
+            : `<ul>${b.items.map((i: string) => `<li>${esc(i)}</li>`).join("")}</ul>`,
+        )
+        .join("")}
+    `,
+      )
+      .join("")}
   </article>
 </section>`;
 
@@ -1369,22 +1908,114 @@ writeFileSync(join(OUT, "partials/mountain-divider.svg"), MOUNTAIN_SVG);
 // Pages
 type PageDef = { file: string; title: string; description: string; body: string };
 const pages: PageDef[] = [
-  { file: "home.html", title: "Weber Human Services Foundation | Ogden, Utah Nonprofit", description: "Donate or volunteer with the Weber Human Services Foundation — a 501(c)(3) funding mental health, aging, recovery, and prevention programs in Weber County, Utah.", body: homeBody },
-  { file: "about.html", title: "About the Weber Human Services Foundation | Ogden, UT", description: "Meet the volunteer board behind the Weber Human Services Foundation — bridging the funding gap for mental health, aging, and recovery services in Weber County, Utah.", body: aboutBody },
-  { file: "board.html", title: "Board & Leadership | Weber Human Services Foundation", description: "Local leaders volunteering with the Weber Human Services Foundation to fund mental health, aging, and recovery programs across Morgan & Weber Counties, Utah.", body: boardBody },
-  { file: "impact.html", title: "Impact & Stories | Weber Human Services Foundation", description: "Real outcomes from the Weber Human Services Foundation: lives changed across mental health, aging, recovery, and prevention services in Weber County, Utah.", body: impactBody },
-  { file: "causes.html", title: "Our Causes — Weber Human Services Foundation", description: "Five focus areas where your gift becomes outcomes: Employee Care, Aging Services, Mental Health, Prevention, and Substance Use Recovery.", body: causesIndexBody },
-  { file: "events.html", title: "Events: Golf Tournament & Sub for Santa | WHS Foundation", description: "Join the Weber Human Services Foundation's annual Golf Tournament and Sub for Santa events in Ogden, Utah. Sponsor, play, or give to fund local programs.", body: eventsIndexBody },
-  { file: "events-golf-tournament.html", title: "Golf Tournament — Weber Human Services Foundation", description: "Join the Weber Human Services Foundation Golf Tournament — a day on the course supporting mental health, recovery, and aging programs.", body: golfBody },
-  { file: "events-sub-for-santa.html", title: "Sub for Santa — Weber Human Services Foundation", description: "Sponsor a family or donate gifts through the Weber Human Services Foundation Sub for Santa program.", body: santaBody },
-  { file: "get-involved.html", title: "Volunteer or Donate | Weber Human Services Foundation", description: "Three ways to support the Weber Human Services Foundation: donate, give in-kind, or volunteer your time across Morgan & Weber Counties, Utah.", body: getInvolvedBody },
-  { file: "news.html", title: "News & Updates | Weber Human Services Foundation", description: "Latest news, campaigns, and impact stories from the Weber Human Services Foundation in Ogden, Utah.", body: newsBody },
-  { file: "donate.html", title: "Donate to the Weber Human Services Foundation | Ogden, UT", description: "Make a tax-deductible donation to the Weber Human Services Foundation. 100% local — funds mental health, aging, prevention, and addiction recovery in Utah.", body: donateBody },
-  { file: "financials.html", title: "Financials & IRS 990s | Weber Human Services Foundation", description: "Annual reports, IRS Form 990s, and financial transparency for the Weber Human Services Foundation — a 501(c)(3) serving Morgan & Weber Counties, Utah.", body: financialsBody },
-  { file: "faq.html", title: "FAQ — Weber Human Services Foundation", description: "Frequently asked questions about giving to, partnering with, and benefiting from the Weber Human Services Foundation.", body: faqBody },
-  { file: "contact.html", title: "Contact the Weber Human Services Foundation | Ogden, UT", description: "Reach the Weber Human Services Foundation in Ogden, Utah. Email foundation@weberhs.org or call (801) 778-6834 to give, partner, or volunteer.", body: contactBody },
-  { file: "privacy.html", title: "Privacy Policy — Weber Human Services Foundation", description: "How the Weber Human Services Foundation collects, uses, and protects your information.", body: legalBody(legal.privacy) },
-  { file: "terms.html", title: "Terms of Use — Weber Human Services Foundation", description: "Terms governing use of the Weber Human Services Foundation website.", body: legalBody(legal.terms) },
+  {
+    file: "home.html",
+    title: "Weber Human Services Foundation | Ogden, Utah Nonprofit",
+    description:
+      "Donate or volunteer with the Weber Human Services Foundation — a 501(c)(3) funding mental health, aging, recovery, and prevention programs in Weber County, Utah.",
+    body: homeBody,
+  },
+  {
+    file: "about.html",
+    title: "About the Weber Human Services Foundation | Ogden, UT",
+    description:
+      "Meet the volunteer board behind the Weber Human Services Foundation — bridging the funding gap for mental health, aging, and recovery services in Weber County, Utah.",
+    body: aboutBody,
+  },
+  {
+    file: "board.html",
+    title: "Board & Leadership | Weber Human Services Foundation",
+    description:
+      "Local leaders volunteering with the Weber Human Services Foundation to fund mental health, aging, and recovery programs across Morgan & Weber Counties, Utah.",
+    body: boardBody,
+  },
+  {
+    file: "impact.html",
+    title: "Impact & Stories | Weber Human Services Foundation",
+    description:
+      "Real outcomes from the Weber Human Services Foundation: lives changed across mental health, aging, recovery, and prevention services in Weber County, Utah.",
+    body: impactBody,
+  },
+  {
+    file: "causes.html",
+    title: "Our Causes — Weber Human Services Foundation",
+    description:
+      "Five focus areas where your gift becomes outcomes: Employee Care, Aging Services, Mental Health, Prevention, and Substance Use Recovery.",
+    body: causesIndexBody,
+  },
+  {
+    file: "events.html",
+    title: "Events: Golf Tournament & Sub for Santa | WHS Foundation",
+    description:
+      "Join the Weber Human Services Foundation's annual Golf Tournament and Sub for Santa events in Ogden, Utah. Sponsor, play, or give to fund local programs.",
+    body: eventsIndexBody,
+  },
+  {
+    file: "events-golf-tournament.html",
+    title: "Golf Tournament — Weber Human Services Foundation",
+    description:
+      "Join the Weber Human Services Foundation Golf Tournament — a day on the course supporting mental health, recovery, and aging programs.",
+    body: golfBody,
+  },
+  {
+    file: "events-sub-for-santa.html",
+    title: "Sub for Santa — Weber Human Services Foundation",
+    description: "Sponsor a family or donate gifts through the Weber Human Services Foundation Sub for Santa program.",
+    body: santaBody,
+  },
+  {
+    file: "get-involved.html",
+    title: "Volunteer or Donate | Weber Human Services Foundation",
+    description:
+      "Three ways to support the Weber Human Services Foundation: donate, give in-kind, or volunteer your time across Morgan & Weber Counties, Utah.",
+    body: getInvolvedBody,
+  },
+  {
+    file: "news.html",
+    title: "News & Updates | Weber Human Services Foundation",
+    description: "Latest news, campaigns, and impact stories from the Weber Human Services Foundation in Ogden, Utah.",
+    body: newsBody,
+  },
+  {
+    file: "donate.html",
+    title: "Donate to the Weber Human Services Foundation | Ogden, UT",
+    description:
+      "Make a tax-deductible donation to the Weber Human Services Foundation. 100% local — funds mental health, aging, prevention, and addiction recovery in Utah.",
+    body: donateBody,
+  },
+  {
+    file: "financials.html",
+    title: "Financials & IRS 990s | Weber Human Services Foundation",
+    description:
+      "Annual reports, IRS Form 990s, and financial transparency for the Weber Human Services Foundation — a 501(c)(3) serving Morgan & Weber Counties, Utah.",
+    body: financialsBody,
+  },
+  {
+    file: "faq.html",
+    title: "FAQ — Weber Human Services Foundation",
+    description:
+      "Frequently asked questions about giving to, partnering with, and benefiting from the Weber Human Services Foundation.",
+    body: faqBody,
+  },
+  {
+    file: "contact.html",
+    title: "Contact the Weber Human Services Foundation | Ogden, UT",
+    description:
+      "Reach the Weber Human Services Foundation in Ogden, Utah. Email foundation@weberhs.org or call (801) 778-6834 to give, partner, or volunteer.",
+    body: contactBody,
+  },
+  {
+    file: "privacy.html",
+    title: "Privacy Policy — Weber Human Services Foundation",
+    description: "How the Weber Human Services Foundation collects, uses, and protects your information.",
+    body: legalBody(legal.privacy),
+  },
+  {
+    file: "terms.html",
+    title: "Terms of Use — Weber Human Services Foundation",
+    description: "Terms governing use of the Weber Human Services Foundation website.",
+    body: legalBody(legal.terms),
+  },
 ];
 
 // Cause detail pages
@@ -1401,14 +2032,23 @@ for (const p of pages) {
   const slug = p.file.replace(/\.html$/, "");
   const urlPath = slug === "home" ? "/" : `/${slug.replace(/^causes-/, "causes/")}`;
   const canonical = SITE + (urlPath === "/" ? "/" : urlPath);
-  writeFileSync(join(OUT, "pages", p.file), pageShell({
-    file: p.file, title: p.title, description: p.description,
-    ogUrl: canonical, canonical, body: p.body,
-  }));
+  writeFileSync(
+    join(OUT, "pages", p.file),
+    pageShell({
+      file: p.file,
+      title: p.title,
+      description: p.description,
+      ogUrl: canonical,
+      canonical,
+      body: p.body,
+    }),
+  );
 }
 
 // README
-writeFileSync(join(OUT, "README.md"), `# Weber Human Services Foundation — static export
+writeFileSync(
+  join(OUT, "README.md"),
+  `# Weber Human Services Foundation — static export
 
 Pixel-close static HTML/CSS port of the live React site. Use as a design handoff,
 CMS reference, or for archival.
@@ -1443,6 +2083,7 @@ matching HTML in \`pages/\` (or regenerate from the script at
 \`scripts/export-static.ts\` in the React project).
 
 Phone: (801) 778-6834 · Email: foundation@weberhs.org
-`);
+`,
+);
 
 console.log(`Wrote ${pages.length} pages to ${OUT}`);
