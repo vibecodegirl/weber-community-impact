@@ -60,7 +60,7 @@ export const impact = {
   storiesDisclaimer: "Names and details have been changed to protect client privacy.",
 
   annualReport: {
-    title: "2024 Annual Report",
+    title: "2025 Annual Report",
     body: "A full breakdown of programs funded, outcomes achieved, and how every dollar was spent.",
     downloadLabel: "Download (PDF)",
     downloadUrl: "#",
