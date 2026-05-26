@@ -65,7 +65,7 @@ function ImpactPage() {
               <p className="mt-4 max-w-xl text-primary-foreground/80">{impact.annualReport.body}</p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
-              <a className="inline-flex items-center gap-2 rounded-full bg-sky px-6 py-3 font-semibold text-primary" href={impact.annualReport.downloadUrl}>
+              <a className="inline-flex items-center gap-2 rounded-full bg-sky px-6 py-3 font-semibold text-primary" href={impact.annualReport.downloadUrl} target="_blank" rel="noopener noreferrer">
                 <Download className="h-4 w-4" /> {impact.annualReport.downloadLabel}
               </a>
               <a href={site.donateUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-ember px-6 py-3 font-semibold text-ember-foreground">

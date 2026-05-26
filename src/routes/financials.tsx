@@ -60,7 +60,7 @@ function FinancialsPage() {
                       <div className="text-xs text-muted-foreground">{doc.note}</div>
                     </div>
                   </div>
-                  <a href={doc.url} className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground">
+                  <a href={doc.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground">
                     <Download className="h-4 w-4" /> {financials.downloadLabel}
                   </a>
                 </li>

@@ -24,7 +24,7 @@ export const financials = {
   },
 
   documents: [
-    { year: "2025", type: "Annual Report", note: "PDF · Coming soon", url: "chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://weberhsfoundation.org/wp-content/uploads/2025/09/AnnualReport-2025.pdf" },
+    { year: "2025", type: "Annual Report", note: "PDF", url: "https://d4eb6aeb-726d-4b4e-946a-5a45757ea5a0.usrfiles.com/ugd/d4eb6a_0d2fcff2aff14494922c928a1fa5ca3a.pdf" },
     { year: "2025", type: "IRS Form 990", note: "PDF · Coming soon", url: "#" },
     { year: "2024", type: "Annual Report", note: "PDF", url: "#" },
     { year: "2024", type: "IRS Form 990", note: "PDF", url: "https://apps.irs.gov/pub/epostcard/cor/870528187_202412_990_2026030223965667.pdf" },
