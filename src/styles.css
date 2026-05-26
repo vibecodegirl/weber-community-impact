@@ -184,7 +184,7 @@ body { top: 0 !important; }
 .goog-tooltip, .goog-tooltip:hover { display: none !important; }
 .goog-text-highlight { background: none !important; box-shadow: none !important; }
 
-/* UserWay accessibility widget — pin to bottom-left, red outline only */
+/* UserWay accessibility widget — pin to bottom-left, minimal */
 .uwy.userway_p1,
 .uwy[class*="userway_p"] {
   left: 16px !important;
@@ -195,9 +195,8 @@ body { top: 0 !important; }
 .uwy .userway_buttons_wrapper,
 .uwy .uai {
   background: transparent !important;
-  border: 2px solid #ef4444 !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
-  color: #ef4444 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 .uwy .uai svg,
 .uwy .uai img {
