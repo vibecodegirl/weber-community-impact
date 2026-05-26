@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Heart, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { MountainDivider } from "./MountainDivider";
 import { heroSlides, heroButtons, heroAutoplayMs } from "@/content/hero";
+import { site } from "@/content/site";
 
 export function HeroCarousel() {
   const [index, setIndex] = useState(0);
@@ -75,12 +76,14 @@ export function HeroCarousel() {
             className="mt-9 flex flex-wrap gap-3"
             style={{ animation: "heroFadeUp 1s 0.3s ease-out both" }}
           >
-            <Link
-              to="/donate"
+            <a
+              href={site.donateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-ember px-7 py-3.5 text-sm font-semibold text-ember-foreground shadow-[var(--shadow-elevated)] transition-transform hover:scale-[1.03]"
             >
               <Heart className="h-4 w-4" /> {heroButtons.primary}
-            </Link>
+            </a>
             <Link
               to="/causes"
               className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/5 px-7 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur transition-colors hover:bg-primary-foreground/15"

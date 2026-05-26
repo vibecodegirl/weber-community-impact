@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Gift, Calendar, ArrowLeft } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { site } from "@/content/site";
 
 export const Route = createFileRoute("/events/sub-for-santa")({
   head: () => ({
@@ -59,9 +60,9 @@ function SubForSantaPage() {
             <Link to="/contact" className="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground">
               Contact us
             </Link>
-            <Link to="/donate" className="inline-flex rounded-full bg-ember px-6 py-3 text-sm font-semibold text-ember-foreground">
+            <a href={site.donateUrl} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-ember px-6 py-3 text-sm font-semibold text-ember-foreground">
               Donate
-            </Link>
+            </a>
           </div>
         </div>
       </section>

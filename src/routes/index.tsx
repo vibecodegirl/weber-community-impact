@@ -150,12 +150,14 @@ function HomePage() {
         <h2 className="mx-auto max-w-3xl text-balance font-serif text-3xl md:text-5xl">{home.cta.title}</h2>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:text-lg">{home.cta.body}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link
-            to="/donate"
+          <a
+            href={site.donateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-ember px-8 py-4 font-semibold text-ember-foreground shadow-[var(--shadow-elevated)] transition-transform hover:scale-[1.03]"
           >
             <Heart className="h-4 w-4" /> {home.cta.primaryLabel}
-          </Link>
+          </a>
           <Link
             to="/get-involved"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-4 font-semibold text-primary"

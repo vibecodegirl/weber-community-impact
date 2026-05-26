@@ -3,6 +3,7 @@ import { ArrowRight, Heart, CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CAUSES, getCause } from "@/lib/causes";
 import { causesPage } from "@/content/causes-page";
+import { site } from "@/content/site";
 
 export const Route = createFileRoute("/causes/$slug")({
   loader: ({ params }) => {
@@ -92,9 +93,9 @@ function CauseDetail() {
             <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
               <h3 className="font-serif text-xl">{c.fundCard.title}</h3>
               <p className="mt-2 text-sm text-primary-foreground/80">{c.fundCard.body}</p>
-              <Link to="/donate" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 font-semibold text-ember-foreground">
+              <a href={site.donateUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember px-5 py-3 font-semibold text-ember-foreground">
                 <Heart className="h-4 w-4" /> {c.fundCard.buttonLabel}
-              </Link>
+              </a>
             </div>
           </aside>
         </div>

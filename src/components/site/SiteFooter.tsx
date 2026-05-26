@@ -14,12 +14,14 @@ export function SiteFooter() {
             {site.brandName} <em className="text-sky">{site.brandSuffix}</em>
           </div>
           <p className="mt-3 max-w-md text-sm text-primary-foreground/75">{site.tagline}</p>
-          <Link
-            to="/donate"
+          <a
+            href={site.donateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-flex rounded-full bg-ember px-6 py-3 text-sm font-semibold text-ember-foreground"
           >
             {site.footer.donateButton}
-          </Link>
+          </a>
         </div>
 
         <div>
