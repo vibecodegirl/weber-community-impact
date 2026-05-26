@@ -63,7 +63,7 @@ export const impact = {
     title: "2025 Annual Report",
     body: "A full breakdown of programs funded, outcomes achieved, and how every dollar was spent.",
     downloadLabel: "Download (PDF)",
-    downloadUrl: "#",
+    downloadUrl: "https://d4eb6aeb-726d-4b4e-946a-5a45757ea5a0.usrfiles.com/ugd/d4eb6a_0d2fcff2aff14494922c928a1fa5ca3a.pdf",
     donateLabel: "Donate",
   },
 };
