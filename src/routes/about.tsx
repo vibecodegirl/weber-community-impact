@@ -72,7 +72,7 @@ function AboutPage() {
                     loading="lazy"
                     width={800}
                     height={800}
-                    className="h-full w-full object-cover object-top"
+                    className="h-full w-full object-cover object-[center_20%]"
                   />
                 </div>
                 <div className="mt-4 font-serif text-xl">{b.name}</div>
