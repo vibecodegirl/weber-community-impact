@@ -85,9 +85,10 @@ import firstCommunityBankLogo from "@/assets/sponsors/first-community-bank.jpg.a
 import goldenwestLogo from "@/assets/sponsors/goldenwest.jpg.asset.json";
 import hoganConstructionLogo from "@/assets/sponsors/hogan-construction.png.asset.json";
 import wasatchPeaksLogo from "@/assets/sponsors/wasatch-peaks.jpg.asset.json";
+import hallFoundationLogo from "@/assets/sponsors/hall-foundation.jpg.asset.json";
 
 const premierSponsors: Sponsor[] = [
-  { name: "The Alan & Jeanne Hall", logo: null },
+  { name: "The Alan & Jeanne Hall Foundation", logo: hallFoundationLogo.url },
   { name: "Goldenwest Credit Union — Putting Green Sponsor", logo: goldenwestLogo.url },
   { name: "Wasatch Peaks Credit Union — Lunch Sponsor", logo: wasatchPeaksLogo.url },
   { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url },
