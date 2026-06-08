@@ -93,6 +93,11 @@ import ogdenSchoolFoundationLogo from "@/assets/sponsors/ogden-school-foundation
 import friendsCjcLogo from "@/assets/sponsors/friends-cjc.png.asset.json";
 import edwardJonesLogo from "@/assets/sponsors/edward-jones.png.asset.json";
 import alphiaLogo from "@/assets/sponsors/alphia.png.asset.json";
+import gmreLogo from "@/assets/sponsors/gmre.png.asset.json";
+import hansenAssociatesLogo from "@/assets/sponsors/hansen-associates.jpg.asset.json";
+import weberSchoolFoundationLogo from "@/assets/sponsors/weber-school-foundation.jpeg.asset.json";
+import swansonFamilyFoundationLogo from "@/assets/sponsors/swanson-family-foundation.jpeg.asset.json";
+import elliottHallLogo from "@/assets/sponsors/elliott-hall.jpeg.asset.json";
 
 const premierSponsors: Sponsor[] = [
   { name: "The Alan & Jeanne Hall Foundation", logo: hallFoundationLogo.url },
@@ -110,6 +115,11 @@ const holeSponsors: Sponsor[] = [
   { name: "Friends of the Weber-Morgan Children's Justice Center", logo: friendsCjcLogo.url },
   { name: "Edward Jones Investments", logo: edwardJonesLogo.url },
   { name: "Alphia", logo: alphiaLogo.url },
+  { name: "GMRE", logo: gmreLogo.url },
+  { name: "Hansen & Associates — American Family Insurance", logo: hansenAssociatesLogo.url },
+  { name: "Weber School Foundation — Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
+  { name: "Dr. W. C. Swanson Family Foundation", logo: swansonFamilyFoundationLogo.url },
+  { name: "Elliott Hall", logo: elliottHallLogo.url },
 ];
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
