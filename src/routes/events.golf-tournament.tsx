@@ -121,14 +121,14 @@ const holeSponsors: Sponsor[] = [
   { name: "Weber School Foundation — Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
   { name: "Dr. W. C. Swanson Family Foundation", logo: swansonFamilyFoundationLogo.url },
   { name: "Elliott Hall", logo: elliottHallLogo.url },
-  { name: "Ascent Credit Union", logo: ascentLogo.url },
+  { name: "Ascent Credit Union", logo: ascentLogo.url, tight: true },
 ];
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
   const baseDims =
     size === "lg" ? "h-40 md:h-56" : size === "md" ? "h-36 md:h-44" : "h-20 md:h-24";
   const pad = sponsor.tight
-    ? "p-1"
+    ? "p-0"
     : size === "lg" ? "p-8" : size === "md" ? "p-6" : "p-4";
   const text =
     size === "lg" ? "text-2xl md:text-3xl font-serif" : size === "md" ? "text-base font-semibold" : "text-sm font-medium";
