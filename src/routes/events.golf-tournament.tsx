@@ -118,21 +118,53 @@ const premierSponsors: Sponsor[] = [
   { name: "O-Tech", type: "Swag Bag / Golf Ball Sponsor", logo: null },
   { name: "Ascent Credit Union", type: "Cart & Lucky Day Sponsor", logo: ascentLogo.url, tight: true },
   { name: "Weber School Foundation", type: "Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
+  { name: "Wasatch Peaks Credit Union", type: "Lunch Sponsor", logo: wasatchPeaksLogo.url },
+];
+
+const teamHoleSponsors: Sponsor[] = [
+  { name: "Alphia", logo: alphiaLogo.url },
+  { name: "Elliott Hall Companies", logo: elliottHallLogo.url },
+  { name: "George E. Wahlen Ogden Veterans Home" },
+  { name: "GMRE", logo: gmreLogo.url },
+  { name: "Grant Trucking", logo: grantTruckingLogo.url },
+  { name: "Kihomac" },
+  { name: "Mountain America Credit Union", logo: mountainAmericaLogo.url },
+  { name: "Overland West", logo: overlandWestLogo.url },
+];
+
+const teamSponsors: Sponsor[] = [
+  { name: "Advanced Research Institute" },
+  { name: "Bank of Utah" },
+  { name: "GMRE", logo: gmreLogo.url },
+  { name: "Hogan & Associates Construction", logo: hoganConstructionLogo.url, tight: true },
+  { name: "PowerQuip" },
+  { name: "Progressive Clinical Research" },
+  { name: "Reaveley Engineers" },
+  { name: "Richards Sheet Metal Works" },
+  { name: "Staker Parson Materials & Construction" },
+  { name: "Tukios Tribute Videos" },
+  { name: "Utah Hospital Association" },
+  { name: "Weber County Commissioner's Office" },
+  { name: "Weber County Sheriff's Office Foundation" },
+  { name: "Weber Human Services" },
 ];
 
 const holeSponsors: Sponsor[] = [
-  { name: "Mountain America Credit Union", logo: mountainAmericaLogo.url },
-  { name: "Grant Trucking", logo: grantTruckingLogo.url },
-  { name: "Overland West", logo: overlandWestLogo.url },
+  { name: "Grizzly Graphics" },
   { name: "Ogden School Foundation", logo: ogdenSchoolFoundationLogo.url },
   { name: "Friends of the Weber-Morgan Children's Justice Center", logo: friendsCjcLogo.url },
   { name: "Edward Jones Investments", logo: edwardJonesLogo.url },
-  { name: "Alphia", logo: alphiaLogo.url },
-  { name: "GMRE", logo: gmreLogo.url },
   { name: "Hansen & Associates — American Family Insurance", logo: hansenAssociatesLogo.url },
   { name: "Dr. W. C. Swanson Family Foundation", logo: swansonFamilyFoundationLogo.url },
-  { name: "Elliott Hall", logo: elliottHallLogo.url },
   { name: "Grain Craft", logo: grainCraftLogo.url },
+];
+
+const raffleSponsors: Sponsor[] = [
+  { name: "George S. Eccles Dinosaur Park" },
+  { name: "Hilton Garden Inn" },
+  { name: "Ogden Pizzeria" },
+  { name: "Weber County Commissioners Office" },
+  { name: "Wolf Creek Golf Course" },
 ];
 
 
