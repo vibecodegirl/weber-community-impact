@@ -73,7 +73,13 @@ function GolfTournamentPage() {
 
 type Sponsor = { name: string; logo?: string | null; url?: string };
 
-const titleSponsor: Sponsor | null = null; // e.g. { name: "Title Sponsor Co.", logo: null, url: "https://…" }
+import afcuTitleLogo from "@/assets/sponsors/afcu-title.png.asset.json";
+
+const titleSponsor: Sponsor | null = {
+  name: "America First Credit Union",
+  logo: afcuTitleLogo.url,
+  url: "https://www.americafirst.com",
+};
 
 const premierSponsors: Sponsor[] = [
   // { name: "Premier Sponsor", logo: null, url: "" },
