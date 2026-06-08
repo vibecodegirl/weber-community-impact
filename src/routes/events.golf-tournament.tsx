@@ -121,6 +121,7 @@ const holeSponsors: Sponsor[] = [
   { name: "Weber School Foundation — Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
   { name: "Dr. W. C. Swanson Family Foundation", logo: swansonFamilyFoundationLogo.url },
   { name: "Elliott Hall", logo: elliottHallLogo.url },
+  { name: "Ascent Credit Union", logo: ascentLogo.url },
 ];
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
