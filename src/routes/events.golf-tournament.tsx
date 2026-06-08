@@ -126,7 +126,15 @@ const holeSponsors: Sponsor[] = [
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
   const baseDims =
-    size === "lg" ? "h-40 md:h-56" : size === "md" ? "h-36 md:h-44" : "h-20 md:h-24";
+    size === "lg"
+      ? "h-40 md:h-56"
+      : size === "md"
+        ? sponsor.tight
+          ? "h-44 md:h-56"
+          : "h-36 md:h-44"
+        : sponsor.tight
+          ? "h-28 md:h-36"
+          : "h-20 md:h-24";
   const pad = sponsor.tight
     ? "p-0"
     : size === "lg" ? "p-8" : size === "md" ? "p-6" : "p-4";
@@ -181,7 +189,7 @@ function SponsorsSection() {
         {premierSponsors.length > 0 && (
           <div className="mb-14">
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Premier Sponsors</div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {premierSponsors.map((s) => (
                 <SponsorCard key={s.name} sponsor={s} size="md" />
               ))}
@@ -192,7 +200,7 @@ function SponsorsSection() {
         {holeSponsors.length > 0 && (
           <div>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Hole Sponsors</div>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {holeSponsors.map((s) => (
                 <SponsorCard key={s.name} sponsor={s} size="sm" />
               ))}
