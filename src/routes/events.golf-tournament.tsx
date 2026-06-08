@@ -80,7 +80,7 @@ function GolfTournamentPage() {
 // to the appropriate array. Use `null` for logo to render a name-only card.
 // ============================================================
 
-type Sponsor = { name: string; logo?: string | null; url?: string; tight?: boolean };
+type Sponsor = { name: string; logo?: string | null; url?: string; tight?: boolean; type?: string };
 
 import afcuTitleLogo from "@/assets/sponsors/afcu-title.png.asset.json";
 
@@ -111,13 +111,13 @@ import ascentLogo from "@/assets/sponsors/ascent-credit-union.png.asset.json";
 import grainCraftLogo from "@/assets/sponsors/grain-craft.png.asset.json";
 
 const premierSponsors: Sponsor[] = [
-  { name: "The Alan & Jeanne Hall Foundation — Clubhouse Sponsor", logo: hallFoundationLogo.url },
-  { name: "First Community Bank — Executive Sponsor", logo: firstCommunityBankLogo.url },
-  { name: "Goldenwest Credit Union — Putting Green Sponsor", logo: goldenwestLogo.url },
-  { name: "Hogan & Associates Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url, tight: true },
-  { name: "O-Tech — Swag Bag / Golf Ball Sponsor", logo: null },
-  { name: "Ascent Credit Union — Cart & Lucky Day Sponsor", logo: ascentLogo.url, tight: true },
-  { name: "Weber School Foundation — Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
+  { name: "The Alan & Jeanne Hall Foundation", type: "Clubhouse Sponsor", logo: hallFoundationLogo.url },
+  { name: "First Community Bank", type: "Executive Sponsor", logo: firstCommunityBankLogo.url },
+  { name: "Goldenwest Credit Union", type: "Putting Green Sponsor", logo: goldenwestLogo.url },
+  { name: "Hogan & Associates Construction", type: "Breakfast Sponsor", logo: hoganConstructionLogo.url, tight: true },
+  { name: "O-Tech", type: "Swag Bag / Golf Ball Sponsor", logo: null },
+  { name: "Ascent Credit Union", type: "Cart & Lucky Day Sponsor", logo: ascentLogo.url, tight: true },
+  { name: "Weber School Foundation", type: "Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
 ];
 
 const holeSponsors: Sponsor[] = [
@@ -200,7 +200,12 @@ function SponsorsSection() {
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Premier Sponsors</div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {premierSponsors.map((s) => (
-                <SponsorCard key={s.name} sponsor={s} size="md" />
+                <div key={s.name} className="flex w-full flex-col items-center">
+                  {s.type && (
+                    <div className="mb-2 text-center text-xs font-semibold uppercase tracking-wider text-ember">{s.type}</div>
+                  )}
+                  <SponsorCard sponsor={s} size="md" />
+                </div>
               ))}
             </div>
           </div>
