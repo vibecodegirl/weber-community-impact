@@ -153,7 +153,7 @@ function SponsorsSection() {
         {premierSponsors.length > 0 && (
           <div className="mb-14">
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Premier Sponsors</div>
-            <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {premierSponsors.map((s) => (
                 <SponsorCard key={s.name} sponsor={s} size="md" />
               ))}
