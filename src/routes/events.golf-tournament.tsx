@@ -85,9 +85,10 @@ import firstCommunityBankLogo from "@/assets/sponsors/first-community-bank.jpg.a
 import goldenwestLogo from "@/assets/sponsors/goldenwest.jpg.asset.json";
 import hoganConstructionLogo from "@/assets/sponsors/hogan-construction.png.asset.json";
 import wasatchPeaksLogo from "@/assets/sponsors/wasatch-peaks.jpg.asset.json";
+import hallFoundationLogo from "@/assets/sponsors/hall-foundation.jpg.asset.json";
 
 const premierSponsors: Sponsor[] = [
-  { name: "The Alan & Jeanne Hall", logo: null },
+  { name: "The Alan & Jeanne Hall Foundation", logo: hallFoundationLogo.url },
   { name: "Goldenwest Credit Union — Putting Green Sponsor", logo: goldenwestLogo.url },
   { name: "Wasatch Peaks Credit Union — Lunch Sponsor", logo: wasatchPeaksLogo.url },
   { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url },
@@ -100,7 +101,7 @@ const holeSponsors: Sponsor[] = [
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
   const dims =
-    size === "lg" ? "h-40 md:h-56 p-8" : size === "md" ? "h-28 md:h-32 p-5" : "h-20 md:h-24 p-4";
+    size === "lg" ? "h-40 md:h-56 p-8" : size === "md" ? "h-36 md:h-44 p-6" : "h-20 md:h-24 p-4";
   const text =
     size === "lg" ? "text-2xl md:text-3xl font-serif" : size === "md" ? "text-base font-semibold" : "text-sm font-medium";
   const inner = (
@@ -152,7 +153,7 @@ function SponsorsSection() {
         {premierSponsors.length > 0 && (
           <div className="mb-14">
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Premier Sponsors</div>
-            <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {premierSponsors.map((s) => (
                 <SponsorCard key={s.name} sponsor={s} size="md" />
               ))}
