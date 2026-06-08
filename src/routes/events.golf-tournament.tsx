@@ -71,7 +71,7 @@ function GolfTournamentPage() {
 // to the appropriate array. Use `null` for logo to render a name-only card.
 // ============================================================
 
-type Sponsor = { name: string; logo?: string | null; url?: string };
+type Sponsor = { name: string; logo?: string | null; url?: string; tight?: boolean };
 
 import afcuTitleLogo from "@/assets/sponsors/afcu-title.png.asset.json";
 
@@ -91,7 +91,7 @@ const premierSponsors: Sponsor[] = [
   { name: "The Alan & Jeanne Hall Foundation", logo: hallFoundationLogo.url },
   { name: "Goldenwest Credit Union — Putting Green Sponsor", logo: goldenwestLogo.url },
   { name: "Wasatch Peaks Credit Union — Lunch Sponsor", logo: wasatchPeaksLogo.url },
-  { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url },
+  { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url, tight: true },
   { name: "First Community Bank — Hole Sponsor", logo: firstCommunityBankLogo.url },
 ];
 
@@ -100,12 +100,15 @@ const holeSponsors: Sponsor[] = [
 ];
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
-  const dims =
-    size === "lg" ? "h-40 md:h-56 p-8" : size === "md" ? "h-36 md:h-44 p-6" : "h-20 md:h-24 p-4";
+  const baseDims =
+    size === "lg" ? "h-40 md:h-56" : size === "md" ? "h-36 md:h-44" : "h-20 md:h-24";
+  const pad = sponsor.tight
+    ? "p-1"
+    : size === "lg" ? "p-8" : size === "md" ? "p-6" : "p-4";
   const text =
     size === "lg" ? "text-2xl md:text-3xl font-serif" : size === "md" ? "text-base font-semibold" : "text-sm font-medium";
   const inner = (
-    <div className={`flex w-full items-center justify-center rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition hover:shadow-md ${dims}`}>
+    <div className={`flex w-full items-center justify-center rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)] transition hover:shadow-md ${baseDims} ${pad}`}>
       {sponsor.logo ? (
         <img src={sponsor.logo} alt={`${sponsor.name} logo`} className="max-h-full max-w-full object-contain" loading="lazy" />
       ) : (
