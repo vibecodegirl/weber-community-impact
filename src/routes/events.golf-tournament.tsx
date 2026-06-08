@@ -101,7 +101,7 @@ const holeSponsors: Sponsor[] = [
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
   const dims =
-    size === "lg" ? "h-40 md:h-56 p-8" : size === "md" ? "h-28 md:h-32 p-5" : "h-20 md:h-24 p-4";
+    size === "lg" ? "h-40 md:h-56 p-8" : size === "md" ? "h-36 md:h-44 p-6" : "h-20 md:h-24 p-4";
   const text =
     size === "lg" ? "text-2xl md:text-3xl font-serif" : size === "md" ? "text-base font-semibold" : "text-sm font-medium";
   const inner = (
