@@ -128,7 +128,7 @@ function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" |
   const baseDims =
     size === "lg" ? "h-40 md:h-56" : size === "md" ? "h-36 md:h-44" : "h-20 md:h-24";
   const pad = sponsor.tight
-    ? "p-1"
+    ? "p-0"
     : size === "lg" ? "p-8" : size === "md" ? "p-6" : "p-4";
   const text =
     size === "lg" ? "text-2xl md:text-3xl font-serif" : size === "md" ? "text-base font-semibold" : "text-sm font-medium";
