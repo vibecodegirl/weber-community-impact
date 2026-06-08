@@ -86,6 +86,13 @@ import goldenwestLogo from "@/assets/sponsors/goldenwest.jpg.asset.json";
 import hoganConstructionLogo from "@/assets/sponsors/hogan-construction.png.asset.json";
 import wasatchPeaksLogo from "@/assets/sponsors/wasatch-peaks.jpg.asset.json";
 import hallFoundationLogo from "@/assets/sponsors/hall-foundation.jpg.asset.json";
+import mountainAmericaLogo from "@/assets/sponsors/mountain-america.png.asset.json";
+import grantTruckingLogo from "@/assets/sponsors/grant-trucking.png.asset.json";
+import overlandWestLogo from "@/assets/sponsors/overland-west.png.asset.json";
+import ogdenSchoolFoundationLogo from "@/assets/sponsors/ogden-school-foundation.png.asset.json";
+import friendsCjcLogo from "@/assets/sponsors/friends-cjc.png.asset.json";
+import edwardJonesLogo from "@/assets/sponsors/edward-jones.png.asset.json";
+import alphiaLogo from "@/assets/sponsors/alphia.png.asset.json";
 
 const premierSponsors: Sponsor[] = [
   { name: "The Alan & Jeanne Hall Foundation", logo: hallFoundationLogo.url },
@@ -93,10 +100,16 @@ const premierSponsors: Sponsor[] = [
   { name: "Wasatch Peaks Credit Union — Lunch Sponsor", logo: wasatchPeaksLogo.url },
   { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url, tight: true },
   { name: "First Community Bank — Hole Sponsor", logo: firstCommunityBankLogo.url },
+  { name: "Mountain America Credit Union — Raffle Sponsor", logo: mountainAmericaLogo.url },
 ];
 
 const holeSponsors: Sponsor[] = [
-  // { name: "Hole Sponsor", logo: null, url: "" },
+  { name: "Grant Trucking", logo: grantTruckingLogo.url },
+  { name: "Overland West", logo: overlandWestLogo.url },
+  { name: "Ogden School Foundation", logo: ogdenSchoolFoundationLogo.url },
+  { name: "Friends of the Weber-Morgan Children's Justice Center", logo: friendsCjcLogo.url },
+  { name: "Edward Jones Investments", logo: edwardJonesLogo.url },
+  { name: "Alphia", logo: alphiaLogo.url },
 ];
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
