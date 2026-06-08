@@ -105,7 +105,6 @@ const premierSponsors: Sponsor[] = [
   { name: "Goldenwest Credit Union — Putting Green Sponsor", logo: goldenwestLogo.url },
   { name: "Wasatch Peaks Credit Union — Lunch Sponsor", logo: wasatchPeaksLogo.url },
   { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url, tight: true },
-  { name: "Ascent Credit Union", logo: ascentLogo.url, tight: true },
   { name: "First Community Bank — Hole Sponsor", logo: firstCommunityBankLogo.url },
   { name: "Mountain America Credit Union — Raffle Sponsor", logo: mountainAmericaLogo.url },
 ];
