@@ -98,6 +98,7 @@ import hansenAssociatesLogo from "@/assets/sponsors/hansen-associates.jpg.asset.
 import weberSchoolFoundationLogo from "@/assets/sponsors/weber-school-foundation.jpeg.asset.json";
 import swansonFamilyFoundationLogo from "@/assets/sponsors/swanson-family-foundation.jpeg.asset.json";
 import elliottHallLogo from "@/assets/sponsors/elliott-hall.jpeg.asset.json";
+import ascentLogo from "@/assets/sponsors/ascent-credit-union.png.asset.json";
 
 const premierSponsors: Sponsor[] = [
   { name: "The Alan & Jeanne Hall Foundation", logo: hallFoundationLogo.url },
