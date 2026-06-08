@@ -81,8 +81,17 @@ const titleSponsor: Sponsor | null = {
   url: "https://www.americafirst.com",
 };
 
+import firstCommunityBankLogo from "@/assets/sponsors/first-community-bank.jpg.asset.json";
+import goldenwestLogo from "@/assets/sponsors/goldenwest.jpg.asset.json";
+import hoganConstructionLogo from "@/assets/sponsors/hogan-construction.png.asset.json";
+import wasatchPeaksLogo from "@/assets/sponsors/wasatch-peaks.jpg.asset.json";
+
 const premierSponsors: Sponsor[] = [
-  // { name: "Premier Sponsor", logo: null, url: "" },
+  { name: "The Alan & Jeanne Hall", logo: null },
+  { name: "Goldenwest Credit Union — Putting Green Sponsor", logo: goldenwestLogo.url },
+  { name: "Wasatch Peaks Credit Union — Lunch Sponsor", logo: wasatchPeaksLogo.url },
+  { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url },
+  { name: "First Community Bank — Hole Sponsor", logo: firstCommunityBankLogo.url },
 ];
 
 const holeSponsors: Sponsor[] = [
