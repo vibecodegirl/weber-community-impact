@@ -126,7 +126,15 @@ const holeSponsors: Sponsor[] = [
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
   const baseDims =
-    size === "lg" ? "h-40 md:h-56" : size === "md" ? "h-36 md:h-44" : "h-20 md:h-24";
+    size === "lg"
+      ? "h-40 md:h-56"
+      : size === "md"
+        ? sponsor.tight
+          ? "h-44 md:h-56"
+          : "h-36 md:h-44"
+        : sponsor.tight
+          ? "h-28 md:h-36"
+          : "h-20 md:h-24";
   const pad = sponsor.tight
     ? "p-0"
     : size === "lg" ? "p-8" : size === "md" ? "p-6" : "p-4";
