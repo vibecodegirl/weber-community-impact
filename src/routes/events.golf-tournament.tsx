@@ -36,16 +36,25 @@ function GolfTournamentPage() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
             <Calendar className="h-6 w-6 text-ember" />
-            <div className="mt-3 font-serif text-2xl text-primary">Date TBA</div>
-            <p className="mt-2 text-muted-foreground">Watch this page for the next tournament date and registration details.</p>
+            <div className="mt-3 font-serif text-2xl text-primary">Thursday, June 25, 2026</div>
+            <p className="mt-2 text-muted-foreground">
+              8:00 a.m. — Check in and report to carts<br />
+              9:00 a.m. — Shotgun start
+            </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
             <MapPin className="h-6 w-6 text-ember" />
-            <div className="mt-3 font-serif text-2xl text-primary">Location TBA</div>
-            <p className="mt-2 text-muted-foreground">A premier Northern Utah course — details coming soon.</p>
+            <div className="mt-3 font-serif text-2xl text-primary">Wolf Creek</div>
+            <p className="mt-2 text-muted-foreground">Eden, Utah — a premier Northern Utah course.</p>
           </div>
         </div>
+        <div className="mt-8 rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground shadow-[var(--shadow-soft)]">
+          For more information contact <span className="font-semibold text-primary">Madeline McDonald</span>, Foundation Director — {" "}
+          <a href="tel:+18017786834" className="font-semibold text-primary underline">(801) 778-6834</a> · {" "}
+          <a href="mailto:madelinemc@weberhs.org" className="font-semibold text-primary underline">madelinemc@weberhs.org</a>
+        </div>
       </section>
+
 
       <SponsorsSection />
 
