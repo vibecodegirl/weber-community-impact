@@ -80,7 +80,7 @@ function GolfTournamentPage() {
 // to the appropriate array. Use `null` for logo to render a name-only card.
 // ============================================================
 
-type Sponsor = { name: string; logo?: string | null; url?: string; tight?: boolean };
+type Sponsor = { name: string; logo?: string | null; url?: string; tight?: boolean; type?: string };
 
 import afcuTitleLogo from "@/assets/sponsors/afcu-title.png.asset.json";
 
