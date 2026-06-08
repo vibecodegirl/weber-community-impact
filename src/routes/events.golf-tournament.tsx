@@ -243,11 +243,44 @@ function SponsorsSection() {
           </div>
         )}
 
+        {teamHoleSponsors.length > 0 && (
+          <div className="mb-14">
+            <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Team / Hole Sponsors</div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              {teamHoleSponsors.map((s) => (
+                <SponsorCard key={s.name} sponsor={s} size="sm" />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {teamSponsors.length > 0 && (
+          <div className="mb-14">
+            <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Team Sponsors</div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              {teamSponsors.map((s) => (
+                <SponsorCard key={s.name} sponsor={s} size="sm" />
+              ))}
+            </div>
+          </div>
+        )}
+
         {holeSponsors.length > 0 && (
-          <div>
+          <div className="mb-14">
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Hole Sponsors</div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {holeSponsors.map((s) => (
+                <SponsorCard key={s.name} sponsor={s} size="sm" />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {raffleSponsors.length > 0 && (
+          <div>
+            <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Raffle Sponsors</div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              {raffleSponsors.map((s) => (
                 <SponsorCard key={s.name} sponsor={s} size="sm" />
               ))}
             </div>
