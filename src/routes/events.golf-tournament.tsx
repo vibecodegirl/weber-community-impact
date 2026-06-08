@@ -200,7 +200,7 @@ function SponsorsSection() {
         {holeSponsors.length > 0 && (
           <div>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Hole Sponsors</div>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {holeSponsors.map((s) => (
                 <SponsorCard key={s.name} sponsor={s} size="sm" />
               ))}
