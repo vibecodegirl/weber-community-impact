@@ -45,8 +45,12 @@ function GolfTournamentPage() {
             <p className="mt-2 text-muted-foreground">A premier Northern Utah course — details coming soon.</p>
           </div>
         </div>
+      </section>
 
-        <div className="mt-12 rounded-2xl bg-cream p-8">
+      <SponsorsSection />
+
+      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+        <div className="rounded-2xl bg-cream p-8">
           <h2 className="font-serif text-2xl text-primary">Sponsorship & registration</h2>
           <p className="mt-3 text-foreground/80">
             Foursomes, hole sponsorships, and corporate packages will be announced ahead of the event. Reach out to the Foundation team to be added to the early-notice list.
@@ -56,8 +60,6 @@ function GolfTournamentPage() {
           </Link>
         </div>
       </section>
-
-      <SponsorsSection />
     </SiteLayout>
   );
 }
