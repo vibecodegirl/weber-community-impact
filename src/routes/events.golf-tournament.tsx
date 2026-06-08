@@ -36,16 +36,25 @@ function GolfTournamentPage() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
             <Calendar className="h-6 w-6 text-ember" />
-            <div className="mt-3 font-serif text-2xl text-primary">Date TBA</div>
-            <p className="mt-2 text-muted-foreground">Watch this page for the next tournament date and registration details.</p>
+            <div className="mt-3 font-serif text-2xl text-primary">Thursday, June 25, 2026</div>
+            <p className="mt-2 text-muted-foreground">
+              8:00 a.m. — Check in and report to carts<br />
+              9:00 a.m. — Shotgun start
+            </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
             <MapPin className="h-6 w-6 text-ember" />
-            <div className="mt-3 font-serif text-2xl text-primary">Location TBA</div>
-            <p className="mt-2 text-muted-foreground">A premier Northern Utah course — details coming soon.</p>
+            <div className="mt-3 font-serif text-2xl text-primary">Wolf Creek</div>
+            <p className="mt-2 text-muted-foreground">Eden, Utah — a premier Northern Utah course.</p>
           </div>
         </div>
+        <div className="mt-8 rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground shadow-[var(--shadow-soft)]">
+          For more information contact <span className="font-semibold text-primary">Madeline McDonald</span>, Foundation Director — {" "}
+          <a href="tel:+18017786834" className="font-semibold text-primary underline">(801) 778-6834</a> · {" "}
+          <a href="mailto:madelinemc@weberhs.org" className="font-semibold text-primary underline">madelinemc@weberhs.org</a>
+        </div>
       </section>
+
 
       <SponsorsSection />
 
@@ -99,17 +108,20 @@ import weberSchoolFoundationLogo from "@/assets/sponsors/weber-school-foundation
 import swansonFamilyFoundationLogo from "@/assets/sponsors/swanson-family-foundation.jpeg.asset.json";
 import elliottHallLogo from "@/assets/sponsors/elliott-hall.jpeg.asset.json";
 import ascentLogo from "@/assets/sponsors/ascent-credit-union.png.asset.json";
+import grainCraftLogo from "@/assets/sponsors/grain-craft.png.asset.json";
 
 const premierSponsors: Sponsor[] = [
-  { name: "The Alan & Jeanne Hall Foundation", logo: hallFoundationLogo.url },
+  { name: "The Alan & Jeanne Hall Foundation — Clubhouse Sponsor", logo: hallFoundationLogo.url },
+  { name: "First Community Bank — Executive Sponsor", logo: firstCommunityBankLogo.url },
   { name: "Goldenwest Credit Union — Putting Green Sponsor", logo: goldenwestLogo.url },
-  { name: "Wasatch Peaks Credit Union — Lunch Sponsor", logo: wasatchPeaksLogo.url },
-  { name: "Hogan Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url, tight: true },
-  { name: "First Community Bank — Hole Sponsor", logo: firstCommunityBankLogo.url },
-  { name: "Mountain America Credit Union — Raffle Sponsor", logo: mountainAmericaLogo.url },
+  { name: "Hogan & Associates Construction — Breakfast Sponsor", logo: hoganConstructionLogo.url, tight: true },
+  { name: "O-Tech — Swag Bag / Golf Ball Sponsor", logo: null },
+  { name: "Ascent Credit Union — Cart & Lucky Day Sponsor", logo: ascentLogo.url, tight: true },
+  { name: "Weber School Foundation — Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
 ];
 
 const holeSponsors: Sponsor[] = [
+  { name: "Mountain America Credit Union", logo: mountainAmericaLogo.url },
   { name: "Grant Trucking", logo: grantTruckingLogo.url },
   { name: "Overland West", logo: overlandWestLogo.url },
   { name: "Ogden School Foundation", logo: ogdenSchoolFoundationLogo.url },
@@ -118,11 +130,11 @@ const holeSponsors: Sponsor[] = [
   { name: "Alphia", logo: alphiaLogo.url },
   { name: "GMRE", logo: gmreLogo.url },
   { name: "Hansen & Associates — American Family Insurance", logo: hansenAssociatesLogo.url },
-  { name: "Weber School Foundation — Hole-in-One Sponsor", logo: weberSchoolFoundationLogo.url },
   { name: "Dr. W. C. Swanson Family Foundation", logo: swansonFamilyFoundationLogo.url },
   { name: "Elliott Hall", logo: elliottHallLogo.url },
-  { name: "Ascent Credit Union", logo: ascentLogo.url, tight: true },
+  { name: "Grain Craft", logo: grainCraftLogo.url },
 ];
+
 
 function SponsorCard({ sponsor, size = "md" }: { sponsor: Sponsor; size?: "lg" | "md" | "sm" }) {
   const baseDims =
