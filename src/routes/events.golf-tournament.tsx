@@ -56,6 +56,8 @@ function GolfTournamentPage() {
           </Link>
         </div>
       </section>
+
+      <SponsorsSection />
     </SiteLayout>
   );
 }
