@@ -67,6 +67,17 @@ function CauseDetail() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr]">
           <div>
             <p className="text-pretty text-lg text-foreground/80 md:text-xl">{cause.description}</p>
+            {cause.slug === "aging-services" && (
+              <div className="mt-10 aspect-video overflow-hidden rounded-2xl border border-border shadow-[var(--shadow-soft)]">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/qgpRsXa3yNQ"
+                  title="Aging Services Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            )}
             <h2 className="mt-12 font-serif text-2xl text-primary">{c.programsHeading}</h2>
             <ul className="mt-5 space-y-3">
               {cause.programs.map((p: string) => (
