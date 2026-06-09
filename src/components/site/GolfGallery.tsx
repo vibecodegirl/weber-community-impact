@@ -10,6 +10,16 @@ import img7 from "@/assets/gallery/WHS-Golf-Tournament-2025-045-1-741x1024.jpg.a
 import img8 from "@/assets/gallery/WHS-Golf-Tournament-2025-056-1-1024x514.jpg.asset.json";
 import img9 from "@/assets/gallery/WHS-Golf-Tournament-2025-082-796x1024.jpg.asset.json";
 import img10 from "@/assets/gallery/WHS-Golf-Tournament-2025-159-591x1024.jpg.asset.json";
+import img11 from "@/assets/gallery/WHS-Golf-Tournament-2025-169-1024x423.jpg.asset.json";
+import img12 from "@/assets/gallery/WHS-Golf-Tournament-2025-203-1024x904.jpg.asset.json";
+import img13 from "@/assets/gallery/WHS-Golf-Tournament-2025-187-1024x683.jpg.asset.json";
+import img14 from "@/assets/gallery/WHS-Golf-Tournament-2025-166-1024x683.jpg.asset.json";
+import img15 from "@/assets/gallery/WHS-Golf-Tournament-2025-141-1024x683.jpg.asset.json";
+import img16 from "@/assets/gallery/WHS-Golf-Tournament-2025-134-1024x683_1.jpg.asset.json";
+import img17 from "@/assets/gallery/WHS-Golf-Tournament-2025-070-1024x683.jpg.asset.json";
+import img18 from "@/assets/gallery/WHS-Golf-Tournament-2025-066-1024x683.jpg.asset.json";
+import img19 from "@/assets/gallery/WHS-Golf-Tournament-2025-067-1024x683.jpg.asset.json";
+import img20 from "@/assets/gallery/WHS-Golf-Tournament-2025-076-1024x683.jpg.asset.json";
 
 const photos = [
   { src: img1.url, alt: "Golfer teeing off with mountain views in the background" },
@@ -22,6 +32,16 @@ const photos = [
   { src: img8.url, alt: "Tournament-goers mingling near the clubhouse" },
   { src: img9.url, alt: "Golfers waving from their Wolf Creek cart" },
   { src: img10.url, alt: "Volunteers staffing The Insurance Center hole sponsor table" },
+  { src: img11.url, alt: "Foursome putting on the green with sweeping Wolf Creek mountain views" },
+  { src: img12.url, alt: "Closest to the Hole contest winner accepting the prize envelope" },
+  { src: img13.url, alt: "Foundation team posing at the Grizzly Graphics photo backdrop" },
+  { src: img14.url, alt: "Foundation Director with a longtime tournament supporter" },
+  { src: img15.url, alt: "Madeline taking a selfie with a guest, Ogden Valley mountains behind" },
+  { src: img16.url, alt: "The Auberge crew giving a thumbs up at their on-course hospitality tent" },
+  { src: img17.url, alt: "Golfers gathering at the clubhouse pergola before the round" },
+  { src: img18.url, alt: "Friends laughing together during pre-round mingling" },
+  { src: img19.url, alt: "Group of guests smiling in front of the Goldenwest sponsor tent" },
+  { src: img20.url, alt: "Emcee welcoming golfers from the Wolf Creek clubhouse patio" },
 ];
 
 export function GolfGallery() {
