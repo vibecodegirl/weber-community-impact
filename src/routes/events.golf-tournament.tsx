@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Calendar, MapPin, Clock, ArrowLeft, Phone, Mail, FileText, ExternalLink } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { GolfGallery } from "@/components/site/GolfGallery";
+import tournamentPacket from "@/assets/Golf-Tournament-Letter-and-Registration-2026.pdf.asset.json";
 
 
 export const Route = createFileRoute("/events/golf-tournament")({
@@ -92,7 +93,7 @@ function GolfTournamentPage() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
                 <a
-                  href="/Golf-Tournament-Letter-and-Registration-2026.pdf"
+                  href={tournamentPacket.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
