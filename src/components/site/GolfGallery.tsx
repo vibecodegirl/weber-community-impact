@@ -52,6 +52,16 @@ const photos = [
   { src: img18.url, alt: "Friends laughing together during pre-round mingling" },
   { src: img19.url, alt: "Group of guests smiling in front of the Goldenwest sponsor tent" },
   { src: img20.url, alt: "Emcee welcoming golfers from the Wolf Creek clubhouse patio" },
+  { src: img21.url, alt: "Putting practice beneath the America First Credit Union title sponsor banner" },
+  { src: img22.url, alt: "Mountain America Credit Union team at their on-course sponsor tent" },
+  { src: img23.url, alt: "Foursome posing on the tee box with Ogden Valley peaks behind" },
+  { src: img24.url, alt: "Two longtime supporters sharing breakfast on the clubhouse patio" },
+  { src: img25.url, alt: "Riders smiling from their golf cart heading to the course" },
+  { src: img26.url, alt: "Couple waving from a golf cart on the cart path" },
+  { src: img27.url, alt: "America First Credit Union team welcoming golfers at their hole" },
+  { src: img28.url, alt: "Foundation board and team gathered under the patio string lights" },
+  { src: img29.url, alt: "Golfer mid-swing on a tee box with sweeping mountain backdrop" },
+  { src: img30.url, alt: "Weber School Foundation team at their tournament table" },
 ];
 
 export function GolfGallery() {
