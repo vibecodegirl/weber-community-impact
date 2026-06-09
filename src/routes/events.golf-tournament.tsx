@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Calendar, MapPin, Clock, ArrowLeft, Phone, Mail, FileText, ExternalLink } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { GolfGallery } from "@/components/site/GolfGallery";
+import tournamentPacket from "@/assets/Golf-Tournament-Letter-and-Registration-2026.pdf.asset.json";
 
 export const Route = createFileRoute("/events/golf-tournament")({
   head: () => ({
