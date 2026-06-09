@@ -1,58 +1,58 @@
-## Goal
+## Golf tournament page — Option A + gallery
 
-Produce a single, fully-documented developer handbook for the Weber Human Services Foundation site, delivered in three formats so devs can read it in-repo and hand the same content to stakeholders/auditors.
+### 1. Restructure the hero into two columns
 
-## Deliverables
+Replace the current single-column hero with a two-column layout (stacks on mobile, side-by-side on `lg:`):
 
-1. `docs/PROJECT.md` — canonical source of truth, version-controlled with the code.
-2. `/mnt/documents/WHSF-Build-Documentation.docx` — editable Word export.
-3. `/mnt/documents/WHSF-Build-Documentation.pdf` — print/share export.
+**Left column** — what's there today, slightly tightened:
+- "All events" back link
+- "Signature Event" eyebrow
+- H1: "Foundation Golf Tournament"
+- Lead paragraph about funding year-round services
 
-Both exports are generated from the Markdown so they stay in sync.
+**Right column** — a single glass/translucent card containing:
+- **Date** row (Calendar icon) — Thursday, June 25, 2026
+- **Location** row (MapPin icon) — Wolf Creek · Eden, Utah
+- **Schedule** row (Clock icon) — 8:00 a.m. check-in · 9:00 a.m. shotgun start
+- Divider
+- **Contact** block — Madeline McDonald, Foundation Director, with tap-to-call phone and mailto email
 
-## Document outline
+Card style: `bg-primary-foreground/10` with `backdrop-blur`, subtle border, rounded-2xl — sits on the dark primary hero background so it reads as part of the hero, not a body card.
 
-1. **Overview** — purpose, parent org (Weber Human Services), nonprofit status, service area, preview/published/custom-domain URLs.
-2. **Tech stack** — TanStack Start v1 (React 19, Vite 7), Tailwind v4 via `src/styles.css`, shadcn/ui, TanStack Router (file-based), TanStack Query, deployment target (Cloudflare Worker / Edge), Bun, TypeScript strict.
-3. **Repository layout** — `src/routes/`, `src/content/` (content-as-code pattern), `src/components/site/*`, `src/components/ui/*`, `src/lib/`, `scripts/export-static.ts`, `public/`.
-4. **Content architecture** — explain the "all copy lives in `src/content/*.ts`" convention, per-page mapping, Wix migration notes (mirrors `src/content/README.md`).
-5. **Routes & pages** — table of every route with file path, URL, purpose, and notable features:
-   - `/` index, `/about`, `/board`, `/impact`, `/financials`, `/events` (+ `/events/golf-tournament`, `/events/sub-for-santa`), `/get-involved`, `/news`, `/contact`, `/donate`, `/causes` + `/causes/$slug`, `/faq`, `/privacy`, `/terms`, `/sitemap.xml`.
-6. **Shared components** — `SiteLayout`, `SiteHeader`, `SiteFooter`, `UtilityBar` (988 crisis line + EN/ES translator), `HeroCarousel`, `LanguageTranslator`, `MountainDivider`, `SectionHeader`, `LegalArticle`.
-7. **Forms & external integrations**
-   - Contact form (`/contact`) — submits to `foundation@weberhs.org`.
-   - Get Involved volunteer/inquiry form — same destination.
-   - Donate CTA — external paywall `https://weberhsfoundation.org/donate/`.
-   - 2025 Annual Report PDF link (Wix-hosted asset URL).
-   - Crisis hotline `tel:988`; WHS 24/7 crisis line.
-   - Google Translate widget (EN/ES).
-8. **SEO & metadata** — per-route `head()` with title/description/og, canonical URLs, `sitemap[.]xml.ts`, `robots.txt`, `llms.txt`, JSON-LD opportunities.
-9. **Design system** — `src/styles.css` tokens (oklch), Tailwind v4 theme, typography, semantic color usage rule, shadcn variants.
-10. **Build, dev, deploy** — `bun install`, dev server, `scripts/export-static.ts`, Cloudflare Worker deploy via `wrangler.jsonc`, env vars (none required client-side today; `VITE_*` vs `process.env.*` convention documented).
-11. **Routing rules & guards** — file-based naming conventions, `__root.tsx`, `<Outlet />` rule, error/not-found boundaries.
-12. **Accessibility & i18n** — semantic HTML, alt text, focus styles, EN/ES translator pattern, contrast tokens.
-13. **Compliance — 501(c)(3) + donor disclosures**
-    - Nonprofit status statement (footer + about).
-    - Public availability of Form 990s and annual reports on `/financials`.
-    - Donation handling: donations processed off-site by parent foundation; site collects no card data.
-    - Donor privacy policy linkage (`/privacy`).
-    - Tax-deductibility disclosure language template.
-    - Recordkeeping recommendations for donations and acknowledgements.
-14. **Developer onboarding checklist** — clone, install, run, where to edit copy, how to add a route, how to add a new news/event item, how to update the annual report link, how to change contact destination email.
-15. **Future work / TODOs** — server-backed contact form (Lovable Cloud), analytics, JSON-LD for events/articles, automated 990 metadata, og:image per route.
-16. **Appendix** — full file inventory, key URLs, glossary.
+### 2. Remove the standalone body sections that moved into the hero
 
-## Generation approach (technical)
+Delete the existing event details grid (Date / Location cards) and the contact strip below them. That whole `<section>` between the hero and `<SponsorsSection />` goes away.
 
-- Write `docs/PROJECT.md` by hand from the repo (read `src/content/*.ts`, `src/routes/*.tsx`, `src/components/site/*`, `vite.config.ts`, `wrangler.jsonc`, `package.json`).
-- Generate DOCX with `docx` npm package per the docx skill (US Letter, Arial defaults, real headings, real lists, dual-width tables for the route table).
-- Generate PDF with ReportLab Platypus from the same content (Letter, 1" margins, proper styles, no Unicode bullets — use `ListFlowable`).
-- QA: convert DOCX→PDF→images and PDF→images, visually inspect every page for overflow/clipping/blank pages; iterate until clean.
-- Emit a `<presentation-artifact>` for each export so the user can download.
+### 3. Add a gallery section between hero and sponsors
 
-## Out of scope
+Upload the 9 photos via `lovable-assets` (CDN pointers under `src/assets/gallery/`), then render a new `GallerySection` on the page.
 
-- No code changes to the app itself.
-- No new pages, forms, or features.
-- No HIPAA/PHI content (marketing site only).
-- No infrastructure changes.
+**Layout — mixed-aspect masonry, not a carousel:**
+- Use a CSS `columns-2 md:columns-3 lg:columns-4` masonry with `gap-3`
+- Each image preserves its native aspect ratio (`w-full h-auto`) so the two portrait shots (hug, golf cart waver, Insurance Center) interleave naturally with the landscape shots
+- Rounded corners, soft shadow, subtle hover zoom (`transition-transform hover:scale-[1.02]`)
+- Lazy-load all images (`loading="lazy"`)
+- Click opens a lightweight lightbox (shadcn `Dialog`) showing the full image — no extra deps
+
+**Why masonry over carousel:** carousels hide content and auto-rotate (distracting near a CTA). A masonry grid is calm, scannable, naturally varied, and lets visitors absorb the vibe at their own pace before reaching sponsors. Section gets a small eyebrow + heading ("Moments from past tournaments") so it reads as a deliberate showcase, not a dump.
+
+### 4. Final page flow
+
+```
+Hero (two columns: pitch | details+contact card)
+   ↓
+Gallery (masonry, "Moments from past tournaments")
+   ↓
+Sponsors (unchanged — title / premier / team-hole / team / hole / raffle)
+   ↓
+Sponsorship & registration CTA (unchanged)
+```
+
+### Technical notes
+
+- New files: `src/assets/gallery/*.asset.json` (9 pointers), `src/components/site/GolfGallery.tsx`
+- Edit: `src/routes/events.golf-tournament.tsx` — new hero JSX, delete old details section, mount `<GolfGallery />` between hero and `<SponsorsSection />`
+- No new npm deps; reuse existing shadcn `Dialog` for lightbox
+- Alt text per image (golfer teeing off, raffle table, cart line, registration, etc.) for a11y/SEO
+
+Sound good — or want a carousel instead of masonry, or a different gallery heading?
