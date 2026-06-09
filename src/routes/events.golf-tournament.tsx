@@ -25,7 +25,7 @@ function GolfTournamentPage() {
           <Link to="/events" className="mb-6 inline-flex items-center gap-2 text-sm text-sky">
             <ArrowLeft className="h-4 w-4" /> All events
           </Link>
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-14">
             <div>
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky">Signature Event</div>
               <h1 className="font-serif text-4xl leading-tight md:text-6xl">Foundation Golf Tournament</h1>
