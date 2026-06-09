@@ -25,7 +25,7 @@ function GolfTournamentPage() {
           <Link to="/events" className="mb-6 inline-flex items-center gap-2 text-sm text-sky">
             <ArrowLeft className="h-4 w-4" /> All events
           </Link>
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-14">
             <div>
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky">Signature Event</div>
               <h1 className="font-serif text-4xl leading-tight md:text-6xl">Foundation Golf Tournament</h1>
@@ -34,44 +34,44 @@ function GolfTournamentPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-6 backdrop-blur md:p-8">
-              <ul className="space-y-5">
-                <li className="flex gap-4">
-                  <Calendar className="mt-0.5 h-5 w-5 flex-none text-sky" />
+            <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-8 backdrop-blur md:p-10">
+              <ul className="space-y-6">
+                <li className="flex gap-5">
+                  <Calendar className="mt-0.5 h-6 w-6 flex-none text-sky" />
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Date</div>
-                    <div className="font-serif text-lg text-primary-foreground">Thursday, June 25, 2026</div>
+                    <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Date</div>
+                    <div className="font-serif text-xl text-primary-foreground">Thursday, June 25, 2026</div>
                   </div>
                 </li>
-                <li className="flex gap-4">
-                  <MapPin className="mt-0.5 h-5 w-5 flex-none text-sky" />
+                <li className="flex gap-5">
+                  <MapPin className="mt-0.5 h-6 w-6 flex-none text-sky" />
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Location</div>
-                    <div className="font-serif text-lg text-primary-foreground">Wolf Creek</div>
-                    <div className="text-sm text-primary-foreground/70">Eden, Utah</div>
+                    <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Location</div>
+                    <div className="font-serif text-xl text-primary-foreground">Wolf Creek</div>
+                    <div className="text-base text-primary-foreground/70">Eden, Utah</div>
                   </div>
                 </li>
-                <li className="flex gap-4">
-                  <Clock className="mt-0.5 h-5 w-5 flex-none text-sky" />
+                <li className="flex gap-5">
+                  <Clock className="mt-0.5 h-6 w-6 flex-none text-sky" />
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Schedule</div>
-                    <div className="text-sm text-primary-foreground/90">8:00 a.m. — Check in and report to carts</div>
-                    <div className="text-sm text-primary-foreground/90">9:00 a.m. — Shotgun start</div>
+                    <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Schedule</div>
+                    <div className="text-base text-primary-foreground/90">8:00 a.m. — Check in and report to carts</div>
+                    <div className="text-base text-primary-foreground/90">9:00 a.m. — Shotgun start</div>
                   </div>
                 </li>
               </ul>
 
-              <div className="my-6 h-px bg-primary-foreground/15" />
+              <div className="my-8 h-px bg-primary-foreground/15" />
 
-              <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Contact</div>
-              <div className="mt-1 font-serif text-base text-primary-foreground">Madeline McDonald</div>
-              <div className="text-sm text-primary-foreground/70">Foundation Director</div>
-              <div className="mt-3 flex flex-col gap-2 text-sm">
+              <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Contact</div>
+              <div className="mt-1 font-serif text-lg text-primary-foreground">Madeline McDonald</div>
+              <div className="text-base text-primary-foreground/70">Foundation Director</div>
+              <div className="mt-4 flex flex-col gap-3 text-base">
                 <a href="tel:+18017786834" className="inline-flex items-center gap-2 text-sky hover:underline">
-                  <Phone className="h-4 w-4" /> (801) 778-6834
+                  <Phone className="h-5 w-5" /> (801) 778-6834
                 </a>
                 <a href="mailto:madelinemc@weberhs.org" className="inline-flex items-center gap-2 text-sky hover:underline">
-                  <Mail className="h-4 w-4" /> madelinemc@weberhs.org
+                  <Mail className="h-5 w-5" /> madelinemc@weberhs.org
                 </a>
               </div>
             </div>
