@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, MapPin, Clock, ArrowLeft, Phone, Mail } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowLeft, Phone, Mail, FileText, ExternalLink } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { GolfGallery } from "@/components/site/GolfGallery";
 
@@ -74,6 +74,35 @@ function GolfTournamentPage() {
                   <Mail className="h-5 w-5" /> madelinemc@weberhs.org
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream">
+        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
+          <div className="rounded-2xl bg-background p-6 shadow-[var(--shadow-soft)] md:p-10">
+            <h2 className="font-serif text-2xl text-primary md:text-3xl">Tournament Packet & Registration</h2>
+            <p className="mt-2 text-muted-foreground">
+              Everything you need to join us on the course.
+            </p>
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="/Golf-Tournament-Letter-and-Registration-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
+              >
+                <FileText className="h-4 w-4" /> Download Tournament Packet (PDF)
+              </a>
+              <a
+                href="https://wl.donorperfect.net/weblink/weblink.aspx?name=E333149&id=16"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary/5"
+              >
+                <ExternalLink className="h-4 w-4" /> Register Online
+              </a>
             </div>
           </div>
         </div>
