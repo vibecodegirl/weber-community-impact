@@ -21,29 +21,29 @@ function GolfTournamentPage() {
   return (
     <SiteLayout>
       <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
-          <Link to="/events" className="mb-6 inline-flex items-center gap-2 text-sm text-sky">
+        <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8 lg:py-14">
+          <Link to="/events" className="mb-4 inline-flex items-center gap-2 text-sm text-sky">
             <ArrowLeft className="h-4 w-4" /> All events
           </Link>
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-14">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-10">
             <div>
-              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky">Signature Event</div>
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-sky">Signature Event</div>
               <h1 className="font-serif text-4xl leading-tight md:text-6xl">Foundation Golf Tournament</h1>
-              <p className="mt-6 max-w-xl text-lg text-primary-foreground/80">
+              <p className="mt-4 max-w-xl text-lg text-primary-foreground/80">
                 A day on the green that fuels year-round services for our neighbors in Morgan and Weber Counties.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-8 backdrop-blur md:p-10">
-              <ul className="space-y-6">
-                <li className="flex gap-5">
+            <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-6 backdrop-blur md:p-8">
+              <ul className="space-y-4">
+                <li className="flex gap-4">
                   <Calendar className="mt-0.5 h-6 w-6 flex-none text-sky" />
                   <div>
                     <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Date</div>
                     <div className="font-serif text-xl text-primary-foreground">Thursday, June 25, 2026</div>
                   </div>
                 </li>
-                <li className="flex gap-5">
+                <li className="flex gap-4">
                   <MapPin className="mt-0.5 h-6 w-6 flex-none text-sky" />
                   <div>
                     <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Location</div>
@@ -51,7 +51,7 @@ function GolfTournamentPage() {
                     <div className="text-base text-primary-foreground/70">Eden, Utah</div>
                   </div>
                 </li>
-                <li className="flex gap-5">
+                <li className="flex gap-4">
                   <Clock className="mt-0.5 h-6 w-6 flex-none text-sky" />
                   <div>
                     <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Schedule</div>
@@ -61,12 +61,12 @@ function GolfTournamentPage() {
                 </li>
               </ul>
 
-              <div className="my-8 h-px bg-primary-foreground/15" />
+              <div className="my-6 h-px bg-primary-foreground/15" />
 
               <div className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">Contact</div>
               <div className="mt-1 font-serif text-lg text-primary-foreground">Madeline McDonald</div>
               <div className="text-base text-primary-foreground/70">Foundation Director</div>
-              <div className="mt-4 flex flex-col gap-3 text-base">
+              <div className="mt-3 flex flex-col gap-2 text-base">
                 <a href="tel:+18017786834" className="inline-flex items-center gap-2 text-sky hover:underline">
                   <Phone className="h-5 w-5" /> (801) 778-6834
                 </a>
