@@ -20,6 +20,16 @@ import img17 from "@/assets/gallery/WHS-Golf-Tournament-2025-070-1024x683.jpg.as
 import img18 from "@/assets/gallery/WHS-Golf-Tournament-2025-066-1024x683.jpg.asset.json";
 import img19 from "@/assets/gallery/WHS-Golf-Tournament-2025-067-1024x683.jpg.asset.json";
 import img20 from "@/assets/gallery/WHS-Golf-Tournament-2025-076-1024x683.jpg.asset.json";
+import img21 from "@/assets/gallery/WHS-Golf-Tournament-2025-057-683x1024.jpg.asset.json";
+import img22 from "@/assets/gallery/DSC_2511-1024x683.jpg.asset.json";
+import img23 from "@/assets/gallery/DSC_2515-1024x683.jpg.asset.json";
+import img24 from "@/assets/gallery/DSC_2343-1024x683.jpg.asset.json";
+import img25 from "@/assets/gallery/DSC_2389-1024x683.jpg.asset.json";
+import img26 from "@/assets/gallery/DSC_2419-1024x683.jpg.asset.json";
+import img27 from "@/assets/gallery/DSC_2440-1024x683.jpg.asset.json";
+import img28 from "@/assets/gallery/DSC_2300-1024x683.jpg.asset.json";
+import img29 from "@/assets/gallery/DSC_5520-1024x426.jpg.asset.json";
+import img30 from "@/assets/gallery/WHS-Golf-Tournament-2025-190-1024x969.jpg.asset.json";
 
 const photos = [
   { src: img1.url, alt: "Golfer teeing off with mountain views in the background" },
@@ -42,6 +52,16 @@ const photos = [
   { src: img18.url, alt: "Friends laughing together during pre-round mingling" },
   { src: img19.url, alt: "Group of guests smiling in front of the Goldenwest sponsor tent" },
   { src: img20.url, alt: "Emcee welcoming golfers from the Wolf Creek clubhouse patio" },
+  { src: img21.url, alt: "Putting practice beneath the America First Credit Union title sponsor banner" },
+  { src: img22.url, alt: "Mountain America Credit Union team at their on-course sponsor tent" },
+  { src: img23.url, alt: "Foursome posing on the tee box with Ogden Valley peaks behind" },
+  { src: img24.url, alt: "Two longtime supporters sharing breakfast on the clubhouse patio" },
+  { src: img25.url, alt: "Riders smiling from their golf cart heading to the course" },
+  { src: img26.url, alt: "Couple waving from a golf cart on the cart path" },
+  { src: img27.url, alt: "America First Credit Union team welcoming golfers at their hole" },
+  { src: img28.url, alt: "Foundation board and team gathered under the patio string lights" },
+  { src: img29.url, alt: "Golfer mid-swing on a tee box with sweeping mountain backdrop" },
+  { src: img30.url, alt: "Weber School Foundation team at their tournament table" },
 ];
 
 export function GolfGallery() {
