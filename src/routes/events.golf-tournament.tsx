@@ -1,14 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, MapPin, ArrowLeft } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowLeft, Phone, Mail } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { GolfGallery } from "@/components/site/GolfGallery";
 
 export const Route = createFileRoute("/events/golf-tournament")({
   head: () => ({
     meta: [
       { title: "Golf Tournament — Weber Human Services Foundation" },
-      { name: "description", content: "Join the Weber Human Services Foundation Golf Tournament — a day on the course supporting mental health, recovery, and aging programs." },
+      { name: "description", content: "Join the Weber Human Services Foundation Golf Tournament — June 25, 2026 at Wolf Creek. A day on the course supporting mental health, recovery, and aging programs." },
       { property: "og:title", content: "Golf Tournament" },
-      { property: "og:description", content: "A day on the course supporting our community." },
+      { property: "og:description", content: "June 25, 2026 at Wolf Creek — a day on the course supporting our community." },
       { property: "og:url", content: "https://whsf.accessmypage.online/events/golf-tournament" },
     ],
     links: [{ rel: "canonical", href: "https://whsf.accessmypage.online/events/golf-tournament" }],
@@ -20,41 +21,65 @@ function GolfTournamentPage() {
   return (
     <SiteLayout>
       <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
           <Link to="/events" className="mb-6 inline-flex items-center gap-2 text-sm text-sky">
             <ArrowLeft className="h-4 w-4" /> All events
           </Link>
-          <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky">Signature Event</div>
-          <h1 className="max-w-3xl font-serif text-4xl leading-tight md:text-6xl">Foundation Golf Tournament</h1>
-          <p className="mt-6 max-w-2xl text-lg text-primary-foreground/80">
-            A day on the green that fuels year-round services for our neighbors in Morgan and Weber Counties.
-          </p>
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14">
+            <div>
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky">Signature Event</div>
+              <h1 className="font-serif text-4xl leading-tight md:text-6xl">Foundation Golf Tournament</h1>
+              <p className="mt-6 max-w-xl text-lg text-primary-foreground/80">
+                A day on the green that fuels year-round services for our neighbors in Morgan and Weber Counties.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-6 backdrop-blur md:p-8">
+              <ul className="space-y-5">
+                <li className="flex gap-4">
+                  <Calendar className="mt-0.5 h-5 w-5 flex-none text-sky" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Date</div>
+                    <div className="font-serif text-lg text-primary-foreground">Thursday, June 25, 2026</div>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <MapPin className="mt-0.5 h-5 w-5 flex-none text-sky" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Location</div>
+                    <div className="font-serif text-lg text-primary-foreground">Wolf Creek</div>
+                    <div className="text-sm text-primary-foreground/70">Eden, Utah</div>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <Clock className="mt-0.5 h-5 w-5 flex-none text-sky" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Schedule</div>
+                    <div className="text-sm text-primary-foreground/90">8:00 a.m. — Check in and report to carts</div>
+                    <div className="text-sm text-primary-foreground/90">9:00 a.m. — Shotgun start</div>
+                  </div>
+                </li>
+              </ul>
+
+              <div className="my-6 h-px bg-primary-foreground/15" />
+
+              <div className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">Contact</div>
+              <div className="mt-1 font-serif text-base text-primary-foreground">Madeline McDonald</div>
+              <div className="text-sm text-primary-foreground/70">Foundation Director</div>
+              <div className="mt-3 flex flex-col gap-2 text-sm">
+                <a href="tel:+18017786834" className="inline-flex items-center gap-2 text-sky hover:underline">
+                  <Phone className="h-4 w-4" /> (801) 778-6834
+                </a>
+                <a href="mailto:madelinemc@weberhs.org" className="inline-flex items-center gap-2 text-sky hover:underline">
+                  <Mail className="h-4 w-4" /> madelinemc@weberhs.org
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
-            <Calendar className="h-6 w-6 text-ember" />
-            <div className="mt-3 font-serif text-2xl text-primary">Thursday, June 25, 2026</div>
-            <p className="mt-2 text-muted-foreground">
-              8:00 a.m. — Check in and report to carts<br />
-              9:00 a.m. — Shotgun start
-            </p>
-          </div>
-          <div className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
-            <MapPin className="h-6 w-6 text-ember" />
-            <div className="mt-3 font-serif text-2xl text-primary">Wolf Creek</div>
-            <p className="mt-2 text-muted-foreground">Eden, Utah — a premier Northern Utah course.</p>
-          </div>
-        </div>
-        <div className="mt-8 rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground shadow-[var(--shadow-soft)]">
-          For more information contact <span className="font-semibold text-primary">Madeline McDonald</span>, Foundation Director — {" "}
-          <a href="tel:+18017786834" className="font-semibold text-primary underline">(801) 778-6834</a> · {" "}
-          <a href="mailto:madelinemc@weberhs.org" className="font-semibold text-primary underline">madelinemc@weberhs.org</a>
-        </div>
-      </section>
-
+      <GolfGallery />
 
       <SponsorsSection />
 
