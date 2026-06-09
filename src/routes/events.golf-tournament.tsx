@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, MapPin, Clock, ArrowLeft, Phone, Mail } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowLeft, Phone, Mail, FileText, ExternalLink } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { GolfGallery } from "@/components/site/GolfGallery";
 
