@@ -79,9 +79,9 @@ function GolfTournamentPage() {
         </div>
       </section>
 
-      <GolfGallery />
-
       <SponsorsSection />
+
+      <GolfGallery />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="rounded-2xl bg-cream p-8">
